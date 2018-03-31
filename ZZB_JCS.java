@@ -53,9 +53,9 @@ public class ZZB_JCS{
 
 * just like decoding the data
 ********************* */
+// 此处需要改造为读取外部数据！并且能够进行分解，改造为可读取的形式
     static Map<Object,List<Sample>> readSample(String[] attribute_Names){
         //样本属性及其分类，暂时先在代码里面写了。后面需要数据库或者是文件读取
-//########### 此处需要改造为读取外部数据！并且能够进行分解，改造为可读取的形式
         Object[][] rawData = new Object [][]{
             { "<30  ", "High  ", "No ", "Fair     ", "0" },  
             { "<30  ", "High  ", "No ", "Excellent", "0" },  
@@ -101,6 +101,42 @@ public class ZZB_JCS{
         }
         return sample_set;
     }
+
+/* *********************
+* this is the class of the decision-tree 
+
+* 决策树（非叶结点），决策树中的每个非叶结点都引导了一棵决策树 
+
+* 每个非叶结点包含一个分支属性和多个分支，分支属性的每个值对应一个分支，该分支引导了一棵子决策树 
+********************* */
+
+    static class Tree{
+        
+        private String attribute;
+
+        private Map<Object,Object> children = new HashMap<Object,Object>();
+
+        public Tree(String attribute){
+            this.attribute=attribute;
+        }
+
+        public Object getAttribute(){
+            return attribute;
+        }
+
+        public Object getChild(Object attrValue){
+            return children.get(attrValue);
+        }
+
+        public void setChild(Object attrValue,Object child){
+            child.put(attrValue,child);
+        }
+
+        public Set<Object> getAttributeValues(){
+            return children.keySet();
+        }
+    }
+
 /* *********************
 * this is the function to generate the DecisionTree
 
@@ -111,14 +147,42 @@ public class ZZB_JCS{
         if(categoryToSamples.size() == 1)
             return categoryToSamples.keySet().iterator().next();
 
-        //如果没有提供决策的属性，那么样本集中具有最多样本的分类作为新样本的分类，也就是投票选举出新的分类
+        //如果没有提供决策的属性（也就是没有给你属性名字清单），那么样本集中具有最多样本的分类作为新样本的分类，也就是投票选举出新的分类
         if (attribute_Names.length == 0) {
             int max = 0;
             Object maxCategory = null;
             for (Entry<Object,List<Sample>> entry : categoryToSamples.entrySet() ) {
                 int cur = entry.getValue().size();
+                if (cur > max) {
+                    max = cur;
+                    maxCategory = entry.getKey();
+                }
+            }
+            return maxCategory;
+        }
+        //如果有属性清单的话，那么就选择测试所用的属性了。
+        Object[] rst = chooseBestTestAttribute(categoryToSamples,attribute_Names);
+        //决策树的根节点选取，分支的属性为选取的测试属性
+        Tree tree = new Tree(attribute_Names[(Integer)rst[0]]);
+
+        //已用过的测试属性不能再次被选择为测试属性
+        String[] subA = new String[attribute_Names.length-1];
+        for (int i=0,j=0;i<attribute_Names.length ;++i ) {
+            if (i != (Integer)rst[0]) {
+                subA[j++] = attribute_Names[i];
             }
         }
+
+        //根据分支的属性生成新的分支
+        @SuppressWarnings("unchecked")  
+        Map<Object,Map<Object,List<Sample>>> splits = (Map<Object,Map<Object,List<Sample>>>) rst[2];
+        for (Entry<Object,Map<Object,List<Sample>>> entry : splits.entrySet()) {
+            Object attrValue = entry.getKey();
+            Map<Object,List<Sample>> split = entry.getValue();
+            Object child = generateDecisionTree(split,subA);
+            tree.setChild(attrValue,child); 
+        }
+        return tree;
     }
 }
 
