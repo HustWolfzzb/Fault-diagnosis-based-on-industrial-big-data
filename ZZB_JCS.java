@@ -129,13 +129,65 @@ public class ZZB_JCS{
         }
 
         public void setChild(Object attrValue,Object child){
-            child.put(attrValue,child);
+            children.put(attrValue,child);
         }
 
         public Set<Object> getAttributeValues(){
             return children.keySet();
         }
     }
+
+/* *********************
+* this is the function to choose the Best Test Attribute
+
+* it will be used in the generateDecisionTree()
+
+* 选取最优测试属性。最优是指如果根据选取的测试属性分支，则从各分支确定新样本 
+     
+* 的分类需要的信息量之和最小，这等价于确定新样本的测试属性获得的信息增益最大 
+
+* 返回数组：选取的属性下标、信息量之和、Map(属性值->(分类->样本列表)) 
+********************* */
+
+static Object[] chooseBestTestAttribute(Map<Object,List<Sample>> categoryToSamples,String[] attribute_Names){
+    //最优的属性的下标！
+    int minIndex = -1;
+    //最小的信息熵
+    double minValue = Double.MAX_VALUE;
+    //最优的分支方案！
+    Map<Object,Map<Object,List<Sample>>> minSplit = null;
+
+    //对每一个属性，都要计算信息熵，选区最小的为最优，Ent(D)
+    for (int attrIndex = 0;attrIndex<attribute_Names.length;++attrIndex) {
+        //统计样本总数的计数器
+        int allCount = 0;
+
+        //按照当前属性构建Map，属性值->(分类->样本列表)  
+        Map<Object,Map<Object,List<Sample>>> curSplits = new HashMap<Object,Map<Object,List<Sample>>>();
+        for (Entry<Object,List<Sample>> entry : categoryToSamples.entrySet()) {
+            Object category = entry.getKey();
+            List<Sample> samples = entry.getValue();
+            for (Sample sample : samples ) {
+                Object attrValue = sample.getAttribute(attribute_Names[attrIndex])
+                Map<Object,List<Sample>> split = curSplits.get(attrValue);
+                if (split == null) {
+                    split = new HashMap<Object,List<Sample>>();
+                    curSplits.put(attrValue,split);
+                }
+                List<Sample> splitSamples = split.get(category);
+                if (splitSamples == null) {
+                    splitSamples = new LinkedList<Sample>();
+                    split.put(category,splitSamples);
+                }
+                splitSamples.add(sample);
+            }
+            allCount += samples.size();
+        }
+
+        // 计算将当前属性作为测试属性的情况下在各分支确定新样本的分类需要的信息熵之和  
+
+    }
+}
 
 /* *********************
 * this is the function to generate the DecisionTree
