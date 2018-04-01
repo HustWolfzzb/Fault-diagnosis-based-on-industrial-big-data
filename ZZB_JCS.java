@@ -10,6 +10,7 @@
  ********************* */
 
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -55,24 +56,11 @@ public class ZZB_JCS{
      ********************* */
 
 // 此处需要改造为读取外部数据！并且能够进行分解，改造为可读取的形式
-    static Map<Object,List<Sample>> readSample(String[] attribute_Names){
+    static Map<Object,List<Sample>> readSample(String[] attribute_Names) throws IOException {
         //样本属性及其分类，暂时先在代码里面写了。后面需要数据库或者是文件读取
-        Object[][] rawData = new Object [][]{
-                { "<30  ", "High  ", "No ", "Fair     ", "0" },
-                { "<30  ", "High  ", "No ", "Excellent", "0" },
-                { "30-40", "High  ", "No ", "Fair     ", "1" },
-                { ">40  ", "Medium", "No ", "Fair     ", "1" },
-                { ">40  ", "Low   ", "Yes", "Fair     ", "1" },
-                { ">40  ", "Low   ", "Yes", "Excellent", "0" },
-                { "30-40", "Low   ", "Yes", "Excellent", "1" },
-                { "<30  ", "Medium", "No ", "Fair     ", "0" },
-                { "<30  ", "Low   ", "Yes", "Fair     ", "1" },
-                { ">40  ", "Medium", "Yes", "Fair     ", "1" },
-                { "<30  ", "Medium", "Yes", "Excellent", "1" },
-                { "30-40", "Medium", "No ", "Excellent", "1" },
-                { "30-40", "High  ", "Yes", "Fair     ", "1" },
-                { ">40  ", "Medium", "No ", "Excellent", "0" }
-        };
+        ReadData data = new ReadData();
+
+        Object[][] rawData =  data.ReadData();
         //最终组合出一个包含所有的样本的图
         Map<Object,List<Sample>> sample_set = new HashMap<Object,List<Sample>>();
 
