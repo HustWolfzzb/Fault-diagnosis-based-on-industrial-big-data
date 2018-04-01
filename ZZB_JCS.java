@@ -59,9 +59,8 @@ public class ZZB_JCS{
     static Map<Object,List<Sample>> readSample(String[] attribute_Names) throws IOException {
         //样本属性及其分类，暂时先在代码里面写了。后面需要数据库或者是文件读取
         ReadData data = new ReadData();
-
         Object[][] rawData =  data.ReadData();
-        //最终组合出一个包含所有的样本的图
+        //最终组合出一个包含所有的样本的Map
         Map<Object,List<Sample>> sample_set = new HashMap<Object,List<Sample>>();
 
         //读取每一排的数据
@@ -79,15 +78,16 @@ public class ZZB_JCS{
             sample.setCategory(row[i]);
             //将解析出来的一排加入整体分类后的样本中，row[i]此刻是指分类后的集合
             List<Sample> samples = sample_set.get(row[i]);
-            //现在整体样本集中查询，如果这个类别还没有样本，那么就添加一下
+            //现在整体样本集中查询，有的话就返回value，而如果这个类别还没有样本，那么就添加一下
             if(samples == null){
                 samples = new LinkedList<Sample>();
                 sample_set.put(row[i],samples);
             }
             //不管是当前分类的样本集中是否为空，都要加上把现在分离出来的样本丢进去。
-            //此处基本只有前几次才会进入if，后面各个分类都有了样本就不会为空了。
+            //此处基本只有前几次分类没有完毕的时候才会进入if，后面各个分类都有了样本就不会为空了。
             samples.add(sample);
         }
+        //最后返回的是一个每一个类别一个链表，串着该类别的所有样本
         return sample_set;
     }
 
@@ -152,42 +152,90 @@ public class ZZB_JCS{
             //统计样本总数的计数器
             int allCount = 0;
 
-            //按照当前属性构建Map，属性值->(分类->样本列表)
+            //按照当前属性构建Map，这个Map的层级关系根据下面的层次划分：属性值[Key]->(分类[Key]->样本列表[Value]) [Value]
+            // curSplits就是一个某一个在当前属性下某一种选择值 所对应的所有样本集！ Dv是也？？待定！
             Map<Object,Map<Object,List<Sample>>> curSplits = new HashMap<Object,Map<Object,List<Sample>>>();
+            /*
+            * Set<Map.Entry<K,V>> entrySet​()
+            * Returns:  A set view of the mappings contained in this map
+            * Entry 这个数据类型大致等于C++中的pair，也就是数据打包的意思
+            */
+        /* 这儿的整个流程画个图哈~下面是对某一个属性进行信息增益的计算了！
+
+                       拿到一个数据对，【所属类别-->样本集】
+                                 |
+                                 V
+                        解析数据对，分解出key和value
+                    其中key为类别，value为此类别所有的样本
+                                 |
+                                 V
+                   对于Value里边读出来的每个样本，分别：
+          读取当前属性下的值，然后建立起来当前属性值相同的所有样本的样本集；
+                                 |
+                                 V
+                   此处还要将每个样本集拆分为分类样本集！
+                                 |
+                                 V
+            这一轮下来，就得到关于这个属性的不同属性值对应的样本集合
+                        而在这些集合集合中又有分类样本集！
+              就好比，这一轮对年龄下手，最终得到了40岁以上的好人、坏人
+                         30-40岁之间的好人、坏人集合
+                         30岁以下的好人、坏人的集合
+                         最后一共得到了6个样本集？
+                 只不过是已Map中键值对的形式存在，二层包装而已！
+
+          */
             for (Entry<Object,List<Sample>> entry : categoryToSamples.entrySet()) {
+                //先拿到数据的分类的名称，我们这儿就0，1
                 Object category = entry.getKey();
+                //再拿到这个类别！注意是类别，不是属性值！类别所对应的所有样本！
                 List<Sample> samples = entry.getValue();
+                //然后再慢慢的对每个样本进行操作，大概是算信息熵？
                 for (Sample sample : samples ) {
+                    // 根据当前要计算的属性，得到当前样本的关于这个属性的值
                     Object attrValue = sample.getAttribute(attribute_Names[attrIndex]);
+                    // 根据前面当前样本getAttribute()所获得的属性值，来获取这个属性的值相同的所有的样本的样本集
                     Map<Object,List<Sample>> split = curSplits.get(attrValue);
+                    // 考虑到一开始肯定没法得到一个完整的Map,所以需要从无到有建立起来！
                     if (split == null) {
+                        //建立一个关于这个属性值的Map，层次关系为：属性值->(All Sample) 见Line156
                         split = new HashMap<Object,List<Sample>>();
                         curSplits.put(attrValue,split);
                     }
+                    //建立起来之后，就可以读取这个属性值等于某个值时对应的分类样本集合了。
                     List<Sample> splitSamples = split.get(category);
+                    // 如果读不到当前属性对应这个值的分类的话，那就要建立一个属性值等于当前样本的属性值，且分类相同的样本集。
                     if (splitSamples == null) {
                         splitSamples = new LinkedList<Sample>();
+                        // 结合当前这个属性值，组成一个集合，放到Map--split里面去。
                         split.put(category,splitSamples);
                     }
+                    // 最后再把当前的这个样本放到这个样本集中？？？！！可以直接这么搞的？%%%%%% 难道是引用传递？
+                    // 是的！没有用new自然就是一个引用传递！卧槽！这都给忘了！？
                     splitSamples.add(sample);
                 }
+                //统计样本总数的计数器需要对当前属性下的样本的数量进行统计。
                 allCount += samples.size();
             }
 
             // 计算将当前属性作为测试属性的情况下在各分支确定新样本的分类需要的信息熵之和
             double curValue = 0.0;
+            //读取当前属性下的每一种属性值对应的样本集
             for (Map<Object,List<Sample>> splits : curSplits.values()) {
                 double perSplitCount = 0;
+                //读取每个属性值的样本集，然后拆分为每个样本来计算
                 for (List<Sample> list : splits.values()) {
                     //累计当前样本的分支总数
                     perSplitCount += list.size();
                 }
-                //计数器，当前分支
+                //计数器，当前分支的信息熵和信息增益，这儿是按出现频率在算呢！
                 double perSplitValue = 0.0;
                 for (List<Sample> list : splits.values() ) {
                     double p = list.size() / perSplitCount;
+                    //貌似是因为p无论如何都是小于1的，所以采用p -= 实际上是加了？
                     perSplitValue -= p*(Math.log(p)/Math.log(2));
                 }
+                //这就是最后的信息熵咯？没感觉是信息增益啊？
                 curValue += (perSplitCount / allCount) * perSplitValue;
             }
             //选择最小的信息熵为最优！
