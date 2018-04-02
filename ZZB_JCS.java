@@ -87,7 +87,7 @@ public class ZZB_JCS{
             //此处基本只有前几次分类没有完毕的时候才会进入if，后面各个分类都有了样本就不会为空了。
             samples.add(sample);
         }
-        //最后返回的是一个每一个类别一个链表，串着该类别的所有样本
+        //最后返回的是一个每一个类别一个链表的Map，串着该类别的所有样本 (类别 --> 此类样本)
         return sample_set;
     }
 
@@ -258,30 +258,30 @@ public class ZZB_JCS{
     }
 
 
-
     /* *********************
      * this is the function to output the Decision Tree to the Dashboard
      ********************* */
 
     static void outputDecisionTree(Object obj,int level, Object from){
-        //这个没用啊！
+        //这个到后面决定输出多少个|----- 也就是说是决定层级的
         for (int i=0; i < level ;++i){
             System.out.print("|-----");
         }
-        //这个也没用啊！
+        //表明自己是从哪个父节点过来的？
         if (from != null){
             System.out.printf("(%s):",from);
         }
+        //大概是说，如果这个东西还有子节点，那就继续递归
         if (obj instanceof Tree){
             Tree tree = (Tree) obj;
             String attribute_Name = tree.getAttribute();
             System.out.printf("[%s = ?]\n",attribute_Name);
             for (Object attrValue : tree.getAttributeValues()){
                 Object child =tree.getChild(attrValue);
-                outputDecisionTree(child,level+1,attribute_Name + "=" + attrValue);
+                outputDecisionTree(child,level+1,attribute_Name + " : " + attrValue);
             }
         }else {
-            System.out.printf("[CATEGORY = %s]\n", obj);
+            System.out.printf("【* CATEGORY = %s *】\n", obj);
         }
     }
 
@@ -290,6 +290,8 @@ public class ZZB_JCS{
      * this is the function to generate the DecisionTree
 
      * use the data which read from the files to get the Decisiontree
+
+     * the most important part I think!
      ********************* */
     static Object generateDecisionTree(Map<Object,List<Sample>> categoryToSamples,String[] attribute_Names){
         //如果只有一个样本，那么该样本所属分类作为新样本的分类
@@ -300,6 +302,7 @@ public class ZZB_JCS{
         if (attribute_Names.length == 0) {
             int max = 0;
             Object maxCategory = null;
+            // 如果没有属性列表的话，那就直接按照分类作为K个样本集，取数量较大的那个样本集的类别作为本分类。
             for (Entry<Object,List<Sample>> entry : categoryToSamples.entrySet() ) {
                 int cur = entry.getValue().size();
                 if (cur > max) {
@@ -315,10 +318,10 @@ public class ZZB_JCS{
         Tree tree = new Tree(attribute_Names[(Integer)rst[0]]);
 
         //已用过的测试属性不能再次被选择为测试属性
-        String[] subA = new String[attribute_Names.length-1];
+        String[] Attr_Find_Already = new String[attribute_Names.length-1];
         for (int i=0,j=0;i<attribute_Names.length ;++i ) {
             if (i != (Integer)rst[0]) {
-                subA[j++] = attribute_Names[i];
+                Attr_Find_Already[j++] = attribute_Names[i];
             }
         }
 
@@ -328,7 +331,8 @@ public class ZZB_JCS{
         for (Entry<Object,Map<Object,List<Sample>>> entry : splits.entrySet()) {
             Object attrValue = entry.getKey();
             Map<Object,List<Sample>> split = entry.getValue();
-            Object child = generateDecisionTree(split,subA);
+            //又是递归调用？那我岂不是玩完？层数不能超过二十层！这是底线！
+            Object child = generateDecisionTree(split,Attr_Find_Already);
             tree.setChild(attrValue,child);
         }
         return tree;

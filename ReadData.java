@@ -1,3 +1,15 @@
+
+/* *********************
+ * Author   :   HustWolf --- 张照博
+
+ * Time     :   2018.3-2018.5
+
+ * Address  :   HUST
+
+ * Version  :   2.0
+ ********************* */
+
+
 /* *******************
 * 这是从数据库或者是文本文件读取数据的时候用的
 * 其实我觉得如果可以每一次读一条数据，然后处理一条会比较好
@@ -21,7 +33,7 @@ public class ReadData {
                 { "<30  ", "Medium", "Yes", "Excellent", "1" },
                 { "30-40", "Medium", "No ", "Excellent", "1" },
                 { "30-40", "High  ", "Yes", "Fair     ", "1" },
-                { "<30"  , "Medium", "No ", "Excellent", "1" },
+                { "<30  "  , "Medium", "No ", "Excellent", "1" },
                 { ">40  ", "Medium", "No ", "Excellent", "0" }
         };
 
