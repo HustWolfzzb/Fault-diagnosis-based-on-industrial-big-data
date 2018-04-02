@@ -264,9 +264,11 @@ public class ZZB_JCS{
      ********************* */
 
     static void outputDecisionTree(Object obj,int level, Object from){
+        //这个没用啊！
         for (int i=0; i < level ;++i){
             System.out.print("|-----");
         }
+        //这个也没用啊！
         if (from != null){
             System.out.printf("(%s):",from);
         }
