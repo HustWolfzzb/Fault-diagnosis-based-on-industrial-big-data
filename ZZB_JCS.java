@@ -134,9 +134,9 @@ public class ZZB_JCS{
 
      * 选取最优测试属性。最优是指如果根据选取的测试属性分支，则从各分支确定新样本
 
-     * 的分类需要的信息量之和最小，这等价于确定新样本的测试属性获得的信息增益最大
+     * 的分类需要的信息熵之和最小，这等价于确定新样本的测试属性获得的信息增益最大
 
-     * 返回数组：选取的属性下标、信息量之和、Map(属性值->(分类->样本列表))
+     * 返回数组：选取的属性下标、信息熵之和、Map(属性值->(分类->样本列表))
      ********************* */
 
     static Object[] chooseBestTestAttribute(Map<Object,List<Sample>> categoryToSamples,String[] attribute_Names){
@@ -153,44 +153,50 @@ public class ZZB_JCS{
             int allCount = 0;
 
             //按照当前属性构建Map，这个Map的层级关系根据下面的层次划分：属性值[Key]->(分类[Key]->样本列表[Value]) [Value]
-            // curSplits就是一个某一个在当前属性下某一种选择值 所对应的所有样本集！ Dv是也？？待定！
+            // curSplits就是一个某一个在当前属性下某一种选择值 所对应的所有样本集！ 所有的Dv的集合是也？？待定！
             Map<Object,Map<Object,List<Sample>>> curSplits = new HashMap<Object,Map<Object,List<Sample>>>();
+
+    /* 这儿的整个流程画个图哈~下面是对某一个属性进行信息增益的计算了！
+
+                   拿到一个数据对，【所属类别-->样本集】
+                             |
+                             V
+                    解析数据对，分解出key和value
+                其中key为类别，value为此类别所有的样本
+                             |
+                             V
+               对于Value里边读出来的每个样本，分别：
+      读取当前属性下的值，然后建立起来当前属性值相同的所有样本的样本集；
+                             |
+                             V
+               此处还要将每个样本集拆分为分类样本集！
+                             |
+                             V
+        这一轮下来，就得到关于这个属性的不同属性值对应的样本集合
+                    而在这些集合集合中又有分类样本集！
+          就好比，这一轮对年龄下手，最终得到了40岁以上的好人、坏人
+                     30-40岁之间的好人、坏人集合
+                     30岁以下的好人、坏人的集合
+                     最后一共得到了6个样本集？
+             只不过是已Map中键值对的形式存在，二层包装而已！
+                                                                --正分类-->  一个Map
+                                 ---属性值1，比如是学生  ->分类两类 |
+                         某一属性（这个就是curSplits这个Map的本体）  --负分类-->  一个Map（此处画图方便重用了！）
+                                 ---属性值2，比如不是学生->分类两类 |
+                                                                 --正分类-->  一个Map
+      */
+
             /*
-            * Set<Map.Entry<K,V>> entrySet​()
-            * Returns:  A set view of the mappings contained in this map
-            * Entry 这个数据类型大致等于C++中的pair，也就是数据打包的意思
-            */
-        /* 这儿的整个流程画个图哈~下面是对某一个属性进行信息增益的计算了！
-
-                       拿到一个数据对，【所属类别-->样本集】
-                                 |
-                                 V
-                        解析数据对，分解出key和value
-                    其中key为类别，value为此类别所有的样本
-                                 |
-                                 V
-                   对于Value里边读出来的每个样本，分别：
-          读取当前属性下的值，然后建立起来当前属性值相同的所有样本的样本集；
-                                 |
-                                 V
-                   此处还要将每个样本集拆分为分类样本集！
-                                 |
-                                 V
-            这一轮下来，就得到关于这个属性的不同属性值对应的样本集合
-                        而在这些集合集合中又有分类样本集！
-              就好比，这一轮对年龄下手，最终得到了40岁以上的好人、坏人
-                         30-40岁之间的好人、坏人集合
-                         30岁以下的好人、坏人的集合
-                         最后一共得到了6个样本集？
-                 只不过是已Map中键值对的形式存在，二层包装而已！
-
-          */
+             * Set<Map.Entry<K,V>> entrySet​()
+             * Returns:  A set view of the mappings contained in this map
+             * Entry 这个数据类型大致等于C++中的pair，也就是数据打包的意思
+             */
             for (Entry<Object,List<Sample>> entry : categoryToSamples.entrySet()) {
                 //先拿到数据的分类的名称，我们这儿就0，1
                 Object category = entry.getKey();
                 //再拿到这个类别！注意是类别，不是属性值！类别所对应的所有样本！
                 List<Sample> samples = entry.getValue();
-                //然后再慢慢的对每个样本进行操作，大概是算信息熵？
+                //然后再慢慢的对每个样本进行操作，将其分为按照属性值划分的各种Dv，然后返回到curSplits
                 for (Sample sample : samples ) {
                     // 根据当前要计算的属性，得到当前样本的关于这个属性的值
                     Object attrValue = sample.getAttribute(attribute_Names[attrIndex]);
@@ -218,33 +224,36 @@ public class ZZB_JCS{
                 allCount += samples.size();
             }
 
-            // 计算将当前属性作为测试属性的情况下在各分支确定新样本的分类需要的信息熵之和
+            // 当前属性值的信息增益寄存器
             double curValue = 0.0;
             //读取当前属性下的每一种属性值对应的样本集
             for (Map<Object,List<Sample>> splits : curSplits.values()) {
                 double perSplitCount = 0;
-                //读取每个属性值的样本集，然后拆分为每个样本来计算
+                //读取每个属性值的样本集Dv的size，得到所有该属性为此值的样本总数，不论类别如何
                 for (List<Sample> list : splits.values()) {
                     //累计当前样本的分支总数
                     perSplitCount += list.size();
                 }
                 //计数器，当前分支的信息熵和信息增益，这儿是按出现频率在算呢！
                 double perSplitValue = 0.0;
+                //计算每个属性值对应的信息熵
                 for (List<Sample> list : splits.values() ) {
+                    //此处完全就是ID3算法的信息熵的计算公式！也就是ENT(D) = -Sum(Pk*log2(Pk))见《机器学习》 P75
                     double p = list.size() / perSplitCount;
                     //貌似是因为p无论如何都是小于1的，所以采用p -= 实际上是加了？
                     perSplitValue -= p*(Math.log(p)/Math.log(2));
                 }
-                //这就是最后的信息熵咯？没感觉是信息增益啊？
+                //这应该还算不上不是信息增益吧！只能算是信息熵之和了。
                 curValue += (perSplitCount / allCount) * perSplitValue;
             }
-            //选择最小的信息熵为最优！
+            //选择最小的信息熵为最优！？
             if (minValue > curValue){
                 minIndex = attrIndex;
                 minValue = curValue;
                 minSplit = curSplits;
             }
         }
+        //所以最终返回的就是一个信息熵之和  最小的属性的列表索引 + 最小的信息熵之和  + 最小的信息熵之和所对应的子树！
         return  new Object[] {minIndex,minValue,minSplit};
     }
 
