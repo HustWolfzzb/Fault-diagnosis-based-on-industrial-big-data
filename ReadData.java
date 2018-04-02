@@ -19,7 +19,7 @@ public class ReadData {
                 { ">40  ", "Medium", "No ", "Excellent", "0" }
         };
 
-        File file = new File("/Users/zhangzhaobo/IdeaProjects/Graduation_Design/src/data.txt");  //存放数组数据的文件
+        File file = new File("data.txt");  //存放数组数据的文件
 
         FileWriter DataToTXT = new FileWriter(file);  //文件写入流
         int row=0;
