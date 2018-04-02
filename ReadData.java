@@ -21,6 +21,7 @@ public class ReadData {
                 { "<30  ", "Medium", "Yes", "Excellent", "1" },
                 { "30-40", "Medium", "No ", "Excellent", "1" },
                 { "30-40", "High  ", "Yes", "Fair     ", "1" },
+                { "<30"  , "Medium", "No ", "Excellent", "1" },
                 { ">40  ", "Medium", "No ", "Excellent", "0" }
         };
 
