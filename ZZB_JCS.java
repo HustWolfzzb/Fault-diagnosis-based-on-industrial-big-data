@@ -28,7 +28,7 @@ public class ZZB_JCS{
      ********************* */
 
     static class Sample{
-        //attributes means the 属性
+        //attributes means 属性
         private Map<String,Object> attributes = new HashMap<String,Object>();
         //category means 类别
         private Object category;
@@ -267,7 +267,7 @@ public class ZZB_JCS{
         for (int i=0; i < level ;++i){
             System.out.print("|-----");
         }
-        //表明自己是从哪个父节点过来的？
+        // 所有子节点专用？除了根节点都要吧！
         if (from != null){
             System.out.printf("(%s):",from);
         }
@@ -278,7 +278,7 @@ public class ZZB_JCS{
             System.out.printf("[%s = ?]\n",attribute_Name);
             for (Object attrValue : tree.getAttributeValues()){
                 Object child =tree.getChild(attrValue);
-                outputDecisionTree(child,level+1,attribute_Name + " : " + attrValue);
+                outputDecisionTree(child,level+1,attribute_Name + " = " + attrValue);
             }
         }else {
             System.out.printf("【* CATEGORY = %s *】\n", obj);
@@ -339,8 +339,8 @@ public class ZZB_JCS{
     }
 
     public static  void main(String[] args) throws Exception{
-        String[] attribute_Names = new String[] {"AGE","INCOME","STUDENT","CREDIT_RATING"};
-
+//        String[] attribute_Names = new String[] {"AGE","INCOME","STUDENT","CREDIT_RATING"};
+        String[] attribute_Names = new String[] {"色泽","根蒂","敲声","纹理","脐部","触感"};
         //读取样本集
         Map<Object,List<Sample>> samples = readSample(attribute_Names);
 
