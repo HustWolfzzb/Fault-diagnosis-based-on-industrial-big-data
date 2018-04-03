@@ -18,19 +18,7 @@ public class Mysql_Connect {
 
     private Connection conn;
 
-    public void setUser(String user){
-        this.user=user;
-    }
-    public  void setPassword(String p){
-        this.password=p;
-    }
-    public void setDatabase(String database){
-        this.Database=database;
-        this.url="jdbc:mysql:/"+Database+"?useUnicode=true&characterEncoding=GBK&useSSL=true";
-    }
-    public void setDatabase(){
-        this.url="jdbc:mysql:/192.168.2.127:3306/Shop_User?useUnicode=true&characterEncoding=GBK&useSSL=true";
-    }
+
     public Statement getStatement() {
         return this.statement;
     }

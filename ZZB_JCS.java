@@ -340,6 +340,8 @@ public class ZZB_JCS{
 
     public static  void main(String[] args) throws Exception{
 //        String[] attribute_Names = new String[] {"AGE","INCOME","STUDENT","CREDIT_RATING"};
+        long startTime=System.currentTimeMillis();   //获取开始时间
+
         String[] attribute_Names = new String[] {"色泽","根蒂","敲声","纹理","脐部","触感"};
         //读取样本集
         Map<Object,List<Sample>> samples = readSample(attribute_Names);
@@ -349,6 +351,8 @@ public class ZZB_JCS{
 
         //输出决策树
         outputDecisionTree(decisionTree,0,null);
+        long endTime=System.currentTimeMillis(); //获取结束时间
+        System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
     }
 }
 

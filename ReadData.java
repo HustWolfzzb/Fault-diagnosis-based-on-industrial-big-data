@@ -22,14 +22,19 @@ import java.sql.Statement;
 
 public class ReadData {
     protected Mysql_Connect mysql=new Mysql_Connect();
-    public void writeToDatabase(int id,Object[] data_array) {
+    public void writeToDatabase(Object[][] Data_Array) {
+        int id=0;
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
-            String INSERT = "INSERT INTO watermelon(id,色泽,根蒂,敲声,纹理,脐部,触感,category) VALUES( " + id + "  , ' " + data_array[0] + "' , ' " + data_array[1] + "' ,  ' " + data_array[2] + "' ,  ' " + data_array[3] + "' ,  ' " + data_array[4] + "' , ' " + data_array[5] + " ', ' " + data_array[6] + "' )";
-            boolean insert_ok = statement.execute(INSERT);
-            if (insert_ok) {
-                System.out.println("Insert Success!");
+            for (int s=0;s<Data_Array.length;++s) {
+                Object[] data_array = Data_Array[s];
+                String INSERT = "INSERT INTO watermelon(id,色泽,根蒂,敲声,纹理,脐部,触感,category) VALUES( " + id + "  , ' " + data_array[0] + "' , ' " + data_array[1] + "' ,  ' " + data_array[2] + "' ,  ' " + data_array[3] + "' ,  ' " + data_array[4] + "' , ' " + data_array[5] + " ', ' " + data_array[6] + "' )";
+                boolean insert_ok = statement.execute(INSERT);
+                if (insert_ok) {
+                    System.out.println("Insert Failed!");
+                }
+                id++;
             }
             statement.close();
             mysql.Dis_Connect();
@@ -39,31 +44,44 @@ public class ReadData {
             e.printStackTrace();
         }
     }
-    public Object[] readFromDatabase(int id) {
-        Object[] DataToOut = new Object[7];
+    public Object[][] readFromDatabase() {
+        int columnCount=0;
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
-            String GETDATA = "SELECT  色泽,根蒂,敲声,纹理,脐部,触感,category FROM watermelon WHERE id="+id;
-            ResultSet select_ok = statement.executeQuery(GETDATA);
-            if(select_ok.next()) {
-                DataToOut[0]=select_ok.getObject("色泽");
-                DataToOut[1]=select_ok.getObject("根蒂");
-                DataToOut[2]=select_ok.getObject("敲声");
-                DataToOut[3]=select_ok.getObject("纹理");
-                DataToOut[4]=select_ok.getObject("脐部");
-                DataToOut[5]=select_ok.getObject("触感");
-                DataToOut[6]=select_ok.getObject("category");
+            String GETCOLUMN="select max(id) from watermelon";
+            String GETDATA;
+            Object[][] DataToOut;
+            ResultSet answer = statement.executeQuery(GETCOLUMN);
+            if(answer.next())
+                columnCount  = answer.getInt(1);
+            GETDATA = "";
+            DataToOut = new Object[columnCount][7];
+            for (int  i = 0;i<columnCount;++i) {
+                GETDATA = "SELECT  色泽,根蒂,敲声,纹理,脐部,触感,category FROM watermelon WHERE id=" + i;
+                ResultSet select_ok;
+                select_ok = statement.executeQuery(GETDATA);
+                if (select_ok.next()) {
+                    DataToOut[i][0] = select_ok.getObject("色泽");
+                    DataToOut[i][1] = select_ok.getObject("根蒂");
+                    DataToOut[i][2] = select_ok.getObject("敲声");
+                    DataToOut[i][3] = select_ok.getObject("纹理");
+                    DataToOut[i][4] = select_ok.getObject("脐部");
+                    DataToOut[i][5] = select_ok.getObject("触感");
+                    DataToOut[i][6] = select_ok.getObject("category");
+                }
             }
             statement.close();
             mysql.Dis_Connect();
+            return DataToOut;
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return DataToOut;
+        return new Object[1][1];
     }
+
     public Object[][] ReadData() throws IOException {
         Object[][] rawData = new Object [][]{
                 {"青绿","蜷缩","浊响","清晰","凹陷","硬滑","是"},
@@ -142,7 +160,6 @@ public class ReadData {
 
         // ***************** 数据库读写式 **************
 
-        int row=0;
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
@@ -158,17 +175,9 @@ public class ReadData {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        for(int i=0;i<rawData.length;i++){
-            writeToDatabase(row,rawData[i]);
-            row++;
-        }
-        Object[][] DataToOut = new Object[row][7];
-        for (int i=0;i<DataToOut.length;++i){
-            DataToOut[i]=readFromDatabase(i);
-        }
-
+        writeToDatabase(rawData);
+        Object[][] DataToOut = readFromDatabase();
+        return  DataToOut;
         // ***************** 数据库读写式 **************
-        return DataToOut;
     }
 }
