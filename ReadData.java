@@ -26,9 +26,9 @@ public class ReadData {
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
-            String INSERT = "INSERT INTO watermelon(id,色泽,根蒂,敲声,纹理,脐部,触感,category) VALUES( " + id+ "  ,' "+data_array[0] + "' ,' "+data_array[1] + "' , ' "+ data_array[2] + "' , + ' "+ data_array[3] + "' ,' "+ data_array[4] + "' ,' "+ data_array[5] + " ','"+ data_array[6] +" ')";
+            String INSERT = "INSERT INTO watermelon(id,色泽,根蒂,敲声,纹理,脐部,触感,category) VALUES( " + id + "  , ' " + data_array[0] + "' , ' " + data_array[1] + "' ,  ' " + data_array[2] + "' ,  ' " + data_array[3] + "' ,  ' " + data_array[4] + "' , ' " + data_array[5] + " ', ' " + data_array[6] + "' )";
             boolean insert_ok = statement.execute(INSERT);
-            if(insert_ok) {
+            if (insert_ok) {
                 System.out.println("Insert Success!");
             }
             statement.close();
@@ -40,7 +40,7 @@ public class ReadData {
         }
     }
     public Object[] readFromDatabase(int id) {
-        Object[] DataToOut = new Object[6];
+        Object[] DataToOut = new Object[7];
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
@@ -53,8 +53,7 @@ public class ReadData {
                 DataToOut[3]=select_ok.getObject("纹理");
                 DataToOut[4]=select_ok.getObject("脐部");
                 DataToOut[5]=select_ok.getObject("触感");
-                DataToOut[5]=select_ok.getObject("category");
-
+                DataToOut[6]=select_ok.getObject("category");
             }
             statement.close();
             mysql.Dis_Connect();
@@ -143,12 +142,28 @@ public class ReadData {
 
         // ***************** 数据库读写式 **************
 
-        int raw=0;
-        for(int i=0;i<rawData.length;i++){
-            writeToDatabase(raw,rawData[i]);
-            raw++;
+        int row=0;
+        try {
+            mysql.Connect();
+            Statement statement=mysql.getStatement();
+            String DELETE="delete from watermelon where id<1000";
+            boolean delete_ok=statement.execute(DELETE);
+            if (delete_ok){
+                System.out.println("Have Fun! Boys!\n\n");
+            }
+            statement.close();
+            mysql.Dis_Connect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        Object[][] DataToOut = new Object[raw][7];
+
+        for(int i=0;i<rawData.length;i++){
+            writeToDatabase(row,rawData[i]);
+            row++;
+        }
+        Object[][] DataToOut = new Object[row][7];
         for (int i=0;i<DataToOut.length;++i){
             DataToOut[i]=readFromDatabase(i);
         }
