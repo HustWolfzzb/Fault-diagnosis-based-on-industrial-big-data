@@ -128,7 +128,7 @@ public class ZZB_JCS{
 
 
     /* *********************
-     * this is the function to choose the Best Test Attribute
+     * this is the function to choose the Best Test Attribute ID3 Algorithm
 
      * it will be used in the generateDecisionTree()
 
@@ -139,7 +139,7 @@ public class ZZB_JCS{
      * 返回数组：选取的属性下标、信息熵之和、Map(属性值->(分类->样本列表))
      ********************* */
 
-    static Object[] chooseBestTestAttribute(Map<Object,List<Sample>> categoryToSamples,String[] attribute_Names){
+    static Object[] ID3(Map<Object,List<Sample>> categoryToSamples,String[] attribute_Names){
         //最优的属性的下标！
         int minIndex = -1;
         //最小的信息熵
@@ -313,7 +313,7 @@ public class ZZB_JCS{
             return maxCategory;
         }
         //如果有属性清单的话，那么就选择测试所用的属性了。
-        Object[] rst = chooseBestTestAttribute(categoryToSamples,attribute_Names);
+        Object[] rst = ID3(categoryToSamples,attribute_Names);
         //决策树的根节点选取，分支的属性为选取的测试属性
         Tree tree = new Tree(attribute_Names[(Integer)rst[0]]);
 
@@ -342,7 +342,7 @@ public class ZZB_JCS{
 //        String[] attribute_Names = new String[] {"AGE","INCOME","STUDENT","CREDIT_RATING"};
         long startTime=System.currentTimeMillis();   //获取开始时间
 
-        String[] attribute_Names = new String[] {"色泽","根蒂","敲声","纹理","脐部","触感"};
+        String[] attribute_Names = new String[] {"X_Minimum","X_Maximum","Y_Minimum","Y_Maximum","Pixels_Areas","X_Perimeter","Y_Perimeter","Sum_of_Luminosity","Minimum_of_Luminosity","Maximum_of_Luminosity","Length_of_Conveyer","TypeOfSteel_A300","TypeOfSteel_A400","Steel_Plate_Thickness","Edges_Index","Empty_Index","Square_Index","Outside_X_Index","Edges_X_Index","Edges_Y_Index","Outside_Global_Index","LogOfAreas","Log_X_Index","Log_Y_Index","Orientation_Index","Luminosity_Index","SigmoidOfAreas","Pastry"};
         //读取样本集
         Map<Object,List<Sample>> samples = readSample(attribute_Names);
 
