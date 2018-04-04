@@ -52,12 +52,10 @@ public class ReadData {
             ResultSet answer = statement.executeQuery(GETCOLUMN);
             if(answer.next())
                 columnCount  = answer.getInt(1);
-//            System.out.println(columnCount);
             DataToOut = new Object[columnCount][28];
             for (int  i = 0;i<columnCount;++i) {
                 GETDATA = getSelectQuery(Name,"plate",i);
                 ResultSet select_ok;
-//                System.out.println(GETDATA);
                 select_ok = statement.executeQuery(GETDATA);
                 select_ok.next();
                 for (int j = 0; j<27;++j){
