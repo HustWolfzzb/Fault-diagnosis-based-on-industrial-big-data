@@ -318,10 +318,10 @@ public class ZZB_JCS{
         Tree tree = new Tree(attribute_Names[(Integer)rst[0]]);
 
         //已用过的测试属性不能再次被选择为测试属性
-        String[] Attr_Find_Already = new String[attribute_Names.length-1];
+        String[] Attr_Not_Used = new String[attribute_Names.length-1];
         for (int i=0,j=0;i<attribute_Names.length ;++i ) {
             if (i != (Integer)rst[0]) {
-                Attr_Find_Already[j++] = attribute_Names[i];
+                Attr_Not_Used[j++] = attribute_Names[i];
             }
         }
 
@@ -332,7 +332,7 @@ public class ZZB_JCS{
             Object attrValue = entry.getKey();
             Map<Object,List<Sample>> split = entry.getValue();
             //又是递归调用？那我岂不是玩完？层数不能超过二十层！这是底线！
-            Object child = generateDecisionTree(split,Attr_Find_Already);
+            Object child = generateDecisionTree(split,Attr_Not_Used);
             tree.setChild(attrValue,child);
         }
         return tree;
@@ -342,15 +342,16 @@ public class ZZB_JCS{
 //        String[] attribute_Names = new String[] {"AGE","INCOME","STUDENT","CREDIT_RATING"};
         long startTime=System.currentTimeMillis();   //获取开始时间
 
-        String[] attribute_Names = new String[] {"X_Minimum","X_Maximum","Y_Minimum","Y_Maximum","Pixels_Areas","X_Perimeter","Y_Perimeter","Sum_of_Luminosity","Minimum_of_Luminosity","Maximum_of_Luminosity","Length_of_Conveyer","TypeOfSteel_A300","TypeOfSteel_A400","Steel_Plate_Thickness","Edges_Index","Empty_Index","Square_Index","Outside_X_Index","Edges_X_Index","Edges_Y_Index","Outside_Global_Index","LogOfAreas","Log_X_Index","Log_Y_Index","Orientation_Index","Luminosity_Index","SigmoidOfAreas","Pastry"};
+        String[] attribute_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness","Fault"};
         //读取样本集
         Map<Object,List<Sample>> samples = readSample(attribute_Names);
 
         //生成决策树
         Object decisionTree = generateDecisionTree(samples,attribute_Names);
-
+        Object[] test = new Object[] {"0","2","11","6","0","200"};
         //输出决策树
         outputDecisionTree(decisionTree,0,null);
+        System.out.println(TestData.TestData(decisionTree, attribute_Names,test));
         long endTime=System.currentTimeMillis(); //获取结束时间
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
     }

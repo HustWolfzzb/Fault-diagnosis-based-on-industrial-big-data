@@ -26,10 +26,10 @@ public class ReadData {
 
     public String getSelectQuery(Object[] Name,String table,int id){
         String select = "SELECT  ";
-        for (int i=0;i<33;++i){
+        for (int i=0;i<Name.length-1;++i){
             select += (Name[i]+",");
         }
-        select += Name[33];
+        select += Name[Name.length-1];
         select += " from " + table + " where id = "+id;
         return select;
     }
@@ -39,32 +39,27 @@ public class ReadData {
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
-            String GETCOLUMN="select max(id) from plate";
+            String GETCOLUMN="select max(id) from steelplate";
             String GETDATA="";
-            File file = new File("/Users/zhangzhaobo/IdeaProjects/Graduation_Design/src/Mydata.txt");
+            File file = new File("/Users/zhangzhaobo/IdeaProjects/Graduation_Design/src/New_Data.txt");
             BufferedReader in = new BufferedReader(new FileReader(file));
             String line;  //一行数据
             //逐行读取，并将每个数组放入到数组中
             line=in.readLine();
             in.close();
-            Object[] Name = line.split("\t");
+            Object[] Name = line.split("\t\t");
             Object[][] DataToOut;
             ResultSet answer = statement.executeQuery(GETCOLUMN);
             if(answer.next())
                 columnCount  = answer.getInt(1);
-            DataToOut = new Object[columnCount][28];
+            DataToOut = new Object[columnCount][7];
             for (int  i = 0;i<columnCount;++i) {
-                GETDATA = getSelectQuery(Name,"plate",i);
+                GETDATA = getSelectQuery(Name,"steelplate",i);
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(GETDATA);
                 select_ok.next();
-                for (int j = 0; j<27;++j){
+                for (int j = 0; j<7;++j){
                     DataToOut[i][j]=select_ok.getObject((String) Name[j]);
-                }
-                for (int x=0;x<7;++x){
-                    if("1".equals((String) select_ok.getObject((String) Name[x + 27]))){
-                        DataToOut[i][27]=x;
-                    }
                 }
             }
             statement.close();
