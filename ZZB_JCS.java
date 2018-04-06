@@ -2,11 +2,11 @@
 /* *********************
  * Author   :   HustWolf --- 张照博
 
- * Time     :   2018.3-2018.5
+ * Time     :   2018.1-2018.5
 
  * Address  :   HUST
 
- * Version  :   1.3？
+ * Version  :   1.5
  ********************* */
 
 
@@ -20,7 +20,7 @@ import java.util.Set;
 
 //最外层类名
 public class ZZB_JCS{
-
+    public static int line=0;
     /* *********************
      * Define the Class of Sample
 
@@ -65,7 +65,7 @@ public class ZZB_JCS{
 
         //读取每一排的数据
         //分解后读取样本属性及其分类，然后利用这些数据构造一个Sample对象
-        //然后按照样本最后的0，1进行二分类划分样本集，
+        //然后按照样本最后的分类划分样本集，
         for (Object[] row:rawData) {
             //新建一个Sample对象，没处理一次加入Map中，最后一起返回
             Sample sample = new Sample();
@@ -102,9 +102,14 @@ public class ZZB_JCS{
     static class Tree{
 
         private String attribute;
-
         private Map<Object,Object> children = new HashMap<Object,Object>();
-
+        public boolean next=false;
+        public void setNext(){
+            this.next=true;
+        }
+        public boolean getNext(){
+            return this.next;
+        }
         public Tree(String attribute){
             this.attribute=attribute;
         }
@@ -264,8 +269,10 @@ public class ZZB_JCS{
 
     static void outputDecisionTree(Object obj,int level, Object from){
         //这个到后面决定输出多少个|----- 也就是说是决定层级的
+        line=line+1;
+//        System.out.print(line);
         for (int i=0; i < level ;++i){
-            System.out.print("|-----");
+            System.out.print("|---->");
         }
         // 所有子节点专用？除了根节点都要吧！
         if (from != null){
@@ -281,7 +288,7 @@ public class ZZB_JCS{
                 outputDecisionTree(child,level+1,attribute_Name + " = " + attrValue);
             }
         }else {
-            System.out.printf("【* CATEGORY = %s *】\n", obj);
+            System.out.printf("【* CATEGORY = %s *】\n", TestData.getFault((String) obj));
         }
     }
 
@@ -295,8 +302,9 @@ public class ZZB_JCS{
      ********************* */
     static Object generateDecisionTree(Map<Object,List<Sample>> categoryToSamples,String[] attribute_Names){
         //如果只有一个样本，那么该样本所属分类作为新样本的分类
-        if(categoryToSamples.size() == 1)
+        if(categoryToSamples.size() == 1) {
             return categoryToSamples.keySet().iterator().next();
+        }
 
         //如果没有提供决策的属性（也就是没有给你属性名字清单），那么样本集中具有最多样本的分类作为新样本的分类，也就是投票选举出新的分类
         if (attribute_Names.length == 0) {
@@ -333,6 +341,7 @@ public class ZZB_JCS{
             Map<Object,List<Sample>> split = entry.getValue();
             //又是递归调用？那我岂不是玩完？层数不能超过二十层！这是底线！
             Object child = generateDecisionTree(split,Attr_Not_Used);
+            tree.setNext();
             tree.setChild(attrValue,child);
         }
         return tree;
@@ -341,17 +350,17 @@ public class ZZB_JCS{
     public static  void main(String[] args) throws Exception{
 //        String[] attribute_Names = new String[] {"AGE","INCOME","STUDENT","CREDIT_RATING"};
         long startTime=System.currentTimeMillis();   //获取开始时间
-
+        String[] Test_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness"};
         String[] attribute_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness","Fault"};
         //读取样本集
         Map<Object,List<Sample>> samples = readSample(attribute_Names);
-
         //生成决策树
-        Object decisionTree = generateDecisionTree(samples,attribute_Names);
+        Object decisionTree = generateDecisionTree(samples,Test_Names);
         Object[] test = new Object[] {"0","2","11","6","0","200"};
         //输出决策树
         outputDecisionTree(decisionTree,0,null);
-        System.out.println(TestData.TestData(decisionTree, attribute_Names,test));
+        //*****原代码有点问题！应该是给定一个没有分类的属性列表去给他！而不带有分类的属性列表，这样会把分类作为一个属性的！
+        TestData.TestData(decisionTree, Test_Names,test);
         long endTime=System.currentTimeMillis(); //获取结束时间
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
     }
