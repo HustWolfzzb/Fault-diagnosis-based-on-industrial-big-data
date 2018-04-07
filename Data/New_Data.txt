@@ -1,4 +1,4 @@
-Diff_X		Diff_Y		Pixels_Areas		Diff_Luminosity		TypeOfSteel		Steel_Plate_Thickness		Fault		
+Diff_X		Diff_Y		Pixels_Areas		Diff_Luminosity		TypeOfSteel		Steel_Plate_Thickness		Fault
 0		4		12		6		1		80		0
 0		2		11		7		1		80		0
 0		1		7		5		1		100		0
