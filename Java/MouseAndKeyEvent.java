@@ -140,61 +140,61 @@ public class MouseAndKeyEvent{
 
         jp3 = new JPanel();
         jl2 = new JLabel();
-        jl2 = new JLabel("Line 1");
+        jl2 = new JLabel("Line 1",JLabel.CENTER);
         jp3.add(jl2);
         f.add(jp3);
 
         jp4 = new JPanel();
         jl3 = new JLabel();
-        jl3 = new JLabel("Line 2");
+        jl3 = new JLabel("Line 2",JLabel.CENTER);
         jp4.add(jl3);
         f.add(jp4);
 
         jp5 = new JPanel();
         jl4 = new JLabel();
-        jl4 = new JLabel("Line 3");
+        jl4 = new JLabel("Line 3",JLabel.CENTER);
         jp5.add(jl4);
         f.add(jp5);
 
         jp6 = new JPanel();
         jl5 = new JLabel();
-        jl5 = new JLabel("Line 4");
+        jl5 = new JLabel("Line 4",JLabel.CENTER);
         jp6.add(jl5);
         f.add(jp6);
 
         jp7 = new JPanel();
         jl6 = new JLabel();
-        jl6 = new JLabel("Line 5");
+        jl6 = new JLabel("Line 5",JLabel.CENTER);
         jp7.add(jl6);
         f.add(jp7);
 
         jp8 = new JPanel();
         jl7 = new JLabel();
-        jl7 = new JLabel("Line 6");
+        jl7 = new JLabel("Line 6",JLabel.CENTER);
         jp8.add(jl7);
         f.add(jp8);
 
         jp9 = new JPanel();
         jl8 = new JLabel();
-        jl8 = new JLabel("Line 7");
+        jl8 = new JLabel("Line 7",JLabel.CENTER);
         jp9.add(jl8);
         f.add(jp9);
 
         jp10 = new JPanel();
         jl9 = new JLabel();
-        jl9 = new JLabel("Line 8");
+        jl9 = new JLabel("Line 8",JLabel.CENTER);
         jp10.add(jl9);
         f.add(jp10);
 
         jp11 = new JPanel();
         jl10 = new JLabel();
-        jl10 = new JLabel("Line 9");
+        jl10 = new JLabel("Line 9",JLabel.CENTER);
         jp11.add(jl10);
         f.add(jp11);
 
         jp12 = new JPanel();
         jl11 = new JLabel();
-        jl11 = new JLabel("Line 10");
+        jl11 = new JLabel("Line 10",JLabel.CENTER);
         jp12.add(jl11);
         f.add(jp12);
 

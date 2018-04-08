@@ -10,7 +10,7 @@
  ********************* */
 
 
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -103,13 +103,6 @@ public class ZZB_JCS{
 
         private String attribute;
         private Map<Object,Object> children = new HashMap<Object,Object>();
-        public boolean next=false;
-        public void setNext(){
-            this.next=true;
-        }
-        public boolean getNext(){
-            return this.next;
-        }
         public Tree(String attribute){
             this.attribute=attribute;
         }
@@ -267,28 +260,32 @@ public class ZZB_JCS{
      * this is the function to output the Decision Tree to the Dashboard
      ********************* */
 
-    static void outputDecisionTree(Object obj,int level, Object from){
+    static void outputDecisionTree(FileWriter out,Object obj,int level, Object from) throws IOException {
         //这个到后面决定输出多少个|----- 也就是说是决定层级的
         line=line+1;
-//        System.out.print(line);
+        out.write(line);
         for (int i=0; i < level ;++i){
             System.out.print("|---->");
+            out.write("|---->");
         }
         // 所有子节点专用？除了根节点都要吧！
         if (from != null){
             System.out.printf("(%s):",from);
+            out.write("("+from+"):");
         }
         //大概是说，如果这个东西还有子节点，那就继续递归
         if (obj instanceof Tree){
             Tree tree = (Tree) obj;
             String attribute_Name = tree.getAttribute();
             System.out.printf("[%s = ?]\n",attribute_Name);
+            out.write("["+attribute_Name+" = ?]\n");
             for (Object attrValue : tree.getAttributeValues()){
                 Object child =tree.getChild(attrValue);
-                outputDecisionTree(child,level+1,attribute_Name + " = " + attrValue);
+                outputDecisionTree(out,child,level+1,attribute_Name + " = " + attrValue);
             }
         }else {
             System.out.printf("【* CATEGORY = %s *】\n", TestData.getFault((String) obj));
+            out.write("【* CATEGORY = "+TestData.getFault((String) obj)+" *】\n");
         }
     }
 
@@ -324,7 +321,6 @@ public class ZZB_JCS{
         Object[] rst = ID3(categoryToSamples,attribute_Names);
         //决策树的根节点选取，分支的属性为选取的测试属性
         Tree tree = new Tree(attribute_Names[(Integer)rst[0]]);
-
         //已用过的测试属性不能再次被选择为测试属性
         String[] Attr_Not_Used = new String[attribute_Names.length-1];
         for (int i=0,j=0;i<attribute_Names.length ;++i ) {
@@ -341,7 +337,6 @@ public class ZZB_JCS{
             Map<Object,List<Sample>> split = entry.getValue();
             //又是递归调用？那我岂不是玩完？层数不能超过二十层！这是底线！
             Object child = generateDecisionTree(split,Attr_Not_Used);
-            tree.setNext();
             tree.setChild(attrValue,child);
         }
         return tree;
@@ -358,7 +353,22 @@ public class ZZB_JCS{
         Object decisionTree = generateDecisionTree(samples,Test_Names);
         Object[] test = new Object[] {"0","2","11","6","0","200"};
         //输出决策树
-        outputDecisionTree(decisionTree,0,null);
+        File file = new File("/Users/zhangzhaobo/Documents/Graduation-Design/Data/GUIDATA.txt");
+        FileWriter out = new FileWriter(file);
+        outputDecisionTree(out,decisionTree,0,null);
+        out.close();
+        MouseAndKeyEvent gui = new MouseAndKeyEvent();
+        String[] txt = new String[10];
+        BufferedReader in = new BufferedReader(new FileReader(file));
+        int line=0;
+        for (int i=0;i<line;++i){
+            txt[0]=in.readLine();
+        }
+        for (int i=0;i<10;++i){
+            txt[i]=in.readLine();
+        }
+        out.close();
+        MouseAndKeyEvent.UpdateTEXT(gui,txt);
         //*****原代码有点问题！应该是给定一个没有分类的属性列表去给他！而不带有分类的属性列表，这样会把分类作为一个属性的！
         TestData.TestData(decisionTree, Test_Names,test);
         long endTime=System.currentTimeMillis(); //获取结束时间
