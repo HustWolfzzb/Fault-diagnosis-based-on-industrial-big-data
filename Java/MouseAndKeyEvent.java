@@ -78,6 +78,7 @@ class MyWin extends WindowAdapter{
 }
 
 public class MouseAndKeyEvent{
+    public static boolean flag=false;
     private Frame f;
     private Button but,but1,but2;
     private TextField ta;
@@ -140,61 +141,61 @@ public class MouseAndKeyEvent{
 
         jp3 = new JPanel();
         jl2 = new JLabel();
-        jl2 = new JLabel("Line 1",JLabel.CENTER);
+        jl2 = new JLabel("Line 1",JLabel.LEFT);
         jp3.add(jl2);
         f.add(jp3);
 
         jp4 = new JPanel();
         jl3 = new JLabel();
-        jl3 = new JLabel("Line 2",JLabel.CENTER);
+        jl3 = new JLabel("Line 2",JLabel.LEFT);
         jp4.add(jl3);
         f.add(jp4);
 
         jp5 = new JPanel();
         jl4 = new JLabel();
-        jl4 = new JLabel("Line 3",JLabel.CENTER);
+        jl4 = new JLabel("Line 3",JLabel.LEFT);
         jp5.add(jl4);
         f.add(jp5);
 
         jp6 = new JPanel();
         jl5 = new JLabel();
-        jl5 = new JLabel("Line 4",JLabel.CENTER);
+        jl5 = new JLabel("Line 4",JLabel.LEFT);
         jp6.add(jl5);
         f.add(jp6);
 
         jp7 = new JPanel();
         jl6 = new JLabel();
-        jl6 = new JLabel("Line 5",JLabel.CENTER);
+        jl6 = new JLabel("Line 5",JLabel.LEFT);
         jp7.add(jl6);
         f.add(jp7);
 
         jp8 = new JPanel();
         jl7 = new JLabel();
-        jl7 = new JLabel("Line 6",JLabel.CENTER);
+        jl7 = new JLabel("Line 6",JLabel.LEFT);
         jp8.add(jl7);
         f.add(jp8);
 
         jp9 = new JPanel();
         jl8 = new JLabel();
-        jl8 = new JLabel("Line 7",JLabel.CENTER);
+        jl8 = new JLabel("Line 7",JLabel.LEFT);
         jp9.add(jl8);
         f.add(jp9);
 
         jp10 = new JPanel();
         jl9 = new JLabel();
-        jl9 = new JLabel("Line 8",JLabel.CENTER);
+        jl9 = new JLabel("Line 8",JLabel.LEFT);
         jp10.add(jl9);
         f.add(jp10);
 
         jp11 = new JPanel();
         jl10 = new JLabel();
-        jl10 = new JLabel("Line 9",JLabel.CENTER);
+        jl10 = new JLabel("Line 9",JLabel.LEFT);
         jp11.add(jl10);
         f.add(jp11);
 
         jp12 = new JPanel();
         jl11 = new JLabel();
-        jl11 = new JLabel("Line 10",JLabel.CENTER);
+        jl11 = new JLabel("Line 10",JLabel.LEFT);
         jp12.add(jl11);
         f.add(jp12);
 
@@ -318,6 +319,7 @@ public class MouseAndKeyEvent{
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 System.out.println("Put Down the Button1 to Clear the Data!");
+
                 jl2.setText("Line 1");
                 jl3.setText("Line 2");
                 jl4.setText("Line 3");
@@ -335,15 +337,25 @@ public class MouseAndKeyEvent{
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 System.out.println("Put Down the Button1 to Clear the Data!");
+                jl2.setHorizontalAlignment(SwingConstants.LEFT);
                 jl2.setText(TEXT[1]);
+                jl3.setHorizontalAlignment(SwingConstants.LEFT);
                 jl3.setText(TEXT[2]);
+                jl4.setHorizontalAlignment(SwingConstants.LEFT);
                 jl4.setText(TEXT[3]);
+                jl5.setHorizontalAlignment(SwingConstants.LEFT);
                 jl5.setText(TEXT[4]);
+                jl6.setHorizontalAlignment(SwingConstants.LEFT);
                 jl6.setText(TEXT[5]);
+                jl7.setHorizontalAlignment(SwingConstants.LEFT);
                 jl7.setText(TEXT[6]);
+                jl8.setHorizontalAlignment(SwingConstants.LEFT);
                 jl8.setText(TEXT[7]);
+                jl9.setHorizontalAlignment(SwingConstants.LEFT);
                 jl9.setText(TEXT[8]);
+                jl10.setHorizontalAlignment(SwingConstants.LEFT);
                 jl10.setText(TEXT[9]);
+                jl11.setHorizontalAlignment(SwingConstants.LEFT);
                 jl11.setText(TEXT[10]);
             }
         });
