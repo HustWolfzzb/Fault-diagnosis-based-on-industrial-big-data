@@ -20,7 +20,6 @@ import java.util.Set;
 
 //最外层类名
 public class ZZB_JCS{
-    public static int line=0;
     /* *********************
      * Define the Class of Sample
 
@@ -262,8 +261,6 @@ public class ZZB_JCS{
 
     static void outputDecisionTree(FileWriter out,Object obj,int level, Object from) throws IOException {
         //这个到后面决定输出多少个|----- 也就是说是决定层级的
-        line=line+1;
-        out.write(line);
         for (int i=0; i < level ;++i){
             System.out.print("|---->");
             out.write("|---->");
@@ -358,17 +355,13 @@ public class ZZB_JCS{
         outputDecisionTree(out,decisionTree,0,null);
         out.close();
         MouseAndKeyEvent gui = new MouseAndKeyEvent();
-        String[] txt = new String[10];
         BufferedReader in = new BufferedReader(new FileReader(file));
-        int line=0;
-        for (int i=0;i<line;++i){
-            txt[0]=in.readLine();
+        String[] LINES= new String[1466];
+        for (int i=0;i<1466;++i){
+            LINES[i]=in.readLine();
         }
-        for (int i=0;i<10;++i){
-            txt[i]=in.readLine();
-        }
-        out.close();
-        MouseAndKeyEvent.UpdateTEXT(gui,txt);
+        in.close();
+        MouseAndKeyEvent.UpdateTEXT(gui,LINES);
         //*****原代码有点问题！应该是给定一个没有分类的属性列表去给他！而不带有分类的属性列表，这样会把分类作为一个属性的！
         TestData.TestData(decisionTree, Test_Names,test);
         long endTime=System.currentTimeMillis(); //获取结束时间

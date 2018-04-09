@@ -46,7 +46,6 @@ public class ReadData {
             File file = new File("/Users/zhangzhaobo/IdeaProjects/Graduation_Design/src/New_Data.txt");
             BufferedReader in = new BufferedReader(new FileReader(file));
             String line;  //一行数据
-            //逐行读取，并将每个数组放入到数组中
             line=in.readLine();
             in.close();
             Object[] Name = line.split("\t\t");

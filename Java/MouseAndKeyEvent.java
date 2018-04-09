@@ -89,14 +89,18 @@ public class MouseAndKeyEvent{
     private File file;
     private JPanel jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8,jp9,jp10,jp11,jp12,jp13;
     private JLabel jl1,jl2,jl3,jl4,jl5,jl6,jl7,jl8,jl9,jl10,jl11;
-    private String[] TEXT =  new String[12];
+    private String[] TEXT =  new String[11];
+    private String[] LINES = new String[1500];
     public MouseAndKeyEvent() {
         init();
     }
-
+    public static int line=0;
+    private static void AddLine(){
+        line++;
+    }
     public static void UpdateTEXT(MouseAndKeyEvent obj,String[] txt){
-        for (int i=0;i<10;++i){
-            obj.TEXT[i]=txt[i];
+        for (int i=0;i<1466;++i){
+            obj.LINES[i]=txt[i];
         }
     }
 
@@ -319,7 +323,6 @@ public class MouseAndKeyEvent{
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 System.out.println("Put Down the Button1 to Clear the Data!");
-
                 jl2.setText("Line 1");
                 jl3.setText("Line 2");
                 jl4.setText("Line 3");
@@ -336,9 +339,26 @@ public class MouseAndKeyEvent{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
-                System.out.println("Put Down the Button1 to Clear the Data!");
+                System.out.println("Put Down the Button1 to Change the Data!");
+                if(line<146) {
+                    for (int i = line * 10, j = 1; i < line * 10 + 10; i++) {
+                        TEXT[j++] = LINES[i];
+                    }
+                    AddLine();
+                }else{
+                    for(int i=1;i<6;++i){
+                        TEXT[i] = LINES[1460+i];
+                    }
+                    for (int i=6;i<11;++i){
+                        TEXT[i]="!!!!|---->DONE!";
+                    }
+                }
+
+                System.out.println(line);
+                System.out.println(TEXT[1]);
                 jl2.setHorizontalAlignment(SwingConstants.LEFT);
                 jl2.setText(TEXT[1]);
+                System.out.println(TEXT[2]);
                 jl3.setHorizontalAlignment(SwingConstants.LEFT);
                 jl3.setText(TEXT[2]);
                 jl4.setHorizontalAlignment(SwingConstants.LEFT);
