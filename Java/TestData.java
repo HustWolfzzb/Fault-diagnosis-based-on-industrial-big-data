@@ -22,7 +22,7 @@ public class TestData{
         return Fault[Integer.valueOf(number)];
     }
 
-    public static void TestData(Object obj, Object[] Attr_Name, Object[] TestData) {
+    public static String  TestData(Object obj, Object[] Attr_Name, Object[] TestData,String line) {
         if (obj instanceof ZZB_JCS.Tree && Attr_Name.length>0){
             ZZB_JCS.Tree tree = (ZZB_JCS.Tree) obj;
             String attribute_Name = tree.getAttribute();
@@ -43,15 +43,17 @@ public class TestData{
                 if (((String)testvalue).equals((String) attrValue)) {
                     Object child = tree.getChild(attrValue);
                     flag=true;
-                    TestData(child,Attr_Not_Used,Data_Not_Used);
+                    line=TestData(child,Attr_Not_Used,Data_Not_Used,line);
                 }
             }
             if (!flag){
+                line="Sorry, We Don't Find the Same Data, Maybe it is Good! Congratulation!";
                 System.out.println("Sorry, We Don't Find the Same Data, Maybe it is Good! Congratulation!");
-                return;
             }
         }else {
-            System.out.println("\n\nThe Fault of this Data is: "+getFault((String )obj));
+            line="The Fault of this Data is:"+getFault((String )obj);
+            System.out.println("\n\nThe Fault of this Data is:"+getFault((String )obj));
         }
+        return line;
     }
 }

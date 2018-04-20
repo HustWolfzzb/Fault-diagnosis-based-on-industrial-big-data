@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class WriteData {
+
     protected Mysql_Connect mysql=new Mysql_Connect();
 
     public String getInsertQuery(int id,Object[] name,Object[] value){
@@ -30,7 +31,6 @@ public class WriteData {
         insert+=");";
         return insert;
     }
-
 
     public void WriteData() throws IOException {
         try {

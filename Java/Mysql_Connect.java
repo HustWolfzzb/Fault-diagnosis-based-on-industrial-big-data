@@ -7,19 +7,25 @@ public class Mysql_Connect {
 
     //此处查看网络才知道。要求SSL，所以就酱紫咯：https://zhidao.baidu.com/question/2056521203295428667.html
     private static String url = "jdbc:mysql://127.0.0.1:3306/Graduation_Design?useUnicode=true&characterEncoding=GBK&useSSL=true";
+//    private static String url = "jdbc:mysql://159.203.250.111:3306/GD?useUnicode=true&characterEncoding=GBK&useSSL=true";
 
     private static String user = "root";
 
     private static String password = "zzb1184827350";
-
-    private static String Database="192.168.2.127:3306/Graduation_Design";
+//    private static String password = "zzb162122";
 
     private Statement statement;
 
     private Connection conn;
 
+    public Connection getConnection() { return this.conn;}
 
     public Statement getStatement() {
+        try {
+            this.statement = this.conn.createStatement();;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return this.statement;
     }
 
@@ -35,7 +41,7 @@ public class Mysql_Connect {
             else {
                 System.out.println("\n\nFailed to connect to the Database!");
             }
-            this.statement = conn.createStatement();
+//            this.statement = conn.createStatement();
 
         } catch (ClassNotFoundException e) {
             System.out.println("Sorry,can`t find the Driver!");

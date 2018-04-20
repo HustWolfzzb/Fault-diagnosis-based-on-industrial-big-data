@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import libsvm.*;
 
 //最外层类名
 public class ZZB_JCS{
@@ -58,7 +59,7 @@ public class ZZB_JCS{
     static Map<Object,List<Sample>> readSample(String[] attribute_Names) throws IOException {
         //样本属性及其分类，暂时先在代码里面写了。后面需要数据库或者是文件读取
         ReadData data = new ReadData();
-        Object[][] rawData =  data.ReadData();
+        Object[][] rawData =  data.readTrainData();
         //最终组合出一个包含所有的样本的Map
         Map<Object,List<Sample>> sample_set = new HashMap<Object,List<Sample>>();
 
@@ -340,7 +341,6 @@ public class ZZB_JCS{
     }
 
     public static  void main(String[] args) throws Exception{
-//        String[] attribute_Names = new String[] {"AGE","INCOME","STUDENT","CREDIT_RATING"};
         long startTime=System.currentTimeMillis();   //获取开始时间
         String[] Test_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness"};
         String[] attribute_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness","Fault"};
@@ -356,14 +356,32 @@ public class ZZB_JCS{
         out.close();
         MouseAndKeyEvent gui = new MouseAndKeyEvent();
         BufferedReader in = new BufferedReader(new FileReader(file));
-        String[] LINES= new String[1466];
-        for (int i=0;i<1466;++i){
+        int linecount = 0;
+        while(in.readLine()!=null){
+            ++linecount;
+        }
+        in.close();
+        System.out.println(linecount);
+        in = new BufferedReader(new FileReader(file));
+        String[] LINES= new String[linecount];
+        for (int i=0;i<linecount;++i){
             LINES[i]=in.readLine();
         }
         in.close();
-        MouseAndKeyEvent.UpdateTEXT(gui,LINES);
-        //*****原代码有点问题！应该是给定一个没有分类的属性列表去给他！而不带有分类的属性列表，这样会把分类作为一个属性的！
-        TestData.TestData(decisionTree, Test_Names,test);
+        FileWriter out1 = new FileWriter("DataToTest.txt");
+        ReadData data = new ReadData();
+        Object[][] DataToTest =  data.readTestData();
+        for (int i=0;i<DataToTest.length;++i){
+            for (int j=0;j<DataToTest[i].length;++j){
+                out1.write(DataToTest[i][j] + " ");
+            }
+            out1.write("\n");
+        }
+        out1.close();
+        MouseAndKeyEvent.UpdateTEXT(gui,LINES,decisionTree);
+//        *****原代码有点问题！应该是给定一个没有分类的属性列表去给他！而不带有分类的属性列表，这样会把分类作为一个属性的！*****
+//        String line="";
+//        TestData.TestData(decisionTree, Test_Names,test,line);
         long endTime=System.currentTimeMillis(); //获取结束时间
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
     }

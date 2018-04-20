@@ -1,8 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.beans.IntrospectionException;
 import java.io.*;
- /*
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Vector;
+
+/*
    8  * GUI(图形用户界面)
    9  *  Graphical User Interface(图形用户接口)
    10  *  用图形的方式,来显示计算机操作的界面,这样更方便更直观.
@@ -67,19 +72,23 @@ class MyWin extends WindowAdapter{
     @Override
     public void windowActivated(WindowEvent e) {
         //每次获得焦点 就会触发
-        System.out.println("");
+        System.out.println("Welcome Back!");
    }
    @Override
     public void windowOpened(WindowEvent e) {
         // TODO Auto-generated method stub
         System.out.println("Now It is Working!");
-        JOptionPane.showMessageDialog(null,"Welcome To Here!","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Welcome To Here!\n【clear】: Clear the Screen!\n【test 】: Test your DATA!\n【next 】：The Next Line！\n【exit 】： Exit the System!","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
   }
 }
 
 public class MouseAndKeyEvent{
-    public static boolean flag=false;
+    public int RightCount = 0;
+    public int FaultCount = 0;
+    public  Map<String,String> FaultMap = new HashMap<String,String>();
+    private Object tree;
     private Frame f;
+    private int nextTimes=0;
     private Button but,but1,but2;
     private TextField ta;
     private MenuBar mb;
@@ -87,28 +96,170 @@ public class MouseAndKeyEvent{
     private MenuItem closeItem,openItem,saveItem,subItem1,subItem;
     private FileDialog openDialog,saveDialog;
     private File file;
-    private JPanel jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8,jp9,jp10,jp11,jp12,jp13;
-    private JLabel jl1,jl2,jl3,jl4,jl5,jl6,jl7,jl8,jl9,jl10,jl11;
+    private JPanel jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8,jp9,jp10,jp11,jp12,jp13,jp14;
+    private JLabel jl1,jl2,jl3,jl4,jl5,jl6,jl7,jl8,jl9,jl10,jl11,jl12;
     private String[] TEXT =  new String[11];
-    private String[] LINES = new String[1500];
+    private static  String[] LINES;
     public MouseAndKeyEvent() {
+        FaultMap.put("Pastry","0");
+        FaultMap.put("Z_Scratch","1");
+        FaultMap.put("K_Scatch","2");
+        FaultMap.put("Stains","3");
+        FaultMap.put("Dirtiness","4");
+        FaultMap.put("Bumps","5");
+        FaultMap.put("Other_Faults","6");
         init();
     }
     public static int line=0;
-    private static void AddLine(){
-        line++;
-    }
-    public static void UpdateTEXT(MouseAndKeyEvent obj,String[] txt){
-        for (int i=0;i<1466;++i){
-            obj.LINES[i]=txt[i];
+    public Vector<String > TData = new Vector<String>();
+    public static String Space = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+    private void AddLine(){
+        if (line<=LINES.length/10)
+            line++;
+        else{
+            line = 0;
         }
     }
-
+    public static void UpdateTEXT(MouseAndKeyEvent obj,String[] txt,Object tree1){
+        LINES = new String[txt.length];
+        for (int i=0;i<txt.length;++i){
+            obj.LINES[i]=txt[i];
+        }
+        obj.tree=tree1;
+    }
+    public static void UpdateTData(MouseAndKeyEvent gui,String file) throws IOException{
+        BufferedReader bufr=new BufferedReader(new FileReader(file));
+        String line=null;
+        while((line=bufr.readLine())!=null){
+            gui.TData.add(line);
+        }
+        bufr.close();
+    }
+    public void UpdateDisplay(){
+        if(line<LINES.length/10) {
+            for (int i = line * 10, j = 1; i < line * 10 + 10; i++) {
+                TEXT[j++] =Space+""+ LINES[i];
+            }
+            AddLine();
+        }else{
+            for(int i=1;i<LINES.length-(LINES.length/10)*10;++i){
+                TEXT[i] = Space+""+LINES[(LINES.length/10)*10+i];
+            }
+            for (int i=LINES.length-(LINES.length/10)*10;i<11;++i){
+                TEXT[i]=Space+"|||||||||||||||||===========》》》》》》DONE!";
+            }
+        }
+        System.out.println(line);
+        jl2.setText(TEXT[1]);
+        jl3.setText(TEXT[2]);
+        jl4.setText(TEXT[3]);
+        jl5.setText(TEXT[4]);
+        jl6.setText(TEXT[5]);
+        jl7.setText(TEXT[6]);
+        jl8.setText(TEXT[7]);
+        jl9.setText(TEXT[8]);
+        jl10.setText(TEXT[9]);
+        jl11.setText(TEXT[10]);
+    }
+    private void DealCommand(String command){
+        String[] Test_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness"};
+        if (command.isEmpty()){
+            System.out.println("呵呵哒~~~");
+        }
+        if (command.toLowerCase().equals("exit")){
+            System.exit(0);
+        }
+        if(command.toLowerCase().equals("clear")){
+            System.out.println("Down, Clear ALL!");
+            line=0;
+            jl2.setText(Space+"Line 1");
+            jl3.setText(Space+"Line 2");
+            jl4.setText(Space+"Line 3");
+            jl5.setText(Space+"Line 4");
+            jl6.setText(Space+"Line 5");
+            jl7.setText(Space+"Line 6");
+            jl8.setText(Space+"Line 7");
+            jl9.setText(Space+"Line 8");
+            jl10.setText(Space+"Line 9");
+            jl11.setText(Space+"Line 10");
+            jl12.setText("");
+        }
+        else if(command.toLowerCase().equals("next")){
+            AddLine();
+            jl12.setText("");
+            UpdateDisplay();
+        }
+        else if(command.toLowerCase().equals("autotest")){
+            if (TData.isEmpty()){
+                jl12.setText(Space+"Please Open the Test File to load the Data!");
+                return;
+            }
+            else {
+                for (int i=0;i<TData.size();++i) {
+                    Object[] test = TData.get(i).split(" ");
+                    String res="";
+                    res=TestData.TestData(tree, Test_Names,test,res);
+                    if (res.contains(":")){
+                        String Fault = res.substring(res.indexOf(":")+1);
+                        Fault = Fault.trim();
+                        String Fa = FaultMap.get(Fault);
+                        if(Fa.equals((String) test[test.length-1])){
+                            RightCount++;
+                        }
+                        else {
+                            FaultCount++;
+                        }
+                    }
+                    else {
+                        FaultCount++;
+                    }
+                }
+                System.out.println(RightCount+" "+FaultCount);
+                jl12.setText(Space+"准确率： "+((float)RightCount/(float)(RightCount+FaultCount)));
+                RightCount = 0;
+                FaultCount = 0;
+            }
+        }
+        else{
+            String[] comm = command.split(" ");
+            if (comm[0].toLowerCase().equals("test") && comm.length<2) {
+                System.out.println("Test Ready NOW!");
+                Object[] test;
+                if(TData.isEmpty()) {
+                    test = new Object[]{"0", "2", "11", "6", "0", "200"};
+                }
+                else {
+                    if (nextTimes<TData.size()) {
+                        test = TData.get(nextTimes).split(" ");
+                        nextTimes++;
+                    }
+                    else {
+                        test = TData.get(TData.size()-1).split(" ");
+                    }
+                }
+                String res="";
+                res=TestData.TestData(tree, Test_Names,test,res);
+                String tdata = "";
+                for (int i=0;i<6;++i){
+                    tdata =tdata + test[i] + ",";
+                }
+                jl12.setText(Space+tdata+" "+res);
+            }
+            else if(comm[0].toLowerCase().equals("test") && comm.length-1==Test_Names.length){
+                Object[] test = new Object[Test_Names.length];
+                for (int i=0;i<test.length;++i){
+                    test[i]=comm[i+1];
+                }
+                String res="";
+                res=TestData.TestData(tree, Test_Names,test,res);
+                jl12.setText(Space+res);
+            }
+        }
+    }
     private void init(){
-
-        f=new Frame("The Graduation Design Windwos form Zhang Zhaobo for Teachers!");
+        f=new Frame("The Graduation Design Windows form Zhang Zhaobo for Teachers!");
         f.setBounds(300, 100, 800, 600);
-        f.setLayout(new GridLayout(13,1));
+        f.setLayout(new GridLayout(14,1));
         ta=new TextField(50);
         mb=new MenuBar();
         m=new Menu("File");
@@ -132,11 +283,10 @@ public class MouseAndKeyEvent{
         saveDialog=new FileDialog(f,"I wanna to save",FileDialog.SAVE);
         f.setMenuBar(mb);
         jp1 = new JPanel();
-        jl1 = new JLabel();
         jl1 = new JLabel("This is the Code Line for Command!");
+        jl1.setSize(300,40);
         jp1.add(jl1);
         f.add(jp1);
-
 
         jp2 = new JPanel();
         jp2.add(ta);
@@ -144,71 +294,78 @@ public class MouseAndKeyEvent{
         f.add(jp2);
 
         jp3 = new JPanel();
-        jl2 = new JLabel();
-        jl2 = new JLabel("Line 1",JLabel.LEFT);
+        jl2 = new JLabel(Space+"Line 1",SwingConstants.LEFT);
         jp3.add(jl2);
+        jp3.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp3);
 
         jp4 = new JPanel();
-        jl3 = new JLabel();
-        jl3 = new JLabel("Line 2",JLabel.LEFT);
+        jl3 = new JLabel(Space+"Line 2",SwingConstants.LEFT);
         jp4.add(jl3);
+        jp4.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp4);
 
         jp5 = new JPanel();
-        jl4 = new JLabel();
-        jl4 = new JLabel("Line 3",JLabel.LEFT);
+        jl4 = new JLabel(Space+"Line 3",SwingConstants.LEFT);
         jp5.add(jl4);
+        jp5.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp5);
 
         jp6 = new JPanel();
-        jl5 = new JLabel();
-        jl5 = new JLabel("Line 4",JLabel.LEFT);
+        jl5 = new JLabel(Space+"Line 4",SwingConstants.LEFT);
         jp6.add(jl5);
+        jp6.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp6);
 
         jp7 = new JPanel();
-        jl6 = new JLabel();
-        jl6 = new JLabel("Line 5",JLabel.LEFT);
+        jl6 = new JLabel(Space+"Line 5",SwingConstants.LEFT);
         jp7.add(jl6);
+        jp7.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp7);
 
         jp8 = new JPanel();
-        jl7 = new JLabel();
-        jl7 = new JLabel("Line 6",JLabel.LEFT);
+        jl7 = new JLabel(Space+"Line 6",SwingConstants.LEFT);
         jp8.add(jl7);
+        jp8.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp8);
 
         jp9 = new JPanel();
-        jl8 = new JLabel();
-        jl8 = new JLabel("Line 7",JLabel.LEFT);
+        jl8 = new JLabel(Space+"Line 7",SwingConstants.LEFT);
         jp9.add(jl8);
+        jp9.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp9);
 
         jp10 = new JPanel();
-        jl9 = new JLabel();
-        jl9 = new JLabel("Line 8",JLabel.LEFT);
+        jl9 = new JLabel(Space+"Line 8",SwingConstants.LEFT);
         jp10.add(jl9);
+        jp10.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp10);
 
         jp11 = new JPanel();
-        jl10 = new JLabel();
-        jl10 = new JLabel("Line 9",JLabel.LEFT);
+        jl10 = new JLabel(Space+"Line 9",SwingConstants.LEFT);
         jp11.add(jl10);
+        jp11.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp11);
 
         jp12 = new JPanel();
-        jl11 = new JLabel();
-        jl11 = new JLabel("Line 10",JLabel.LEFT);
+        jl11 = new JLabel(Space+"Line 10",SwingConstants.LEFT);
         jp12.add(jl11);
+        jp12.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp12);
 
         jp13 = new JPanel();
+        jl12 = new JLabel("");
+        jp13.add(jl12);
+        jp13.setLayout(new FlowLayout(FlowLayout.LEFT));
+        f.add(jp13);
+
+        jp14 = new JPanel();
         but1 = new Button("CLEAR");
         but2 = new Button("NEXT");
-        jp13.add(but1);
-        jp13.add(but2);
-        f.add(jp13);
+        jp14.add(but1);
+        jp14.add(but2);
+        f.add(jp14);
+
         f.addWindowListener(new MyWin());
         event();
         f.setVisible(true);
@@ -237,21 +394,20 @@ public class MouseAndKeyEvent{
                     file=new File(dirPath,fileName);
                 }
                 try {
-
-                    BufferedWriter bufw=new BufferedWriter(new FileWriter(file));
-
-                    String text=ta.getText();
-
-                    bufw.write(text);
+                    BufferedWriter bufw = new BufferedWriter(new FileWriter(file));
+                    int i = 0;
+                    while (i < LINES.length){
+                        if(LINES[i]!=null)
+                            bufw.write(LINES[i]+"\n");
+                        i++;
+                    }
                     bufw.close();
                 } catch (IOException e2) {
                     throw new RuntimeException("Failed to Save !");
                 }
-
             }
         });
         openItem.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
@@ -261,13 +417,12 @@ public class MouseAndKeyEvent{
                 System.out.println(dirPath+"...."+fileName);
                 if(dirPath==null || fileName==null)
                     return;
-                ta.setText("");
                 file=new File(dirPath,fileName);
                 try {
                     BufferedReader bufr=new BufferedReader(new FileReader(file));
                     String line=null;
                     while((line=bufr.readLine())!=null){
-                        ta.setText(line+"\r\n");
+                        TData.add(line);
                     }
                     bufr.close();
                 } catch (IOException e2) {
@@ -289,27 +444,20 @@ public class MouseAndKeyEvent{
             }
 
         });
-        ta.addKeyListener(new KeyAdapter() {
-            public void keyPressed(KeyEvent e){
-                int code=e.getKeyCode();
-                if(code<0){
-                    System.out.println(code+"  ....Illegal Input");
-                    e.consume();  //不执行加入文本框.
-                }
-            }
-        });
+
         but.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
-                System.out.println("Put Down the Button!");
+                System.out.println("Put Down the Button to Execute the Command!");
+                    DealCommand(ta.getText());
             }
         });
         but.addMouseListener(new MouseAdapter() {
             private int count=0;
             private int clickCount=1;
             public void mouseEntered(MouseEvent e){
-                System.out.println("Entered!"+count++);
+                System.out.println("Entered The EXECUTE BUTTON!"+count++);
             }
             public void mouseClicked(MouseEvent e){
                 if(e.getClickCount()==2){
@@ -318,65 +466,47 @@ public class MouseAndKeyEvent{
                     System.out.println("Click : "+clickCount++);
             }
         });
+        ta.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e){
+                if(e.getKeyCode()==KeyEvent.VK_ENTER){
+                    System.out.println("Put Down the Enter to Execute the Command!");
+                        DealCommand(ta.getText());
+                }
+            }
+        });
         but1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 System.out.println("Put Down the Button1 to Clear the Data!");
-                jl2.setText("Line 1");
-                jl3.setText("Line 2");
-                jl4.setText("Line 3");
-                jl5.setText("Line 4");
-                jl6.setText("Line 5");
-                jl7.setText("Line 6");
-                jl8.setText("Line 7");
-                jl9.setText("Line 8");
-                jl10.setText("Line 9");
-                jl11.setText("Line 10");
+                line=0;
+                jl2.setText(Space+"Line 1");
+                jl3.setText(Space+"Line 2");
+                jl4.setText(Space+"Line 3");
+                jl5.setText(Space+"Line 4");
+                jl6.setText(Space+"Line 5");
+                jl7.setText(Space+"Line 6");
+                jl8.setText(Space+"Line 7");
+                jl9.setText(Space+"Line 8");
+                jl10.setText(Space+"Line 9");
+                jl11.setText(Space+"Line 10");
             }
         });
         but2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
-                System.out.println("Put Down the Button1 to Change the Data!");
-                if(line<146) {
-                    for (int i = line * 10, j = 1; i < line * 10 + 10; i++) {
-                        TEXT[j++] = LINES[i];
-                    }
-                    AddLine();
-                }else{
-                    for(int i=1;i<6;++i){
-                        TEXT[i] = LINES[1460+i];
-                    }
-                    for (int i=6;i<11;++i){
-                        TEXT[i]="!!!!|---->DONE!";
-                    }
+                System.out.println("Put Down the Button2 to Change the Data!");
+                UpdateDisplay();
+            }
+        });
+        but2.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e){
+                System.out.println(KeyEvent.getKeyText(e.getKeyCode())+" ******>>>> "+e.getKeyCode());
+                if(e.getKeyCode()==KeyEvent.VK_ENTER){
+                    System.out.println("Put Down the Enter to Change the Data!");
+                    UpdateDisplay();
                 }
-
-                System.out.println(line);
-                System.out.println(TEXT[1]);
-                jl2.setHorizontalAlignment(SwingConstants.LEFT);
-                jl2.setText(TEXT[1]);
-                System.out.println(TEXT[2]);
-                jl3.setHorizontalAlignment(SwingConstants.LEFT);
-                jl3.setText(TEXT[2]);
-                jl4.setHorizontalAlignment(SwingConstants.LEFT);
-                jl4.setText(TEXT[3]);
-                jl5.setHorizontalAlignment(SwingConstants.LEFT);
-                jl5.setText(TEXT[4]);
-                jl6.setHorizontalAlignment(SwingConstants.LEFT);
-                jl6.setText(TEXT[5]);
-                jl7.setHorizontalAlignment(SwingConstants.LEFT);
-                jl7.setText(TEXT[6]);
-                jl8.setHorizontalAlignment(SwingConstants.LEFT);
-                jl8.setText(TEXT[7]);
-                jl9.setHorizontalAlignment(SwingConstants.LEFT);
-                jl9.setText(TEXT[8]);
-                jl10.setHorizontalAlignment(SwingConstants.LEFT);
-                jl10.setText(TEXT[9]);
-                jl11.setHorizontalAlignment(SwingConstants.LEFT);
-                jl11.setText(TEXT[10]);
             }
         });
     }

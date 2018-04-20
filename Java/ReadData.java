@@ -24,7 +24,17 @@ import java.sql.Statement;
 
 public class ReadData {
 
+    private Object[] Name;
     protected Mysql_Connect mysql=new Mysql_Connect();
+
+    ReadData() throws IOException{
+        File file = new File("/Users/zhangzhaobo/IdeaProjects/Graduation_Design/src/New_Data.txt");
+        BufferedReader in = new BufferedReader(new FileReader(file));
+        String line;  //一行数据作为属性名字
+        line = in.readLine();
+        in.close();
+        Name = line.split("\t\t");
+    }
 
     public String getSelectQuery(Object[] Name,String table,int id){
         String select = "SELECT  ";
@@ -42,22 +52,16 @@ public class ReadData {
             mysql.Connect();
             Statement statement=mysql.getStatement();
             String GETCOLUMN="select max(id) from steelplate";
-            String GETDATA="";
-            File file = new File("/Users/zhangzhaobo/IdeaProjects/Graduation_Design/src/New_Data.txt");
-            BufferedReader in = new BufferedReader(new FileReader(file));
-            String line;  //一行数据
-            line=in.readLine();
-            in.close();
-            Object[] Name = line.split("\t\t");
+            String getDataQuery="";
             Object[][] DataToOut;
             ResultSet answer = statement.executeQuery(GETCOLUMN);
             if(answer.next())
                 columnCount  = answer.getInt(1);
             DataToOut = new Object[columnCount][7];
             for (int  i = 0;i<columnCount;++i) {
-                GETDATA = getSelectQuery(Name,"steelplate",i);
+                getDataQuery = getSelectQuery(Name,"steelplate",i);
                 ResultSet select_ok;
-                select_ok = statement.executeQuery(GETDATA);
+                select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();
                 for (int j = 0; j<7;++j){
                     DataToOut[i][j]=select_ok.getObject((String) Name[j]);
@@ -74,10 +78,73 @@ public class ReadData {
         return new Object[1][1];
     }
 
+    public Object[][] readTrainData() {
+        int columnCount=0;
+        try {
+            mysql.Connect();
+            Statement statement=mysql.getStatement();
+            String GETCOLUMN="select max(id) from steelplate";
+            String getDataQuery="";
+            Object[][] DataTrain;
+            ResultSet answer = statement.executeQuery(GETCOLUMN);
+            if(answer.next())
+                columnCount  = answer.getInt(1);
+            DataTrain = new Object[columnCount/2][7];
+            for (int  i = 0;i<columnCount/2;++i) {
+                getDataQuery = getSelectQuery(Name,"steelplate",i*2);
+                ResultSet select_ok;
+                select_ok = statement.executeQuery(getDataQuery);
+                select_ok.next();
+                for (int j = 0; j<7;++j){
+                    DataTrain[i][j]=select_ok.getObject((String) Name[j]);
+                }
+            }
+            statement.close();
+            mysql.Dis_Connect();
+            return DataTrain;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new Object[1][1];
+    }
+
+    public Object[][] readTestData() {
+        int columnCount=0;
+        try {
+            mysql.Connect();
+            Statement statement=mysql.getStatement();
+            String GETCOLUMN="select max(id) from steelplate";
+            Object[][] DataTest;
+            ResultSet answer = statement.executeQuery(GETCOLUMN);
+            if(answer.next())
+                columnCount  = answer.getInt(1);
+            DataTest = new Object[columnCount/2][7];
+            for (int  i = 0 ;i<columnCount/2-1;++i) {
+                String getDataQuery = getSelectQuery(Name,"steelplate",i*2+1);
+                ResultSet select_ok;
+                select_ok = statement.executeQuery(getDataQuery);
+                select_ok.next();
+                for (int j = 0; j<7;++j){
+                    DataTest[i][j]=select_ok.getObject((String) Name[j]);
+                }
+            }
+            statement.close();
+            mysql.Dis_Connect();
+            return DataTest;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new Object[1][1];
+    }
+
     public Object[][] ReadData() throws IOException {
         // ***************** 数据库读写式 **************
-        WriteData write = new WriteData();
-        write.WriteData();
+//        WriteData write = new WriteData();
+//        write.WriteData();
         Object[][] DataToOut = readFromDatabase();
         return  DataToOut;
         // ***************** 数据库读写式 **************
