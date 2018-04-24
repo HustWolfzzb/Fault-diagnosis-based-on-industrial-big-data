@@ -1,37 +1,65 @@
 [Steel_Plate_Thickness = ?]
-|---->(Steel_Plate_Thickness = 69):[Pixels_Areas = ?]
-|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_X = 2):【* CATEGORY = Dirtiness *】
+|---->(Steel_Plate_Thickness = 69):[Diff_Luminosity = ?]
+|---->|---->(Diff_Luminosity = 22):【* CATEGORY = Dirtiness *】
+|---->|---->(Diff_Luminosity = 12):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
+|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 4):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Pixels_Areas = 5):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Pixels_Areas = 6):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 7):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Dirtiness *】
+|---->|---->(Diff_Luminosity = 15):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 1):[Pixels_Areas = ?]
+|---->|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Pixels_Areas = 5):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 2):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):[Pixels_Areas = ?]
+|---->|---->|---->|---->|---->(Pixels_Areas = 6):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->|---->(Pixels_Areas = 8):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = Dirtiness *】
-|---->|---->(Pixels_Areas = 12):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 12):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 15):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 5):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Dirtiness *】
-|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_Luminosity = 7):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
+|---->|---->(Diff_Luminosity = 6):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Bumps *】
+|---->|---->(Diff_Luminosity = 7):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):[Pixels_Areas = ?]
+|---->|---->|---->|---->|---->(Pixels_Areas = 5):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 6):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 7):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Dirtiness *】
-|---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 8):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 21):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Bumps *】
+|---->(Steel_Plate_Thickness = 290):[Diff_X = ?]
+|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
+|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->(Steel_Plate_Thickness = 180):【* CATEGORY = Other_Faults *】
 |---->(Steel_Plate_Thickness = 150):[Diff_Y = ?]
-|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Y = 11):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 18):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 21):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 0):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 6):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Y = 12):【* CATEGORY = Pastry *】
 |---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Y = 2):【* CATEGORY = Pastry *】
@@ -40,173 +68,300 @@
 |---->|---->(Diff_Y = 4):【* CATEGORY = Pastry *】
 |---->|---->(Diff_Y = 5):【* CATEGORY = Pastry *】
 |---->|---->(Diff_Y = 6):【* CATEGORY = Pastry *】
-|---->(Steel_Plate_Thickness = 185):[Diff_Luminosity = ?]
-|---->|---->(Diff_Luminosity = 3):[Diff_Y = ?]
+|---->|---->(Diff_Y = 7):【* CATEGORY = Pastry *】
+|---->(Steel_Plate_Thickness = 250):[Pixels_Areas = ?]
+|---->|---->(Pixels_Areas = 11):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 12):【* CATEGORY = Pastry *】
+|---->(Steel_Plate_Thickness = 140):【* CATEGORY = Other_Faults *】
+|---->(Steel_Plate_Thickness = 185):[Diff_Y = ?]
+|---->|---->(Diff_Y = 11):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Y = 12):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 1):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Y = 5):【* CATEGORY = Other_Faults *】
+|---->(Steel_Plate_Thickness = 130):【* CATEGORY = Other_Faults *】
+|---->(Steel_Plate_Thickness = 120):[Diff_Luminosity = ?]
+|---->|---->(Diff_Luminosity = 11):【* CATEGORY = Bumps *】
+|---->|---->(Diff_Luminosity = 15):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Luminosity = 4):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 14):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 4):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Dirtiness *】
+|---->|---->(Diff_Luminosity = 6):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Diff_Y = 7):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Diff_Y = 8):【* CATEGORY = Dirtiness *】
+|---->|---->(Diff_Luminosity = 18):【* CATEGORY = Dirtiness *】
+|---->|---->(Diff_Luminosity = 7):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 6):【* CATEGORY = Bumps *】
+|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Dirtiness *】
+|---->|---->(Diff_Luminosity = 20):【* CATEGORY = Other_Faults *】
+|---->(Steel_Plate_Thickness = 175):[Pixels_Areas = ?]
+|---->|---->(Pixels_Areas = 11):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 23):【* CATEGORY = Z_Scratch *】
+|---->|---->(Pixels_Areas = 12):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 13):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 4):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 14):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 15):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 19):【* CATEGORY = Pastry *】
+|---->|---->(Pixels_Areas = 5):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 6):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 7):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 8):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 9):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 21):【* CATEGORY = Z_Scratch *】
+|---->(Steel_Plate_Thickness = 143):[Diff_X = ?]
+|---->|---->(Diff_X = 0):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Pastry *】
+|---->|---->|---->(Pixels_Areas = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 3):【* CATEGORY = Pastry *】
+|---->|---->|---->(Pixels_Areas = 7):【* CATEGORY = Dirtiness *】
+|---->|---->(Diff_X = 1):[Diff_Y = ?]
 |---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 17):【* CATEGORY = Pastry *】
-|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Other_Faults *】
-|---->(Steel_Plate_Thickness = 130):【* CATEGORY = Other_Faults *】
-|---->(Steel_Plate_Thickness = 120):[Pixels_Areas = ?]
-|---->|---->(Pixels_Areas = 11):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 12):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):【* CATEGORY = Dirtiness *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 13):【* CATEGORY = Dirtiness *】
-|---->|---->(Pixels_Areas = 14):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 15):【* CATEGORY = Dirtiness *】
-|---->|---->(Pixels_Areas = 4):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 6):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 7):【* CATEGORY = Pastry *】
-|---->|---->(Pixels_Areas = 8):【* CATEGORY = Other_Faults *】
-|---->(Steel_Plate_Thickness = 175):[Pixels_Areas = ?]
-|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->(Pixels_Areas = 23):【* CATEGORY = Z_Scratch *】
-|---->|---->(Pixels_Areas = 12):[Diff_Y = ?]
-|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 13):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 14):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 6):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 8):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 9):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 21):【* CATEGORY = Z_Scratch *】
-|---->(Steel_Plate_Thickness = 143):[Diff_Luminosity = ?]
-|---->|---->(Diff_Luminosity = 14):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):【* CATEGORY = Dirtiness *】
-|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Pastry *】
-|---->(Steel_Plate_Thickness = 220):[Diff_X = ?]
-|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
-|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_X = 4):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_X = 8):【* CATEGORY = Other_Faults *】
+|---->(Steel_Plate_Thickness = 220):[Diff_Y = ?]
+|---->|---->(Diff_Y = 11):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 12):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Y = 2):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 6):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Y = 7):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Y = 8):【* CATEGORY = Other_Faults *】
 |---->(Steel_Plate_Thickness = 100):[Pixels_Areas = ?]
-|---->|---->(Pixels_Areas = 11):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 3):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Dirtiness *】
-|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 4):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 3):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 2):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 2):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 5):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 2):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->(Diff_Luminosity = 6):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 1):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_X = 2):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 5):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->(TypeOfSteel = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(TypeOfSteel = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 6):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Dirtiness *】
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 6):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
-|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 10):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 10):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(TypeOfSteel = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 2):[TypeOfSteel = ?]
+|---->|---->|---->|---->(TypeOfSteel = 0):[Diff_Luminosity = ?]
+|---->|---->|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(TypeOfSteel = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[Diff_Luminosity = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 3):[TypeOfSteel = ?]
+|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 12):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 12):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 4):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 4):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 16):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 6):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 13):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->(Diff_Y = 6):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_X = 1):[Diff_Luminosity = ?]
 |---->|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_X = 4):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 6):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 24):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 35):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 14):[Diff_Luminosity = ?]
 |---->|---->|---->(Diff_Luminosity = 15):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Dirtiness *】
 |---->|---->|---->(Diff_Luminosity = 20):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 15):【* CATEGORY = Dirtiness *】
+|---->|---->(Pixels_Areas = 26):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 16):【* CATEGORY = Dirtiness *】
 |---->|---->(Pixels_Areas = 17):【* CATEGORY = Dirtiness *】
 |---->|---->(Pixels_Areas = 18):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 19):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Dirtiness *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 1):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 3):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 4):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 0):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 5):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Pastry *】
-|---->|---->|---->|---->(Diff_Y = 1):[Diff_Luminosity = ?]
-|---->|---->|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Dirtiness *】
-|---->|---->|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_X = 1):[Diff_Luminosity = ?]
-|---->|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->(Pixels_Areas = 5):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 4):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->(TypeOfSteel = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->|---->(TypeOfSteel = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 6):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 7):[Diff_X = ?]
+|---->|---->|---->(Diff_Luminosity = 6):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
+|---->|---->(Pixels_Areas = 6):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->(TypeOfSteel = 1):[Diff_Luminosity = ?]
+|---->|---->|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->|---->(Diff_Luminosity = 7):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = Stains *】
+|---->|---->(Pixels_Areas = 7):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 7):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 8):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 11):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 3):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Dirtiness *】
 |---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 4):[TypeOfSteel = ?]
+|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 9):[Diff_Luminosity = ?]
 |---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 30):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 31):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 21):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 1):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Diff_X = 12):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 5):【* CATEGORY = Other_Faults *】
 |---->(Steel_Plate_Thickness = 200):[Diff_Luminosity = ?]
 |---->|---->(Diff_Luminosity = 11):[Diff_Y = ?]
 |---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Bumps *】
+|---->|---->(Diff_Luminosity = 12):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 14):【* CATEGORY = Bumps *】
 |---->|---->(Diff_Luminosity = 15):【* CATEGORY = Bumps *】
 |---->|---->(Diff_Luminosity = 17):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 12):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
 |---->|---->(Diff_Luminosity = 3):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):[Pixels_Areas = ?]
+|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Y = 7):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 5):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Y = 3):[Pixels_Areas = ?]
 |---->|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Pixels_Areas = 13):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 8):[Diff_Y = ?]
@@ -217,63 +372,113 @@
 |---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Y = 5):【* CATEGORY = Pastry *】
-|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 9):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 1):[Pixels_Areas = ?]
+|---->|---->|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
 |---->|---->(Diff_Luminosity = 10):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 11):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Y = 12):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
 |---->|---->(Diff_Luminosity = 21):【* CATEGORY = Other_Faults *】
 |---->(Steel_Plate_Thickness = 211):[Pixels_Areas = ?]
 |---->|---->(Pixels_Areas = 3):[Diff_Luminosity = ?]
 |---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 5):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 6):【* CATEGORY = Pastry *】
 |---->(Steel_Plate_Thickness = 300):【* CATEGORY = Other_Faults *】
 |---->(Steel_Plate_Thickness = 125):【* CATEGORY = Pastry *】
-|---->(Steel_Plate_Thickness = 90):【* CATEGORY = Pastry *】
+|---->(Steel_Plate_Thickness = 90):[Diff_Y = ?]
+|---->|---->(Diff_Y = 11):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 2):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 14):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 4):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 5):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 6):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 7):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 8):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Y = 9):【* CATEGORY = Pastry *】
 |---->(Steel_Plate_Thickness = 80):[Pixels_Areas = ?]
+|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 2):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 1):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 11):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 15):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 5):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 6):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 9):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 3):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 5):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 22):【* CATEGORY = Pastry *】
-|---->|---->(Pixels_Areas = 11):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 11):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 6):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 9):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 12):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 13):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 23):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 8):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 13):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 3):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 6):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 24):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 14):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 15):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 16):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 11):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 2):【* CATEGORY = K_Scatch *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 17):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 5):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 18):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 19):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 3):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 4):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 5):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 0):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
@@ -281,26 +486,50 @@
 |---->|---->(Pixels_Areas = 6):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 0):[Diff_Luminosity = ?]
 |---->|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 7):[Diff_Luminosity = ?]
 |---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 8):【* CATEGORY = Bumps *】
-|---->|---->(Pixels_Areas = 21):【* CATEGORY = Other_Faults *】
-|---->(Steel_Plate_Thickness = 70):[Diff_Luminosity = ?]
-|---->|---->(Diff_Luminosity = 11):[Pixels_Areas = ?]
-|---->|---->|---->(Pixels_Areas = 22):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 12):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_X = 3):【* CATEGORY = Z_Scratch *】
+|---->|---->(Pixels_Areas = 8):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 21):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 9):【* CATEGORY = Bumps *】
+|---->(Steel_Plate_Thickness = 70):[Diff_Luminosity = ?]
+|---->|---->(Diff_Luminosity = 11):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 11):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Diff_Y = 1):[Pixels_Areas = ?]
+|---->|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 12):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Y = 7):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Y = 9):【* CATEGORY = Z_Scratch *】
+|---->|---->(Diff_Luminosity = 12):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 12):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 13):[Pixels_Areas = ?]
 |---->|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
@@ -309,101 +538,153 @@
 |---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Bumps *】
 |---->|---->|---->(Pixels_Areas = 24):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 14):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 5):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 27):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 5):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 14):[Diff_Y = ?]
-|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
+|---->|---->(Diff_Luminosity = 14):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 13):【* CATEGORY = Pastry *】
+|---->|---->|---->(Pixels_Areas = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 6):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 25):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 26):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 15):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 16):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 16):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 12):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 27):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 17):[Diff_Y = ?]
 |---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 28):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 18):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 19):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 2):【* CATEGORY = Other_Faults *】
 |---->|---->(Diff_Luminosity = 3):[Pixels_Areas = ?]
 |---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Pixels_Areas = 5):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 6):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 8):[TypeOfSteel = ?]
+|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 9):[TypeOfSteel = ?]
+|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 21):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 4):[Pixels_Areas = ?]
-|---->|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
+|---->|---->(Diff_Luminosity = 4):[TypeOfSteel = ?]
+|---->|---->|---->(TypeOfSteel = 0):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):[Pixels_Areas = ?]
+|---->|---->|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->|---->(Pixels_Areas = 5):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->|---->(Pixels_Areas = 6):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 12):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 14):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 5):[TypeOfSteel = ?]
-|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Pastry *】
-|---->|---->|---->|---->(TypeOfSteel = 1):[Diff_X = ?]
-|---->|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_X = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(TypeOfSteel = 1):[Pixels_Areas = ?]
+|---->|---->|---->|---->(Pixels_Areas = 11):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
+|---->|---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Pixels_Areas = 12):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Pixels_Areas = 14):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Pixels_Areas = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Pixels_Areas = 5):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
 |---->|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 6):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 7):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_X = 2):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 8):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Pixels_Areas = 6):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Pixels_Areas = 7):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_X = 2):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Pixels_Areas = 8):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Z_Scratch *】
 |---->|---->(Diff_Luminosity = 5):[Pixels_Areas = ?]
-|---->|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->(Pixels_Areas = 11):[TypeOfSteel = ?]
+|---->|---->|---->|---->(TypeOfSteel = 0):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
 |---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 12):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 3):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 13):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 14):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 15):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 14):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 15):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_X = 6):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Pixels_Areas = 16):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 5):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 17):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 18):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 7):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 5):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 6):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 7):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 7):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Pixels_Areas = 8):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
@@ -411,39 +692,70 @@
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 21):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 21):[TypeOfSteel = ?]
+|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
 |---->|---->(Diff_Luminosity = 6):[Pixels_Areas = ?]
-|---->|---->|---->(Pixels_Areas = 11):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 22):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 12):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 2):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 13):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 14):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 15):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 16):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Pixels_Areas = 5):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 15):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 16):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 17):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 18):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 19):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 5):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 6):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 18):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 7):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Z_Scratch *】
 |---->|---->(Diff_Luminosity = 7):[Pixels_Areas = ?]
 |---->|---->|---->(Pixels_Areas = 11):[Diff_Y = ?]
 |---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_X = 2):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_Y = 3):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Bumps *】
 |---->|---->|---->(Pixels_Areas = 13):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 14):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 15):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 16):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 17):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 19):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 5):[Diff_Y = ?]
 |---->|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
@@ -452,145 +764,263 @@
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 6):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 7):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 21):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 21):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 11):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_Y = 8):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_Y = 9):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->|---->(Diff_X = 2):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->(Diff_Luminosity = 8):[Pixels_Areas = ?]
 |---->|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
 |---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Pastry *】
 |---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 12):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 15):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 17):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 6):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 18):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 7):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 21):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 9):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_X = 2):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 20):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 10):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_X = 11):【* CATEGORY = Z_Scratch *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 21):【* CATEGORY = Other_Faults *】
-|---->(Steel_Plate_Thickness = 60):[Diff_Luminosity = ?]
-|---->|---->(Diff_Luminosity = 12):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 4):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 15):【* CATEGORY = Other_Faults *】
-|---->|---->(Diff_Luminosity = 5):[Pixels_Areas = ?]
-|---->|---->|---->(Pixels_Areas = 3):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 5):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 6):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 16):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 6):[Pixels_Areas = ?]
-|---->|---->|---->(Pixels_Areas = 3):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 5):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Pastry *】
-|---->|---->|---->(Pixels_Areas = 6):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 7):[TypeOfSteel = ?]
-|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Pastry *】
-|---->|---->(Diff_Luminosity = 7):[Pixels_Areas = ?]
-|---->|---->|---->(Pixels_Areas = 11):[TypeOfSteel = ?]
-|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Pastry *】
-|---->|---->|---->(Pixels_Areas = 4):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 21):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 8):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_Y = 9):【* CATEGORY = Z_Scratch *】
+|---->|---->(Diff_Luminosity = 9):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 12):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 23):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 13):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 27):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Pixels_Areas = 5):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 6):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 7):【* CATEGORY = Bumps *】
-|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Pixels_Areas = 9):【* CATEGORY = Pastry *】
-|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 9):[TypeOfSteel = ?]
-|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Pastry *】
-|---->|---->|---->(TypeOfSteel = 1):【* CATEGORY = Bumps *】
-|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 7):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 21):【* CATEGORY = Z_Scratch *】
+|---->|---->(Diff_Luminosity = 20):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->(Diff_Luminosity = 10):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 22):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 12):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 13):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 25):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Pixels_Areas = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 21):【* CATEGORY = Z_Scratch *】
+|---->|---->(Diff_Luminosity = 21):【* CATEGORY = Other_Faults *】
+|---->(Steel_Plate_Thickness = 60):[TypeOfSteel = ?]
+|---->|---->(TypeOfSteel = 0):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Pastry *】
+|---->|---->|---->(Pixels_Areas = 12):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 13):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 4):【* CATEGORY = Pastry *】
+|---->|---->|---->(Pixels_Areas = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 8):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 30):【* CATEGORY = Pastry *】
+|---->|---->(TypeOfSteel = 1):[Pixels_Areas = ?]
+|---->|---->|---->(Pixels_Areas = 11):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 11):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 12):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 12):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 3):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 15):【* CATEGORY = Pastry *】
+|---->|---->|---->(Pixels_Areas = 4):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 5):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 6):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Pixels_Areas = 16):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 6):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 7):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 6):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 8):【* CATEGORY = Bumps *】
+|---->|---->|---->(Pixels_Areas = 9):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 6):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Bumps *】
 |---->(Steel_Plate_Thickness = 50):[Pixels_Areas = ?]
-|---->|---->(Pixels_Areas = 0):【* CATEGORY = Stains *】
+|---->|---->(Pixels_Areas = 33):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 11):[Diff_Luminosity = ?]
 |---->|---->|---->(Diff_Luminosity = 12):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 13):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 4):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 9):[Diff_Y = ?]
 |---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 12):[Diff_Y = ?]
-|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 10):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 12):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 34):【* CATEGORY = K_Scatch *】
+|---->|---->(Pixels_Areas = 13):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 11):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 12):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 14):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 36):【* CATEGORY = K_Scatch *】
+|---->|---->(Pixels_Areas = 25):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 15):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 17):【* CATEGORY = Dirtiness *】
+|---->|---->(Pixels_Areas = 19):【* CATEGORY = Pastry *】
+|---->|---->(Pixels_Areas = 0):【* CATEGORY = Stains *】
 |---->|---->(Pixels_Areas = 1):【* CATEGORY = Stains *】
 |---->|---->(Pixels_Areas = 2):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 2):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Stains *】
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Stains *】
 |---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Stains *】
 |---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Stains *】
 |---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Stains *】
-|---->|---->(Pixels_Areas = 13):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 36):【* CATEGORY = K_Scatch *】
-|---->|---->(Pixels_Areas = 3):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 4):【* CATEGORY = Stains *】
+|---->|---->(Pixels_Areas = 3):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):[Diff_Luminosity = ?]
+|---->|---->|---->|---->|---->(Diff_Luminosity = 2):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Stains *】
+|---->|---->(Pixels_Areas = 4):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Stains *】
 |---->|---->(Pixels_Areas = 6):[Diff_Luminosity = ?]
 |---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Stains *】
 |---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Stains *】
-|---->|---->(Pixels_Areas = 19):【* CATEGORY = Pastry *】
 |---->|---->(Pixels_Areas = 8):【* CATEGORY = Bumps *】
+|---->|---->(Pixels_Areas = 9):【* CATEGORY = Other_Faults *】
 |---->(Steel_Plate_Thickness = 40):[Pixels_Areas = ?]
 |---->|---->(Pixels_Areas = 22):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_X = 6):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_X = 4):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 5):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_X = 6):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 6):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 7):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 8):【* CATEGORY = K_Scatch *】
 |---->|---->|---->(Diff_X = 7):【* CATEGORY = K_Scatch *】
 |---->|---->|---->(Diff_X = 9):【* CATEGORY = K_Scatch *】
+|---->|---->(Pixels_Areas = 44):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 23):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 11):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_X = 2):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_X = 14):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_X = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 7):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 12):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 9):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 45):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 24):【* CATEGORY = K_Scatch *】
-|---->|---->(Pixels_Areas = 25):[Diff_Y = ?]
-|---->|---->|---->(Diff_Y = 11):【* CATEGORY = K_Scatch *】
-|---->|---->|---->(Diff_Y = 5):[Diff_Luminosity = ?]
-|---->|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = K_Scatch *】
-|---->|---->|---->|---->(Diff_Luminosity = 15):【* CATEGORY = K_Scatch *】
-|---->|---->|---->|---->(Diff_Luminosity = 16):[Diff_X = ?]
+|---->|---->(Pixels_Areas = 25):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 0):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 15):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 26):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 16):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 11):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 5):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 11):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = K_Scatch *】
-|---->|---->|---->|---->(Diff_Luminosity = 17):【* CATEGORY = K_Scatch *】
-|---->|---->|---->(Diff_Y = 6):【* CATEGORY = K_Scatch *】
-|---->|---->|---->(Diff_Y = 7):【* CATEGORY = K_Scatch *】
-|---->|---->|---->(Diff_Y = 8):【* CATEGORY = K_Scatch *】
-|---->|---->(Pixels_Areas = 26):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 6):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 17):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 5):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 6):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 11):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 7):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 18):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 19):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 20):【* CATEGORY = K_Scatch *】
+|---->|---->(Pixels_Areas = 26):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 11):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 27):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 28):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 11):【* CATEGORY = K_Scatch *】
 |---->|---->|---->(Diff_X = 15):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 29):【* CATEGORY = K_Scatch *】
+|---->|---->(Pixels_Areas = 172):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 30):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 31):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 32):【* CATEGORY = K_Scatch *】
@@ -604,6 +1034,12 @@
 |---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 27):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 2):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->(Diff_Luminosity = 3):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Dirtiness *】
 |---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
@@ -611,7 +1047,12 @@
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 2):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_X = 3):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
@@ -622,13 +1063,15 @@
 |---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->(Diff_Y = 3):[Diff_X = ?]
-|---->|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Dirtiness *】
 |---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Dirtiness *】
 |---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
@@ -642,15 +1085,18 @@
 |---->|---->|---->|---->|---->(Diff_Y = 2):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 27):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 6):[Diff_Y = ?]
-|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
-|---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 6):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_Y = 2):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_Luminosity = 7):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
 |---->|---->|---->|---->|---->(Diff_Y = 2):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Pastry *】
 |---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
@@ -658,146 +1104,271 @@
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 8):[Diff_Y = ?]
 |---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Pastry *】
 |---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 9):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Pastry *】
 |---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 30):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 10):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Pastry *】
 |---->|---->(Pixels_Areas = 33):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 12):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 11):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 11):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 14):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 17):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 18):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 3):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = K_Scatch *】
-|---->|---->|---->(Diff_Luminosity = 14):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 7):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 2):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->|---->(Diff_X = 3):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_X = 4):【* CATEGORY = Other_Faults *】
 |---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Pastry *】
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_X = 3):[Diff_Y = ?]
-|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 3):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 4):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 18):【* CATEGORY = K_Scatch *】
-|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 7):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 8):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 9):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 9):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Pastry *】
 |---->|---->(Pixels_Areas = 34):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 13):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 13):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 14):【* CATEGORY = Pastry *】
 |---->|---->|---->(Diff_Luminosity = 3):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->(Diff_Y = 4):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
 |---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Z_Scratch *】
 |---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 4):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Diff_Luminosity = 4):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_X = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 9):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 4):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 9):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 35):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 57):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 14):[Diff_Luminosity = ?]
 |---->|---->|---->(Diff_Luminosity = 13):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 28):【* CATEGORY = K_Scatch *】
-|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 6):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 9):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 6):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 21):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 36):【* CATEGORY = K_Scatch *】
-|---->|---->(Pixels_Areas = 15):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 11):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_X = 2):[Diff_Luminosity = ?]
-|---->|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = K_Scatch *】
-|---->|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_X = 3):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_X = 5):【* CATEGORY = Z_Scratch *】
+|---->|---->(Pixels_Areas = 15):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 12):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 15):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_Luminosity = 4):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 5):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Diff_Luminosity = 28):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 37):【* CATEGORY = K_Scatch *】
-|---->|---->(Pixels_Areas = 16):[Diff_X = ?]
-|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_X = 5):【* CATEGORY = Z_Scratch *】
+|---->|---->(Pixels_Areas = 16):[Diff_Y = ?]
+|---->|---->|---->(Diff_Y = 2):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 5):【* CATEGORY = Z_Scratch *】
+|---->|---->|---->(Diff_Y = 3):[Diff_Luminosity = ?]
+|---->|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Luminosity = 10):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Y = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Y = 6):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Y = 8):【* CATEGORY = Pastry *】
 |---->|---->(Pixels_Areas = 38):【* CATEGORY = K_Scatch *】
-|---->|---->(Pixels_Areas = 17):【* CATEGORY = K_Scatch *】
-|---->|---->(Pixels_Areas = 18):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 17):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->(Diff_X = 2):【* CATEGORY = K_Scatch *】
+|---->|---->(Pixels_Areas = 39):【* CATEGORY = K_Scatch *】
+|---->|---->(Pixels_Areas = 18):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 1):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_X = 8):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 19):[Diff_X = ?]
 |---->|---->|---->(Diff_X = 11):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_X = 3):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 0):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 4):【* CATEGORY = Other_Faults *】
-|---->|---->(Pixels_Areas = 5):[Diff_Y = ?]
-|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_X = 1):[Diff_Luminosity = ?]
-|---->|---->|---->|---->|---->(Diff_Luminosity = 2):[TypeOfSteel = ?]
+|---->|---->(Pixels_Areas = 5):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 2):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 0):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Y = 1):[Diff_Luminosity = ?]
-|---->|---->|---->|---->(Diff_Luminosity = 4):[Diff_X = ?]
+|---->|---->|---->(Diff_Luminosity = 3):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = K_Scatch *】
-|---->|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
 |---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
 |---->|---->(Pixels_Areas = 6):[Diff_Luminosity = ?]
+|---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = K_Scatch *】
 |---->|---->|---->(Diff_Luminosity = 3):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Dirtiness *】
+|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Dirtiness *】
 |---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 4):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = K_Scatch *】
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = K_Scatch *】
 |---->|---->|---->|---->(Diff_X = 1):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 7):[Diff_Luminosity = ?]
 |---->|---->|---->(Diff_Luminosity = 2):【* CATEGORY = K_Scatch *】
-|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 4):[Diff_X = ?]
+|---->|---->|---->(Diff_Luminosity = 3):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 1):[Diff_X = ?]
+|---->|---->|---->|---->|---->(Diff_X = 0):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Y = 3):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
-|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Pastry *】
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = K_Scatch *】
 |---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 9):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = K_Scatch *】
+|---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
 |---->|---->(Pixels_Areas = 8):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Diff_Luminosity = 3):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_X = 1):[Diff_Y = ?]
+|---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
+|---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Dirtiness *】
 |---->|---->|---->(Diff_Luminosity = 26):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 5):[Diff_X = ?]
+|---->|---->|---->|---->(Diff_X = 0):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 6):[Diff_X = ?]
 |---->|---->|---->|---->(Diff_X = 0):[Diff_Y = ?]
 |---->|---->|---->|---->|---->(Diff_Y = 1):[TypeOfSteel = ?]
 |---->|---->|---->|---->|---->|---->(TypeOfSteel = 0):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = Bumps *】
 |---->|---->|---->(Diff_Luminosity = 8):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 9):[Diff_Luminosity = ?]
 |---->|---->|---->(Diff_Luminosity = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_Luminosity = 4):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 1):【* CATEGORY = Other_Faults *】
+|---->|---->|---->|---->(Diff_Y = 2):【* CATEGORY = Dirtiness *】
+|---->|---->|---->(Diff_Luminosity = 5):【* CATEGORY = Other_Faults *】
 |---->|---->|---->(Diff_Luminosity = 7):【* CATEGORY = K_Scatch *】
 |---->|---->|---->(Diff_Luminosity = 9):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 40):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 41):【* CATEGORY = K_Scatch *】
 |---->|---->(Pixels_Areas = 42):【* CATEGORY = K_Scatch *】
-|---->|---->(Pixels_Areas = 21):[Diff_Luminosity = ?]
-|---->|---->|---->(Diff_Luminosity = 11):[Diff_X = ?]
-|---->|---->|---->|---->(Diff_X = 2):【* CATEGORY = Bumps *】
-|---->|---->|---->|---->(Diff_X = 3):【* CATEGORY = Other_Faults *】
-|---->|---->|---->(Diff_Luminosity = 13):【* CATEGORY = Bumps *】
-|---->|---->|---->(Diff_Luminosity = 15):【* CATEGORY = Pastry *】
-|---->|---->|---->(Diff_Luminosity = 4):【* CATEGORY = K_Scatch *】
-|---->|---->|---->(Diff_Luminosity = 6):【* CATEGORY = Other_Faults *】
+|---->|---->(Pixels_Areas = 21):[Diff_X = ?]
+|---->|---->|---->(Diff_X = 11):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 12):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 2):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 11):【* CATEGORY = Pastry *】
+|---->|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->(Diff_X = 3):[Diff_Y = ?]
+|---->|---->|---->|---->(Diff_Y = 5):【* CATEGORY = Bumps *】
+|---->|---->|---->|---->(Diff_Y = 7):【* CATEGORY = Other_Faults *】
+|---->|---->|---->(Diff_X = 5):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_X = 6):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_X = 7):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_X = 8):【* CATEGORY = K_Scatch *】
+|---->|---->|---->(Diff_X = 9):【* CATEGORY = Other_Faults *】
 |---->(Steel_Plate_Thickness = 85):【* CATEGORY = Bumps *】

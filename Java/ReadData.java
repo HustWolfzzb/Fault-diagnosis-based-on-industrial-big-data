@@ -6,9 +6,9 @@
 
  * Address  :   HUST
 
- * Version  :   4.0
+ * Version  :   5.0
 
- * 从数据库读取数据，并且从ReadData这个函数传出去！
+ * 从数据库读取数据，并且从ReadData这个函数传出去！5.0加了训练集和验证集的划分
  ********************* */
 
 
@@ -26,7 +26,7 @@ public class ReadData {
 
     private Object[] Name;
     protected Mysql_Connect mysql=new Mysql_Connect();
-
+    private int rate = 20;
     ReadData() throws IOException{
         File file = new File("/Users/zhangzhaobo/IdeaProjects/Graduation_Design/src/New_Data.txt");
         BufferedReader in = new BufferedReader(new FileReader(file));
@@ -36,7 +36,7 @@ public class ReadData {
         Name = line.split("\t\t");
     }
 
-    public String getSelectQuery(Object[] Name,String table,int id){
+    public static String getSelectQuery(Object[] Name,String table,int id){
         String select = "SELECT  ";
         for (int i=0;i<Name.length-1;++i){
             select += (Name[i]+",");
@@ -89,14 +89,18 @@ public class ReadData {
             ResultSet answer = statement.executeQuery(GETCOLUMN);
             if(answer.next())
                 columnCount  = answer.getInt(1);
-            DataTrain = new Object[columnCount/2][7];
-            for (int  i = 0;i<columnCount/2;++i) {
-                getDataQuery = getSelectQuery(Name,"steelplate",i*2);
-                ResultSet select_ok;
-                select_ok = statement.executeQuery(getDataQuery);
-                select_ok.next();
-                for (int j = 0; j<7;++j){
-                    DataTrain[i][j]=select_ok.getObject((String) Name[j]);
+            DataTrain = new Object[columnCount/rate*(rate-1)][7];
+            int count = 0;
+            for (int  i = 0;i<columnCount;++i) {
+                if(i%rate != 1) {
+                    getDataQuery = getSelectQuery(Name, "steelplate", i);
+                    ResultSet selectTrainOk;
+                    selectTrainOk = statement.executeQuery(getDataQuery);
+                    selectTrainOk.next();
+                    for (int j = 0; j < 7; ++j) {
+                        DataTrain[count][j] = selectTrainOk.getObject((String) Name[j]);
+                    }
+                    count++;
                 }
             }
             statement.close();
@@ -120,22 +124,22 @@ public class ReadData {
             ResultSet answer = statement.executeQuery(GETCOLUMN);
             if(answer.next())
                 columnCount  = answer.getInt(1);
-            DataTest = new Object[columnCount/2][7];
-            for (int  i = 0 ;i<columnCount/2-1;++i) {
-                String getDataQuery = getSelectQuery(Name,"steelplate",i*2+1);
-                ResultSet select_ok;
-                select_ok = statement.executeQuery(getDataQuery);
-                select_ok.next();
-                for (int j = 0; j<7;++j){
-                    DataTest[i][j]=select_ok.getObject((String) Name[j]);
+            DataTest = new Object[columnCount/rate][7];
+            for (int  i = 0 ;i<columnCount;++i) {
+                if(i%rate == 1) {
+                    String getDataQuery = getSelectQuery(Name, "steelplate", i);
+                    ResultSet selectTestOk;
+                    selectTestOk = statement.executeQuery(getDataQuery);
+                    selectTestOk.next();
+                    for (int j = 0; j < 7; ++j) {
+                        DataTest[i/rate][j] = selectTestOk.getObject((String) Name[j]);
+                    }
                 }
             }
             statement.close();
             mysql.Dis_Connect();
             return DataTest;
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
             e.printStackTrace();
         }
         return new Object[1][1];

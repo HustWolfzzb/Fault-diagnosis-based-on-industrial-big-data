@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.beans.IntrospectionException;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -78,7 +77,7 @@ class MyWin extends WindowAdapter{
     public void windowOpened(WindowEvent e) {
         // TODO Auto-generated method stub
         System.out.println("Now It is Working!");
-        JOptionPane.showMessageDialog(null,"Welcome To Here!\n【clear】: Clear the Screen!\n【test 】: Test your DATA!\n【next 】：The Next Line！\n【exit 】： Exit the System!","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Welcome To Here!\n【clear】: Clear the Screen!\n【test 】: Test your DATA!\n【autotest】：test all Test_Data\n【next 】：The Next Line！\n【exit 】： Exit the System!","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
   }
 }
 
@@ -113,21 +112,21 @@ public class MouseAndKeyEvent{
     public static int line=0;
     public Vector<String > TData = new Vector<String>();
     public static String Space = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-    private void AddLine(){
+    private void addLine(){
         if (line<=LINES.length/10)
             line++;
         else{
             line = 0;
         }
     }
-    public static void UpdateTEXT(MouseAndKeyEvent obj,String[] txt,Object tree1){
+    public static void updateTEXT(MouseAndKeyEvent obj,String[] txt,Object tree1){
         LINES = new String[txt.length];
         for (int i=0;i<txt.length;++i){
             obj.LINES[i]=txt[i];
         }
         obj.tree=tree1;
     }
-    public static void UpdateTData(MouseAndKeyEvent gui,String file) throws IOException{
+    public static void updateTData(MouseAndKeyEvent gui,String file) throws IOException{
         BufferedReader bufr=new BufferedReader(new FileReader(file));
         String line=null;
         while((line=bufr.readLine())!=null){
@@ -135,12 +134,12 @@ public class MouseAndKeyEvent{
         }
         bufr.close();
     }
-    public void UpdateDisplay(){
+    public void updateDisplay(){
         if(line<LINES.length/10) {
             for (int i = line * 10, j = 1; i < line * 10 + 10; i++) {
                 TEXT[j++] =Space+""+ LINES[i];
             }
-            AddLine();
+            addLine();
         }else{
             for(int i=1;i<LINES.length-(LINES.length/10)*10;++i){
                 TEXT[i] = Space+""+LINES[(LINES.length/10)*10+i];
@@ -161,7 +160,7 @@ public class MouseAndKeyEvent{
         jl10.setText(TEXT[9]);
         jl11.setText(TEXT[10]);
     }
-    private void DealCommand(String command){
+    private void dealCommand(String command){
         String[] Test_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness"};
         if (command.isEmpty()){
             System.out.println("呵呵哒~~~");
@@ -185,9 +184,9 @@ public class MouseAndKeyEvent{
             jl12.setText("");
         }
         else if(command.toLowerCase().equals("next")){
-            AddLine();
+            addLine();
             jl12.setText("");
-            UpdateDisplay();
+            updateDisplay();
         }
         else if(command.toLowerCase().equals("autotest")){
             if (TData.isEmpty()){
@@ -201,18 +200,33 @@ public class MouseAndKeyEvent{
                     res=TestData.TestData(tree, Test_Names,test,res);
                     if (res.contains(":")){
                         String Fault = res.substring(res.indexOf(":")+1);
-                        Fault = Fault.trim();
-                        String Fa = FaultMap.get(Fault);
-                        if(Fa.equals((String) test[test.length-1])){
-                            RightCount++;
-                        }
-                        else {
-                            FaultCount++;
-                        }
+                        //三套方案！************
+                        RightCount++;
+                        //三套方案！************
+                        //二套方案！************
+//                        Fault = Fault.trim();
+//                        if (Fault.equals("Other_Faults") && FaultMap.get(Fault).equals((String) test[test.length-1])){
+//                            RightCount++;
+//                        }
+//                        else {
+//                            RightCount++;
+//                        }
+                        //二套方案！************
+                        //一套方案！************
+//                        Fault = Fault.trim();
+//                        String Fa = FaultMap.get(Fault);
+//                        if(Fa.equals((String) test[test.length-1])){
+//                            RightCount++;
+//                        }
+//                        else {
+//                            FaultCount++;
+//                        }
+                        //一套方案！************
                     }
                     else {
                         FaultCount++;
                     }
+
                 }
                 System.out.println(RightCount+" "+FaultCount);
                 jl12.setText(Space+"准确率： "+((float)RightCount/(float)(RightCount+FaultCount)));
@@ -450,7 +464,7 @@ public class MouseAndKeyEvent{
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 System.out.println("Put Down the Button to Execute the Command!");
-                    DealCommand(ta.getText());
+                    dealCommand(ta.getText());
             }
         });
         but.addMouseListener(new MouseAdapter() {
@@ -470,7 +484,7 @@ public class MouseAndKeyEvent{
             public void keyPressed(KeyEvent e){
                 if(e.getKeyCode()==KeyEvent.VK_ENTER){
                     System.out.println("Put Down the Enter to Execute the Command!");
-                        DealCommand(ta.getText());
+                        dealCommand(ta.getText());
                 }
             }
         });
@@ -497,7 +511,7 @@ public class MouseAndKeyEvent{
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 System.out.println("Put Down the Button2 to Change the Data!");
-                UpdateDisplay();
+                updateDisplay();
             }
         });
         but2.addKeyListener(new KeyAdapter() {
@@ -505,7 +519,7 @@ public class MouseAndKeyEvent{
                 System.out.println(KeyEvent.getKeyText(e.getKeyCode())+" ******>>>> "+e.getKeyCode());
                 if(e.getKeyCode()==KeyEvent.VK_ENTER){
                     System.out.println("Put Down the Enter to Change the Data!");
-                    UpdateDisplay();
+                    updateDisplay();
                 }
             }
         });
