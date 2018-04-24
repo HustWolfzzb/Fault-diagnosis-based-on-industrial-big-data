@@ -124,7 +124,6 @@ public class ZZB_JCS{
         }
     }
 
-
     /* *********************
      * this is the function to choose the Best Test Attribute ID3 Algorithm
 
@@ -149,7 +148,6 @@ public class ZZB_JCS{
         for (int attrIndex = 0;attrIndex<attribute_Names.length;++attrIndex) {
             //统计样本总数的计数器
             int allCount = 0;
-
             //按照当前属性构建Map，这个Map的层级关系根据下面的层次划分：属性值[Key]->(分类[Key]->样本列表[Value]) [Value]
             // curSplits就是一个某一个在当前属性下某一种选择值 所对应的所有样本集！ 所有的Dv的集合是也？？待定！
             Map<Object,Map<Object,List<Sample>>> curSplits = new HashMap<Object,Map<Object,List<Sample>>>();
@@ -183,12 +181,12 @@ public class ZZB_JCS{
                                  ---属性值2，比如不是学生->分类两类 |
                                                                  --正分类-->  一个Map
       */
-
             /*
              * Set<Map.Entry<K,V>> entrySet​()
              * Returns:  A set view of the mappings contained in this map
              * Entry 这个数据类型大致等于C++中的pair，也就是数据打包的意思
              */
+
             for (Entry<Object,List<Sample>> entry : categoryToSamples.entrySet()) {
                 //先拿到数据的分类的名称，我们这儿就0，1
                 Object category = entry.getKey();
@@ -252,6 +250,7 @@ public class ZZB_JCS{
             }
         }
         //所以最终返回的就是一个信息熵之和  最小的属性的列表索引 + 最小的信息熵之和  + 最小的信息熵之和所对应的子树！
+//        System.out.println(attribute_Names[minIndex]);
         return  new Object[] {minIndex,minValue,minSplit};
     }
 
@@ -260,30 +259,30 @@ public class ZZB_JCS{
      * this is the function to output the Decision Tree to the Dashboard
      ********************* */
 
-    static void outputDecisionTree(FileWriter out,Object obj,int level, Object from) throws IOException {
+    static void outputDecisionTree(FileWriter out,Object obj, int level, Object from) throws IOException {
         //这个到后面决定输出多少个|----- 也就是说是决定层级的
         for (int i=0; i < level ;++i){
-//            System.out.print("|---->");
+            System.out.print("|---->");
             out.write("|---->");
         }
         // 所有子节点专用？除了根节点都要吧！
         if (from != null){
-//            System.out.printf("(%s):",from);
+            System.out.printf("(%s):",from);
             out.write("("+from+"):");
         }
         //大概是说，如果这个东西还有子节点，那就继续递归
         if (obj instanceof Tree){
             Tree tree = (Tree) obj;
             String attribute_Name = tree.getAttribute();
-//            System.out.printf("[%s = ?]\n",attribute_Name);
+            System.out.printf("[%s = ?]\n",attribute_Name);
             out.write("["+attribute_Name+" = ?]\n");
             for (Object attrValue : tree.getAttributeValues()){
                 Object child =tree.getChild(attrValue);
                 outputDecisionTree(out,child,level+1,attribute_Name + " = " + attrValue);
             }
         }else {
-//            System.out.printf("【* CATEGORY = %s *】\n", TestData.getFault((String) obj));
-            out.write("【* CATEGORY = "+TestData.getFault((String) obj)+" *】\n");
+            System.out.printf("【* CATEGORY = %s *】\n", TestData.getCategory(obj));
+            out.write("【* CATEGORY = "+TestData.getCategory(obj)+" *】\n");
         }
     }
 
@@ -317,6 +316,7 @@ public class ZZB_JCS{
         }
         //如果有属性清单的话，那么就选择测试所用的属性了。
         Object[] rst = ID3(categoryToSamples,attribute_Names);
+//        System.out.println(attribute_Names[(Integer)rst[0]]);
         //决策树的根节点选取，分支的属性为选取的测试属性
         Tree tree = new Tree(attribute_Names[(Integer)rst[0]]);
         //已用过的测试属性不能再次被选择为测试属性
@@ -342,47 +342,46 @@ public class ZZB_JCS{
 
     public static  void main(String[] args) throws Exception{
         long startTime=System.currentTimeMillis();   //获取开始时间
-//        String[] Test_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness"};
-//        String[] attribute_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness","Fault"};
-//        //读取样本集
-//        Map<Object,List<Sample>> samples = readSample(attribute_Names);
-//        //生成决策树
-//        Object decisionTree = generateDecisionTree(samples,Test_Names);
-//        Object[] test = new Object[] {"0","2","11","6","0","200"};
-//        //输出决策树
-//        File file = new File("/Users/zhangzhaobo/Documents/Graduation-Design/Data/GUIDATA.txt");
-//        FileWriter out = new FileWriter(file);
-//        outputDecisionTree(out,decisionTree,0,null);
-//        out.close();
-//        MouseAndKeyEvent gui = new MouseAndKeyEvent();
-//        BufferedReader in = new BufferedReader(new FileReader(file));
-//        int linecount = 0;
-//        while(in.readLine()!=null){
-//            ++linecount;
-//        }
-//        in.close();
-//        System.out.println(linecount);
-//        in = new BufferedReader(new FileReader(file));
-//        String[] LINES= new String[linecount];
-//        for (int i=0;i<linecount;++i){
-//            LINES[i]=in.readLine();
-//        }
-//        in.close();
-//        FileWriter out1 = new FileWriter("DataToTest.txt");
-//        ReadData data = new ReadData();
-//        Object[][] DataToTest =  data.readTestData();
-//        for (int i=0;i<DataToTest.length;++i){
-//            for (int j=0;j<DataToTest[i].length;++j){
-//                out1.write(DataToTest[i][j] + " ");
-//            }
-//            out1.write("\n");
-//        }
-//        out1.close();
-//        MouseAndKeyEvent.updateTEXT(gui,LINES,decisionTree);
+        String[] attribute = new String[] {"Sensor1","Sensor2","Sensor3", "Sensor4", "HZ"};
+        String[] attribute_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4","HZ", "category"};
+        //读取样本集
+        Map<Object,List<Sample>> samples = readSample(attribute_Names);
+        //生成决策树
+        Object decisionTree = generateDecisionTree(samples,attribute);
+        //输出决策树
+        File file = new File("GUIDATA.txt");
+        FileWriter out = new FileWriter(file);
+        outputDecisionTree(out,decisionTree,0,null);
+        out.close();
+        MouseAndKeyEvent gui = new MouseAndKeyEvent();
+        BufferedReader in = new BufferedReader(new FileReader(file));
+        int linecount = 0;
+        while(in.readLine()!=null){
+            ++linecount;
+        }
+        in.close();
+        System.out.println(linecount);
+        in = new BufferedReader(new FileReader(file));
+        String[] LINES= new String[linecount];
+        for (int i=0;i<linecount;++i){
+            LINES[i]=in.readLine();
+        }
+        in.close();
+        FileWriter out1 = new FileWriter("DataToTest.txt");
+        ReadData data = new ReadData();
+        Object[][] DataToTest =  data.readTestData();
+        for (int i=0;i<DataToTest.length;++i){
+            for (int j=0;j<DataToTest[i].length;++j){
+                out1.write(DataToTest[i][j] + " ");
+            }
+            out1.write("\n");
+        }
+        out1.close();
+        MouseAndKeyEvent.updateTEXT(gui,LINES,decisionTree);
 ////        *****原代码有点问题！应该是给定一个没有分类的属性列表去给他！而不带有分类的属性列表，这样会把分类作为一个属性的！*****
 ////        String line="";
 ////        TestData.TestData(decisionTree, Test_Names,test,line);
-        ZZB_SVM.main();
+//        ZZB_SVM.main();
         long endTime=System.currentTimeMillis(); //获取结束时间
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
     }

@@ -5,9 +5,9 @@
 
  * Address  :   HUST
 
- * Version  :   1.5
+ * Version  :   2.0
 
- * 输入测试数据得到决策树的预测结果
+ * 输入测试数据得到故障模型的预测结果
 
  * @param decisionTree 决策树
 
@@ -17,9 +17,11 @@
  */
 
 public class TestData{
-    public static String getFault(String number){
-        String[] Fault = new String[]{"Pastry","Z_Scratch","K_Scatch","Stains","Dirtiness","Bumps","Other_Faults"};
-        return Fault[Integer.valueOf(number)];
+    public static String getCategory(Object number){
+        if ((Float)number == 0){
+            return "0";
+        }
+        else return "1";
     }
 
     public static String  TestData(Object obj, Object[] Attr_Name, Object[] TestData,String line) {
@@ -28,19 +30,19 @@ public class TestData{
             String attribute_Name = tree.getAttribute();
             Object[] Attr_Not_Used = new Object[Attr_Name.length-1];
             Object[] Data_Not_Used = new Object[Attr_Name.length-1];
-            Object testvalue = TestData[0];
+            Float testvalue = Float.parseFloat((String) TestData[0]);
             for (int i=0,j=0;i<Attr_Name.length ;++i ) {
                 if ( attribute_Name != Attr_Name[i]  ) {
                     Data_Not_Used[j] = TestData[i];
                     Attr_Not_Used[j++] = Attr_Name[i];
                 }
                 else {
-                    testvalue = TestData[i];
+                    testvalue = Float.parseFloat((String) TestData[i]);
                 }
             }
             boolean flag=false;
             for (Object attrValue : tree.getAttributeValues()){
-                if (((String)testvalue).equals((String) attrValue)) {
+                if ((testvalue - (Float) attrValue) == 0) {
                     Object child = tree.getChild(attrValue);
                     flag=true;
                     line=TestData(child,Attr_Not_Used,Data_Not_Used,line);
@@ -51,8 +53,8 @@ public class TestData{
                 System.out.println("Sorry, We Don't Find the Same Data, Maybe it is Good! Congratulation!");
             }
         }else {
-            line="The Fault of this Data is:"+getFault((String )obj);
-            System.out.println("\n\nThe Fault of this Data is:"+getFault((String )obj));
+            line="The Category of this Data is:"+getCategory(obj);
+            System.out.println("\n\nThe Category of this Data is:"+getCategory(obj));
         }
         return line;
     }

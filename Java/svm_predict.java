@@ -27,7 +27,7 @@ class svm_predict{
 		return Integer.parseInt(s);
 	}
 
-	private static void predict(BufferedReader input, DataOutputStream output, svm_model model, int predict_probability) throws IOException {
+	private static float predict(BufferedReader input, DataOutputStream output, svm_model model, int predict_probability) throws IOException {
 		int correct = 0;
 		int total = 0;
 		double error = 0;
@@ -101,6 +101,7 @@ class svm_predict{
 		else
 			svm_predict.info("Accuracy = "+(double)correct/total*100+
 				 "% ("+correct+"/"+total+") (classification)\n");
+		return (float)correct/total*100;
 	}
 
 	private static void exit_with_help() {
@@ -111,10 +112,10 @@ class svm_predict{
 		System.exit(1);
 	}
 
-	public static void main(String argv[]) throws IOException {
+	public static float main(String argv[]) throws IOException {
 		int i, predict_probability=0;
         	svm_print_string = svm_print_stdout;
-
+		float acc = 0;
 		// parse options
 		for(i=0;i<argv.length;i++) {
 			if(argv[i].charAt(0) != '-') break;
@@ -153,7 +154,7 @@ class svm_predict{
 					svm_predict.info("Model supports probability estimates, but disabled in prediction.\n");
 				}
 			}
-			predict(input,output,model,predict_probability);
+			acc = predict(input,output,model,predict_probability);
 			input.close();
 			output.close();
 		} 
@@ -163,5 +164,6 @@ class svm_predict{
 		catch(ArrayIndexOutOfBoundsException e) {
 			exit_with_help();
 		}
+		return acc;
 	}
 }

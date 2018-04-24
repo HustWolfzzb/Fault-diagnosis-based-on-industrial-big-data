@@ -2,59 +2,52 @@ import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.NumberFormat;
 
 public class SVMReadData {
+    private Parameter par = new Parameter();
     private Object[] Name;
     protected Mysql_Connect mysql=new Mysql_Connect();
     private int rate = 20;
     private static int atoi(String s) {
         return Integer.parseInt(s);
     }
-    SVMReadData() throws IOException {
-        File file = new File("/Users/zhangzhaobo/IdeaProjects/Graduation_Design/src/New_Data.txt");
-        BufferedReader in = new BufferedReader(new FileReader(file));
-        String line;  //一行数据作为属性名字
-        line = in.readLine();
-        in.close();
-        Name = line.split("\t\t");
+    SVMReadData() {
+        Name = new Object[]{"Sensor1","Sensor2","Sensor3","Sensor4","HZ","category"};
     }
 
     public String readTrainData() {
-        int columnCount=0;
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
-            String GETCOLUMN="select max(id) from steelplate";
-            String getDataQuery="";
+            NumberFormat nf = NumberFormat.getNumberInstance();
+            nf.setMaximumFractionDigits(0);
             FileWriter svmTrainData = new FileWriter("svmTrainData.txt");
-            ResultSet answer = statement.executeQuery(GETCOLUMN);
-            if(answer.next())
-                columnCount  = answer.getInt(1);
-            Object[][] DataTrain = new Object[columnCount/rate*(rate-1)][7];
-            int count = 0;
+            int columnCount = par.getTrainNum();
+            Object[][] DataTrain;
+            DataTrain = new Object[columnCount][Name.length];
             for (int  i = 0;i<columnCount;++i) {
-                if(i%rate != 1) {
-                    getDataQuery = ReadData.getSelectQuery(Name, "steelplate", i);
-                    ResultSet selectTrainOk;
-                    selectTrainOk = statement.executeQuery(getDataQuery);
-                    selectTrainOk.next();
-                    for (int j = 0; j < 7; ++j) {
-                        DataTrain[count][j] = selectTrainOk.getObject((String) Name[j]);
-                    }
-                    if(atoi((String) DataTrain[count][DataTrain[0].length-1])<6)
-                        svmTrainData.write("1 ");
-                    else
-                        svmTrainData.write("0 ");
-                    for (int j = 0; j<DataTrain[0].length-1; ++j ){
-                        svmTrainData.write(j+":"+DataTrain[count][j]+" ");
-                    }
-                    svmTrainData.write("\n");
-                    count++;
+                String getDataQuery = ReadData.getSelectQuery(Name,"gear",i*par.getTrainDistance());
+                ResultSet select_ok;
+                select_ok = statement.executeQuery(getDataQuery);
+                select_ok.next();
+                for (int j = 0; j < Name.length; ++j){
+//                    DataTrain[i][j]=Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
+                    DataTrain[i][j]=select_ok.getFloat((String) Name[j]);
+
                 }
+                if((Float)DataTrain[i][DataTrain[0].length-1] == 1.0)
+                    svmTrainData.write("1 ");
+                else
+                    svmTrainData.write("0 ");
+                for (int j = 0; j<DataTrain[0].length-1; ++j ){
+                    svmTrainData.write(j+":"+DataTrain[i][j]+" ");
+                }
+                svmTrainData.write("\n");
             }
-            svmTrainData.close();
             statement.close();
             mysql.Dis_Connect();
+            svmTrainData.close();
             return "svmTrainData.txt";
         } catch (SQLException e) {
             e.printStackTrace();
@@ -65,45 +58,40 @@ public class SVMReadData {
     }
 
     public String readTestData() {
-        int columnCount=0;
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
-            String GETCOLUMN="select max(id) from steelplate";
+            NumberFormat nf = NumberFormat.getNumberInstance();
+            nf.setMaximumFractionDigits(0);
+            FileWriter svmTestData = new FileWriter("svmTestData.txt");
+            int columnCount = par.getTestNum();
             Object[][] DataTest;
-            ResultSet answer = statement.executeQuery(GETCOLUMN);
-            if(answer.next())
-                columnCount  = answer.getInt(1);
-            DataTest = new Object[columnCount/rate][7];
-            try {
-                FileWriter svmTestData = new FileWriter("svmTestData.txt");
-                for (int i = 0; i < columnCount; ++i) {
-                    if (i % rate == 1) {
-                        String getDataQuery = ReadData.getSelectQuery(Name, "steelplate", i);
-                        ResultSet selectTestOk;
-                        selectTestOk = statement.executeQuery(getDataQuery);
-                        selectTestOk.next();
-                        for (int j = 0; j < 7; ++j) {
-                            DataTest[i / rate][j] = selectTestOk.getObject((String) Name[j]);
-                        }
-                        if(atoi((String) DataTest[i / rate][DataTest[0].length-1])<6)
-                            svmTestData.write("1 ");
-                        else
-                            svmTestData.write("0 ");
-                        for (int j = 0; j < DataTest[0].length - 1; ++j) {
-                            svmTestData.write(j + ":" + DataTest[i / rate][j] + " ");
-                        }
-                        svmTestData.write("\n");
-                    }
+            DataTest = new Object[columnCount][Name.length];
+            for (int  i = 0;i<columnCount;++i) {
+                String getDataQuery = ReadData.getSelectQuery(Name,"gear",i*par.getTestDistance()+1);
+                ResultSet select_ok;
+                select_ok = statement.executeQuery(getDataQuery);
+                select_ok.next();
+                for (int j = 0; j < Name.length; ++j){
+//                    DataTest[i][j]=Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
+                    DataTest[i][j]=select_ok.getFloat((String) Name[j]);
                 }
-                svmTestData.close();
-            }catch (IOException e){
-                e.printStackTrace();
+                if((Float)DataTest[i][DataTest[0].length-1] == 1)
+                    svmTestData.write("1 ");
+                else
+                    svmTestData.write("0 ");
+                for (int j = 0; j<DataTest[0].length-1; ++j ){
+                    svmTestData.write(j+":"+DataTest[i][j]+" ");
+                }
+                svmTestData.write("\n");
             }
             statement.close();
             mysql.Dis_Connect();
+            svmTestData.close();
             return "svmTestData.txt";
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return "svmTestData.txt";

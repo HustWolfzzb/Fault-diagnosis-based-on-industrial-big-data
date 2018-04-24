@@ -17,23 +17,18 @@
 * 其实我觉得如果可以每一次读一条数据，然后处理一条会比较好
 * 但是算了，数据量不大的话，这个样子也不会增加太多时间的！
 ******************* */
-import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.NumberFormat;
 
 public class ReadData {
-
+    private Parameter par = new Parameter();
     private Object[] Name;
-    protected Mysql_Connect mysql=new Mysql_Connect();
-    private int rate = 20;
-    ReadData() throws IOException{
-        File file = new File("/Users/zhangzhaobo/IdeaProjects/Graduation_Design/src/New_Data.txt");
-        BufferedReader in = new BufferedReader(new FileReader(file));
-        String line;  //一行数据作为属性名字
-        line = in.readLine();
-        in.close();
-        Name = line.split("\t\t");
+    private Mysql_Connect mysql=new Mysql_Connect();
+
+    ReadData() {
+        Name = new Object[]{"Sensor1","Sensor2","Sensor3","Sensor4","HZ", "category"};
     }
 
     public static String getSelectQuery(Object[] Name,String table,int id){
@@ -46,111 +41,59 @@ public class ReadData {
         return select;
     }
 
-    public Object[][] readFromDatabase() {
-        int columnCount=0;
+    public Object[][] readTrainData() {
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
-            String GETCOLUMN="select max(id) from steelplate";
-            String getDataQuery="";
-            Object[][] DataToOut;
-            ResultSet answer = statement.executeQuery(GETCOLUMN);
-            if(answer.next())
-                columnCount  = answer.getInt(1);
-            DataToOut = new Object[columnCount][7];
+            NumberFormat nf = NumberFormat.getNumberInstance();
+            nf.setMaximumFractionDigits(0);
+            int columnCount = par.getTrainNum();
+            Object[][] dataToTrain;
+            dataToTrain = new Object[columnCount][Name.length];
             for (int  i = 0;i<columnCount;++i) {
-                getDataQuery = getSelectQuery(Name,"steelplate",i);
+                String getDataQuery = getSelectQuery(Name,"gear",i*par.getTrainDistance());
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();
-                for (int j = 0; j<7;++j){
-                    DataToOut[i][j]=select_ok.getObject((String) Name[j]);
+                for (int j = 0; j < Name.length; ++j){
+                    dataToTrain[i][j]=Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
                 }
             }
             statement.close();
             mysql.Dis_Connect();
-            return DataToOut;
+            return dataToTrain;
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return new Object[1][1];
-    }
-
-    public Object[][] readTrainData() {
-        int columnCount=0;
-        try {
-            mysql.Connect();
-            Statement statement=mysql.getStatement();
-            String GETCOLUMN="select max(id) from steelplate";
-            String getDataQuery="";
-            Object[][] DataTrain;
-            ResultSet answer = statement.executeQuery(GETCOLUMN);
-            if(answer.next())
-                columnCount  = answer.getInt(1);
-            DataTrain = new Object[columnCount/rate*(rate-1)][7];
-            int count = 0;
-            for (int  i = 0;i<columnCount;++i) {
-                if(i%rate != 1) {
-                    getDataQuery = getSelectQuery(Name, "steelplate", i);
-                    ResultSet selectTrainOk;
-                    selectTrainOk = statement.executeQuery(getDataQuery);
-                    selectTrainOk.next();
-                    for (int j = 0; j < 7; ++j) {
-                        DataTrain[count][j] = selectTrainOk.getObject((String) Name[j]);
-                    }
-                    count++;
-                }
-            }
-            statement.close();
-            mysql.Dis_Connect();
-            return DataTrain;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
             e.printStackTrace();
         }
         return new Object[1][1];
     }
 
     public Object[][] readTestData() {
-        int columnCount=0;
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
-            String GETCOLUMN="select max(id) from steelplate";
-            Object[][] DataTest;
-            ResultSet answer = statement.executeQuery(GETCOLUMN);
-            if(answer.next())
-                columnCount  = answer.getInt(1);
-            DataTest = new Object[columnCount/rate][7];
-            for (int  i = 0 ;i<columnCount;++i) {
-                if(i%rate == 1) {
-                    String getDataQuery = getSelectQuery(Name, "steelplate", i);
-                    ResultSet selectTestOk;
-                    selectTestOk = statement.executeQuery(getDataQuery);
-                    selectTestOk.next();
-                    for (int j = 0; j < 7; ++j) {
-                        DataTest[i/rate][j] = selectTestOk.getObject((String) Name[j]);
-                    }
+            NumberFormat nf = NumberFormat.getNumberInstance();
+            nf.setMaximumFractionDigits(0);
+            int columnCount = par.getTestNum();
+            Object[][] dataToTest;
+            dataToTest = new Object[columnCount][Name.length];
+            for (int  i = 0;i<columnCount;++i) {
+                String getDataQuery = getSelectQuery(Name,"gear",i*par.getTestDistance()+1);
+                ResultSet select_ok;
+                select_ok = statement.executeQuery(getDataQuery);
+                select_ok.next();
+                for (int j = 0; j < Name.length; ++j){
+                    dataToTest[i][j]=Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
                 }
             }
             statement.close();
             mysql.Dis_Connect();
-            return DataTest;
+            return dataToTest;
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return new Object[1][1];
-    }
-
-    public Object[][] ReadData() throws IOException {
-        // ***************** 数据库读写式 **************
-//        WriteData write = new WriteData();
-//        write.WriteData();
-        Object[][] DataToOut = readFromDatabase();
-        return  DataToOut;
-        // ***************** 数据库读写式 **************
     }
 }

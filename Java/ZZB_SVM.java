@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 public class ZZB_SVM {
-    public static void main() throws IOException {
+    public static Float main() throws IOException {
         SVMReadData sr = new SVMReadData();
         String trainFileName = sr.readTrainData();
         String testFileName = sr.readTestData();
@@ -16,6 +16,7 @@ public class ZZB_SVM {
         svm_train.main(arg); //训练
         System.out.println("用时:"+(System.currentTimeMillis()-start));
         //预测
-        svm_predict.main(parg);
+        float x = svm_predict.main(parg);
+        return x;
     }
 }

@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
@@ -82,9 +83,8 @@ class MyWin extends WindowAdapter{
 }
 
 public class MouseAndKeyEvent{
-    public int RightCount = 0;
-    public int FaultCount = 0;
-    public  Map<String,String> FaultMap = new HashMap<String,String>();
+    public float RightCount = 0;
+    public float FaultCount = 0;
     private Object tree;
     private Frame f;
     private int nextTimes=0;
@@ -100,13 +100,6 @@ public class MouseAndKeyEvent{
     private String[] TEXT =  new String[11];
     private static  String[] LINES;
     public MouseAndKeyEvent() {
-        FaultMap.put("Pastry","0");
-        FaultMap.put("Z_Scratch","1");
-        FaultMap.put("K_Scatch","2");
-        FaultMap.put("Stains","3");
-        FaultMap.put("Dirtiness","4");
-        FaultMap.put("Bumps","5");
-        FaultMap.put("Other_Faults","6");
         init();
     }
     public static int line=0;
@@ -126,14 +119,7 @@ public class MouseAndKeyEvent{
         }
         obj.tree=tree1;
     }
-    public static void updateTData(MouseAndKeyEvent gui,String file) throws IOException{
-        BufferedReader bufr=new BufferedReader(new FileReader(file));
-        String line=null;
-        while((line=bufr.readLine())!=null){
-            gui.TData.add(line);
-        }
-        bufr.close();
-    }
+
     public void updateDisplay(){
         if(line<LINES.length/10) {
             for (int i = line * 10, j = 1; i < line * 10 + 10; i++) {
@@ -161,7 +147,7 @@ public class MouseAndKeyEvent{
         jl11.setText(TEXT[10]);
     }
     private void dealCommand(String command){
-        String[] Test_Names = new String[] {"Diff_X","Diff_Y","Pixels_Areas","Diff_Luminosity","TypeOfSteel","Steel_Plate_Thickness"};
+        String[] Test_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4","HZ"};
         if (command.isEmpty()){
             System.out.println("呵呵哒~~~");
         }
@@ -188,9 +174,23 @@ public class MouseAndKeyEvent{
             jl12.setText("");
             updateDisplay();
         }
+        else if (command.toLowerCase().equals("autoload")){
+            file=new File("DataToTest.txt");
+            try {
+                BufferedReader tdata=new BufferedReader(new FileReader(file));
+                String line=null;
+                while((line=tdata.readLine())!=null){
+                    TData.add(line);
+                }
+                tdata.close();
+                jl12.setText(Space+"Auto Load Done! Now you can test data to check the model!");
+            } catch (IOException e2) {
+                System.out.println(e2);
+            }
+        }
         else if(command.toLowerCase().equals("autotest")){
             if (TData.isEmpty()){
-                jl12.setText(Space+"Please Open the Test File to load the Data!");
+                jl12.setText(Space+"Please Open the Test File to load the Data! Or input autoload to load the data！");
                 return;
             }
             else {
@@ -228,8 +228,16 @@ public class MouseAndKeyEvent{
                     }
 
                 }
+                NumberFormat nf = NumberFormat.getNumberInstance();
+                nf.setMaximumFractionDigits(1);
                 System.out.println(RightCount+" "+FaultCount);
-                jl12.setText(Space+"准确率： "+((float)RightCount/(float)(RightCount+FaultCount)));
+                try{
+                    float acc1 = RightCount/(RightCount + FaultCount)*100;
+                    jl12.setText(Space+Space+"Please Wait For Calculate!");
+                    jl12.setText(Space+"决策树(Descision Tree) Model 准确率： "+Float.parseFloat(nf.format(acc1)) + "%     支持向量机(SVM) Model 准确率为：  " + Float.parseFloat(nf.format(ZZB_SVM.main()))+"%");
+                }catch (IOException e){
+                    System.out.println("这他么都能给报错？我不信！!");
+                }
                 RightCount = 0;
                 FaultCount = 0;
             }
@@ -240,7 +248,7 @@ public class MouseAndKeyEvent{
                 System.out.println("Test Ready NOW!");
                 Object[] test;
                 if(TData.isEmpty()) {
-                    test = new Object[]{"0", "2", "11", "6", "0", "200"};
+                    test = new Object[]{"-3.0", "2.0", "2.0", "1.0", "0.0", "0.0" };
                 }
                 else {
                     if (nextTimes<TData.size()) {
