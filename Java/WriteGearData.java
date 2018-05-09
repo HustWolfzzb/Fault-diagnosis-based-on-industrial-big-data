@@ -1,3 +1,14 @@
+/* *********************
+ * Author   :   HustWolf --- 张照博
+
+ * Time     :   2018.1-2018.5
+
+ * Address  :   HUST
+
+ * Version  :   1.0
+
+ * 将两百万条记录清洗后写入到数据库中
+ ********************* */
 import java.io.*;
 import java.text.NumberFormat;
 import java.io.IOException;

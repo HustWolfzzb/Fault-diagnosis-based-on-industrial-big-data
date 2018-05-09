@@ -23,21 +23,21 @@ import java.sql.Statement;
 import java.text.NumberFormat;
 
 public class ReadData {
-    private Parameter par = new Parameter();
     private Object[] Name;
     private Mysql_Connect mysql=new Mysql_Connect();
 
     ReadData() {
-        Name = new Object[]{"Sensor1","Sensor2","Sensor3","Sensor4","HZ", "category"};
+        Name = new Object[]{"Sensor1","Sensor2","Sensor3","Sensor4", "Load", "category"};
     }
 
     public static String getSelectQuery(Object[] Name,String table,int id){
         String select = "SELECT  ";
         for (int i=0;i<Name.length-1;++i){
-            select += (Name[i]+",");
+            select += ("`"+(Name[i]+"`"+","));
         }
-        select += Name[Name.length-1];
+        select += ("`"+Name[Name.length-1]+"`");
         select += " from " + table + " where id = "+id;
+//        System.out.println(select);
         return select;
     }
 
@@ -47,11 +47,11 @@ public class ReadData {
             Statement statement=mysql.getStatement();
             NumberFormat nf = NumberFormat.getNumberInstance();
             nf.setMaximumFractionDigits(0);
-            int columnCount = par.getTrainNum();
+            int columnCount = Parameter.getTrainNum();
             Object[][] dataToTrain;
             dataToTrain = new Object[columnCount][Name.length];
             for (int  i = 0;i<columnCount;++i) {
-                String getDataQuery = getSelectQuery(Name,"gear",i*par.getTrainDistance());
+                String getDataQuery = getSelectQuery(Name,"gear",i*Parameter.getTrainDistance()+1);
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();
@@ -74,11 +74,11 @@ public class ReadData {
             Statement statement=mysql.getStatement();
             NumberFormat nf = NumberFormat.getNumberInstance();
             nf.setMaximumFractionDigits(0);
-            int columnCount = par.getTestNum();
+            int columnCount = Parameter.getTestNum();
             Object[][] dataToTest;
             dataToTest = new Object[columnCount][Name.length];
             for (int  i = 0;i<columnCount;++i) {
-                String getDataQuery = getSelectQuery(Name,"gear",i*par.getTestDistance()+1);
+                String getDataQuery = getSelectQuery(Name,"gear",i*Parameter.getTestDistance());
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();

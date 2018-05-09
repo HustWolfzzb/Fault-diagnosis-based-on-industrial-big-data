@@ -1,4 +1,3 @@
-
 /* *********************
  * Author   :   HustWolf --- 张照博
 
@@ -7,8 +6,9 @@
  * Address  :   HUST
 
  * Version  :   1.5
- ********************* */
 
+ * 决策树主体，从读取到生成
+ ********************* */
 
 import java.io.*;
 import java.util.HashMap;
@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import libsvm.*;
 
 //最外层类名
 public class ZZB_JCS{
@@ -295,11 +294,10 @@ public class ZZB_JCS{
      * the most important part I think!
      ********************* */
     static Object generateDecisionTree(Map<Object,List<Sample>> categoryToSamples,String[] attribute_Names){
-        //如果只有一个样本，那么该样本所属分类作为新样本的分类
+        //如果只有一个分类，那么该样本所属分类作为新样本的分类
         if(categoryToSamples.size() == 1) {
             return categoryToSamples.keySet().iterator().next();
         }
-
         //如果没有提供决策的属性（也就是没有给你属性名字清单），那么样本集中具有最多样本的分类作为新样本的分类，也就是投票选举出新的分类
         if (attribute_Names.length == 0) {
             int max = 0;
@@ -326,7 +324,6 @@ public class ZZB_JCS{
                 Attr_Not_Used[j++] = attribute_Names[i];
             }
         }
-
         //根据分支的属性生成新的分支
         @SuppressWarnings("unchecked")
         Map<Object,Map<Object,List<Sample>>> splits = (Map<Object,Map<Object,List<Sample>>>) rst[2];
@@ -340,10 +337,41 @@ public class ZZB_JCS{
         return tree;
     }
 
-    public static  void main(String[] args) throws Exception{
+    public static void readTXT(GUI gui,Object decisionTree){
+        try {
+            File file = new File("GUIDATA.txt");
+            BufferedReader in = new BufferedReader(new FileReader(file));
+            int linecount = 0;
+            while (in.readLine() != null) {
+                ++linecount;
+            }
+            in.close();
+            System.out.println(linecount);
+            in = new BufferedReader(new FileReader(file));
+            String[] LINES = new String[linecount];
+            for (int i = 0; i < linecount; ++i) {
+                LINES[i] = in.readLine();
+            }
+            in.close();
+            FileWriter out1 = new FileWriter("DataToTest.txt");
+            ReadData data = new ReadData();
+            Object[][] DataToTest = data.readTestData();
+            for (int i = 0; i < DataToTest.length; ++i) {
+                for (int j = 0; j < DataToTest[i].length; ++j) {
+                    out1.write(DataToTest[i][j] + " ");
+                }
+                out1.write("\n");
+            }
+            out1.close();
+            GUI.updateTEXT(gui, LINES, decisionTree);
+        }catch (IOException e){
+            System.out.println("Nothing! Continue!");
+        }
+    }
+    public static void main(String[] args) throws Exception{
         long startTime=System.currentTimeMillis();   //获取开始时间
-        String[] attribute = new String[] {"Sensor1","Sensor2","Sensor3", "Sensor4", "HZ"};
-        String[] attribute_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4","HZ", "category"};
+        String[] attribute = new String[] {"Sensor1","Sensor2","Sensor3", "Sensor4", "Load"};
+        String[] attribute_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4","Load", "category"};
         //读取样本集
         Map<Object,List<Sample>> samples = readSample(attribute_Names);
         //生成决策树
@@ -353,31 +381,8 @@ public class ZZB_JCS{
         FileWriter out = new FileWriter(file);
         outputDecisionTree(out,decisionTree,0,null);
         out.close();
-        MouseAndKeyEvent gui = new MouseAndKeyEvent();
-        BufferedReader in = new BufferedReader(new FileReader(file));
-        int linecount = 0;
-        while(in.readLine()!=null){
-            ++linecount;
-        }
-        in.close();
-        System.out.println(linecount);
-        in = new BufferedReader(new FileReader(file));
-        String[] LINES= new String[linecount];
-        for (int i=0;i<linecount;++i){
-            LINES[i]=in.readLine();
-        }
-        in.close();
-        FileWriter out1 = new FileWriter("DataToTest.txt");
-        ReadData data = new ReadData();
-        Object[][] DataToTest =  data.readTestData();
-        for (int i=0;i<DataToTest.length;++i){
-            for (int j=0;j<DataToTest[i].length;++j){
-                out1.write(DataToTest[i][j] + " ");
-            }
-            out1.write("\n");
-        }
-        out1.close();
-        MouseAndKeyEvent.updateTEXT(gui,LINES,decisionTree);
+        GUI gui = new GUI();
+        readTXT(gui,decisionTree);
 ////        *****原代码有点问题！应该是给定一个没有分类的属性列表去给他！而不带有分类的属性列表，这样会把分类作为一个属性的！*****
 ////        String line="";
 ////        TestData.TestData(decisionTree, Test_Names,test,line);

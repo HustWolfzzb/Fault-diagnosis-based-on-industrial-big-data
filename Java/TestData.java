@@ -5,7 +5,7 @@
 
  * Address  :   HUST
 
- * Version  :   2.0
+ * Version  :   2.5
 
  * 输入测试数据得到故障模型的预测结果
 

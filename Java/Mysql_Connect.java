@@ -1,3 +1,15 @@
+/* *********************
+ * Author   :   HustWolf --- 张照博
+
+ * Time     :   2018.1-2018.5
+
+ * Address  :   HUST
+
+ * Version  :   1.0
+
+ * 封装数据库连接，会话，断开三个功能
+ ********************* */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -36,7 +48,7 @@ public class Mysql_Connect {
             conn = DriverManager.getConnection(url, user, password);
 
             if (!conn.isClosed()){
-
+                System.out.println("Connect Success!");
             }
             else {
                 System.out.println("\n\nFailed to connect to the Database!");

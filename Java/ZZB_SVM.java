@@ -5,18 +5,16 @@ public class ZZB_SVM {
         SVMReadData sr = new SVMReadData();
         String trainFileName = sr.readTrainData();
         String testFileName = sr.readTestData();
-        String[] arg = { trainFileName, //训练集
-                "model.txt" }; // 存放SVM训练模型
-
-        String[] parg = { testFileName, //测试数据
-                "model.txt", // 调用训练模型
-                "predict.txt" }; //预测结果
-        System.out.println("........SVM运行开始..........");
+        //训练使用的数据以及训练得出生成的模型文件名。
+        String[] trainFile = { trainFileName, "model.txt" };
+        //测试数据文件，模型文件，结果存放文件
+        String[] predictFile = { testFileName, "model.txt","predict.txt" };
+        System.out.println("........SVM Start..........");
         long start=System.currentTimeMillis();
-        svm_train.main(arg); //训练
-        System.out.println("用时:"+(System.currentTimeMillis()-start));
+        svm_train.main(trainFile); //训练
+        System.out.println("Usage of Time : "+(System.currentTimeMillis()-start));
         //预测
-        float x = svm_predict.main(parg);
+        float x = svm_predict.main(predictFile);
         return x;
     }
 }
