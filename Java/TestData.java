@@ -30,31 +30,31 @@ public class TestData{
             String attribute_Name = tree.getAttribute();
             Object[] Attr_Not_Used = new Object[Attr_Name.length-1];
             Object[] Data_Not_Used = new Object[Attr_Name.length-1];
-            Float testvalue = Float.parseFloat((String) TestData[0]);
+            Object testvalue = TestData[0];
             for (int i=0,j=0;i<Attr_Name.length ;++i ) {
                 if ( attribute_Name != Attr_Name[i]  ) {
                     Data_Not_Used[j] = TestData[i];
                     Attr_Not_Used[j++] = Attr_Name[i];
                 }
                 else {
-                    testvalue = Float.parseFloat((String) TestData[i]);
+                    testvalue = TestData[i];
                 }
             }
             boolean flag=false;
             for (Object attrValue : tree.getAttributeValues()){
-                if ((testvalue - (Float) attrValue) == 0) {
+                if ((testvalue.equals(attrValue))) {
                     Object child = tree.getChild(attrValue);
                     flag=true;
                     line=TestData(child,Attr_Not_Used,Data_Not_Used,line);
                 }
             }
             if (!flag){
-                line="Sorry, We Don't Find the Same Data, Maybe it is Good! Congratulation!";
-                System.out.println("Sorry, We Don't Find the Same Data, Maybe it is Good! Congratulation!");
+                line="Sorry, we don't find this data, maybe it's OK!";
+                System.out.println("Sorry, we don't find this data, maybe it's OK!");
             }
         }else {
             line="The Category of this Data is:"+getCategory(obj);
-            System.out.println("\n\nThe Category of this Data is:"+getCategory(obj));
+            System.out.println("The Category of this Data is:"+getCategory(obj));
         }
         return line;
     }

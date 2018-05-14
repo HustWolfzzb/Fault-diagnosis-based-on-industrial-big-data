@@ -77,6 +77,7 @@ class MyWin extends WindowAdapter{
     @Override
     public void windowClosing(WindowEvent e) {
         System.out.println("Bye Bye!");
+        JOptionPane.showInternalMessageDialog(null, "非法输入字符", "Error", JOptionPane.WARNING_MESSAGE);
         JOptionPane.showMessageDialog(null," Welcome for Your Next Time!","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
         System.exit(0);
     }
@@ -89,7 +90,7 @@ class MyWin extends WindowAdapter{
     public void windowOpened(WindowEvent e) {
         // TODO Auto-generated method stub
         System.out.println("Now It is Working!");
-        JOptionPane.showMessageDialog(null,"Welcome To Here!\n【clear】: Clear the Screen!\n【test 】: Test your DATA!\n【autotest】：test all Test_Data\n【next 】：The Next Line！\n【exit 】： Exit the System!","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Welcome To Here!\n【clear】: Clear the Screen!\n【next 】：The Next Line！\n【exit 】： Exit the System!\nFor More Option, input \"HELP\"","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
     }
 }
 
@@ -125,6 +126,13 @@ public class GUI{
             line = 0;
         }
     }
+    private void subLine(){
+        if (line>0)
+            line--;
+        else{
+            line = 0;
+        }
+    }
     private void autoTest(){
         for (int i=0;i<TData.size();++i) {
             Object[] test = TData.get(i).split(" ");
@@ -144,7 +152,7 @@ public class GUI{
 //                        }
                 //二套方案！************
                 //一套方案！************
-                if((res.contains("1") && ((String)test[test.length - 1]).equals("1.0")) || (res.contains("0") && ((String)test[test.length - 1]).equals("0.0"))){
+                if((res.contains("1") && (test[test.length - 1]).equals("1.0")) || (res.contains("0") && ((String)test[test.length - 1]).equals("0.0"))){
                     RightCount++;
                 }
                 else {
@@ -170,7 +178,6 @@ public class GUI{
             for (int i = line * 10, j = 1; i < line * 10 + 10; i++) {
                 TEXT[j++] =Space+""+ LINES[i];
             }
-            addLine();
         }else{
             for(int i=1;i<LINES.length-(LINES.length/10)*10;++i){
                 TEXT[i] = Space+""+LINES[(LINES.length/10)*10+i];
@@ -191,13 +198,34 @@ public class GUI{
         jl10.setText(TEXT[9]);
         jl11.setText(TEXT[10]);
     }
-
+    private void openFile(){
+        openDialog.setVisible(true);
+        String dirPath=openDialog.getDirectory();
+        String fileName=openDialog.getFile();
+        System.out.println(dirPath+"...."+fileName);
+        if(dirPath==null || fileName==null)
+            return;
+        file=new File(dirPath,fileName);
+        try {
+            BufferedReader bufr=new BufferedReader(new FileReader(file));
+            String line=null;
+            while((line=bufr.readLine())!=null){
+                TData.add(line);
+            }
+            bufr.close();
+        } catch (IOException e2) {
+            throw new RuntimeException("open the Exception");
+        }
+    }
     private void dealCommand(String command){
         if (command.isEmpty()){
             System.out.println("呵呵哒~~~");
         }
         if (command.toLowerCase().equals("exit")){
             System.exit(0);
+        }
+        if (command.toLowerCase().equals("help")){
+            JOptionPane.showMessageDialog(null,"【clear】: Clear the Screen!\n【test】: Test your DATA!\n【load】:Load the File Choosed\n【autoload】：Load the default testdata\n【autotest】：test all Test_Data\n【last】：The Last Line\n【next】：The Next Line\n【help】：Show All Options\n【save】：Save the DecisionTree as '.txt' File\n【exit】： Exit the System","**** Command Option ****",JOptionPane.WARNING_MESSAGE);
         }
         if(command.toLowerCase().equals("clear")){
             System.out.println("Down, Clear ALL!");
@@ -219,7 +247,14 @@ public class GUI{
             jl12.setText("");
             updateDisplay();
         }
-
+        else if(command.toLowerCase().equals("last")){
+            subLine();
+            jl12.setText("");
+            updateDisplay();
+        }
+        else if(command.toLowerCase().equals("load")){
+            openFile();
+        }
         else if (command.toLowerCase().equals("autoload")){
             file=new File("DataToTest.txt");
             try {
@@ -456,23 +491,7 @@ public class GUI{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
-                openDialog.setVisible(true);
-                String dirPath=openDialog.getDirectory();
-                String fileName=openDialog.getFile();
-                System.out.println(dirPath+"...."+fileName);
-                if(dirPath==null || fileName==null)
-                    return;
-                file=new File(dirPath,fileName);
-                try {
-                    BufferedReader bufr=new BufferedReader(new FileReader(file));
-                    String line=null;
-                    while((line=bufr.readLine())!=null){
-                        TData.add(line);
-                    }
-                    bufr.close();
-                } catch (IOException e2) {
-                    throw new RuntimeException("open the Exception");
-                }
+                openFile();
             }
         });
         closeItem.addActionListener(new ActionListener() {

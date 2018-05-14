@@ -30,7 +30,7 @@ public class SVMReadData {
             mysql.Connect();
             Statement statement=mysql.getStatement();
             NumberFormat nf = NumberFormat.getNumberInstance();
-            nf.setMaximumFractionDigits(0);
+            nf.setMaximumFractionDigits(1);
             FileWriter svmTrainData = new FileWriter("svmTrainData.txt");
             int columnCount = Parameter.getTrainNum();
             Object[][] DataTrain;
@@ -71,7 +71,7 @@ public class SVMReadData {
             mysql.Connect();
             Statement statement=mysql.getStatement();
             NumberFormat nf = NumberFormat.getNumberInstance();
-            nf.setMaximumFractionDigits(0);
+            nf.setMaximumFractionDigits(1);
             FileWriter svmTestData = new FileWriter("svmTestData.txt");
             int columnCount = Parameter.getTestNum();
             Object[][] DataTest;

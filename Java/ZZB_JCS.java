@@ -59,6 +59,15 @@ public class ZZB_JCS{
         //样本属性及其分类，暂时先在代码里面写了。后面需要数据库或者是文件读取
         ReadData data = new ReadData();
         Object[][] rawData =  data.readTrainData();
+        FileWriter out1 = new FileWriter("DataToTest.txt");
+        Object[][] DataToTest = data.readTestData();
+        for (int i = 0; i < DataToTest.length; ++i) {
+            for (int j = 0; j < DataToTest[i].length; ++j) {
+                out1.write(DataToTest[i][j] + " ");
+            }
+            out1.write("\n");
+        }
+        out1.close();
         //最终组合出一个包含所有的样本的Map
         Map<Object,List<Sample>> sample_set = new HashMap<Object,List<Sample>>();
 
@@ -353,16 +362,7 @@ public class ZZB_JCS{
                 LINES[i] = in.readLine();
             }
             in.close();
-            FileWriter out1 = new FileWriter("DataToTest.txt");
-            ReadData data = new ReadData();
-            Object[][] DataToTest = data.readTestData();
-            for (int i = 0; i < DataToTest.length; ++i) {
-                for (int j = 0; j < DataToTest[i].length; ++j) {
-                    out1.write(DataToTest[i][j] + " ");
-                }
-                out1.write("\n");
-            }
-            out1.close();
+
             GUI.updateTEXT(gui, LINES, decisionTree);
         }catch (IOException e){
             System.out.println("Nothing! Continue!");

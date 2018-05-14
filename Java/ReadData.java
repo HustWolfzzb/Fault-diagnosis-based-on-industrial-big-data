@@ -6,9 +6,11 @@
 
  * Address  :   HUST
 
- * Version  :   5.0
+ * Version  :   6.0
 
  * 从数据库读取数据，并且从ReadData这个函数传出去！5.0加了训练集和验证集的划分
+ *
+ * 第六代提供了离散化方式并且增加了属性划分区间这一变量。
  ********************* */
 
 
@@ -21,10 +23,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ReadData {
     private Object[] Name;
     private Mysql_Connect mysql=new Mysql_Connect();
+    ArrayList<List<Float>> range;
 
     ReadData() {
         Name = new Object[]{"Sensor1","Sensor2","Sensor3","Sensor4", "Load", "category"};
@@ -46,12 +51,12 @@ public class ReadData {
             mysql.Connect();
             Statement statement=mysql.getStatement();
             NumberFormat nf = NumberFormat.getNumberInstance();
-            nf.setMaximumFractionDigits(0);
+            nf.setMaximumFractionDigits(1);
             int columnCount = Parameter.getTrainNum();
-            Object[][] dataToTrain;
-            dataToTrain = new Object[columnCount][Name.length];
+            float [][] dataToTrain;
+            dataToTrain = new float[columnCount][Name.length];
             for (int  i = 0;i<columnCount;++i) {
-                String getDataQuery = getSelectQuery(Name,"gear",i*Parameter.getTrainDistance()+1);
+                String getDataQuery = getSelectQuery(Name,"gear",i*Parameter.getTrainDistance());
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();
@@ -59,9 +64,24 @@ public class ReadData {
                     dataToTrain[i][j]=Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
                 }
             }
+            range = Parameter.EADC(dataToTrain);
+            Object[][] re = new Object[columnCount][Name.length];
+            for (int valueindex = 0;valueindex<Name.length-1;++valueindex) {
+                for (int i = 0; i < dataToTrain.length; ++i) {
+                    for (int x = 0; x < range.get(valueindex).size(); ++x) {
+                        if (dataToTrain[i][valueindex] > range.get(valueindex).get(x) && dataToTrain[i][valueindex] <= range.get(valueindex).get(x+1)) {
+                            re[i][valueindex] = ("|"+range.get(valueindex).get(x) + "<X≤" + range.get(valueindex).get(x + 1)+"|");
+                            break;
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < dataToTrain.length; ++i) {
+                re[i][Name.length-1] = dataToTrain[i][Name.length-1];
+            }
             statement.close();
             mysql.Dis_Connect();
-            return dataToTrain;
+            return re;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -73,12 +93,12 @@ public class ReadData {
             mysql.Connect();
             Statement statement=mysql.getStatement();
             NumberFormat nf = NumberFormat.getNumberInstance();
-            nf.setMaximumFractionDigits(0);
+            nf.setMaximumFractionDigits(1);
             int columnCount = Parameter.getTestNum();
-            Object[][] dataToTest;
-            dataToTest = new Object[columnCount][Name.length];
+            float[][] dataToTest;
+            dataToTest = new float[columnCount][Name.length];
             for (int  i = 0;i<columnCount;++i) {
-                String getDataQuery = getSelectQuery(Name,"gear",i*Parameter.getTestDistance());
+                String getDataQuery = getSelectQuery(Name,"gear",i*Parameter.getTestDistance()+1);
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();
@@ -86,9 +106,27 @@ public class ReadData {
                     dataToTest[i][j]=Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
                 }
             }
-            statement.close();
-            mysql.Dis_Connect();
-            return dataToTest;
+            if (range.size()!=0) {
+                Object[][] re = new Object[columnCount][range.size()+1];
+                for (int valueindex = 0; valueindex < range.size(); ++valueindex) {
+                    for (int i = 0; i < dataToTest.length; ++i) {
+                        for (int x = 0; x < range.get(valueindex).size(); ++x) {
+                            if (dataToTest[i][valueindex] > range.get(valueindex).get(x) && dataToTest[i][valueindex] <= range.get(valueindex).get(x+1)) {
+                                re[i][valueindex] = ("|"+range.get(valueindex).get(x) + "<X≤" + range.get(valueindex).get(x + 1)+"|");
+                                break;
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i < dataToTest.length; ++i) {
+                    re[i][Name.length-1] = dataToTest[i][Name.length-1];
+                    //便利旧集合没有就添加到新集合
+                }
+                statement.close();
+                mysql.Dis_Connect();
+                return re;
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
