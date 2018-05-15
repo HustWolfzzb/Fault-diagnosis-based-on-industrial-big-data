@@ -479,6 +479,9 @@ public class ZZB_JCS{
 
     public static void main(String[] args) throws Exception{
         long startTime=System.currentTimeMillis();   //获取开始时间
+// ####################################################
+//        下面是主体的，生成决策树，GUI部分的内容
+//####################################################
 //        String[] attribute = new String[] {"Sensor1","Sensor2","Sensor3", "Sensor4", "Load"};
 //        String[] attribute_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4","Load", "category"};
 //        //读取样本集
@@ -493,12 +496,17 @@ public class ZZB_JCS{
 //        out.close();
 //        GUI gui = new GUI();
 //        readTXT(gui,decisionTree);
-        ZZB_JCS zzb = new ZZB_JCS();
-        zzb.DataToPlot();
-////        *****原代码有点问题！应该是给定一个没有分类的属性列表去给他！而不带有分类的属性列表，这样会把分类作为一个属性的！*****
-////        String line="";
-////        TestData.TestData(decisionTree, Test_Names,test,line);
-//        ZZB_SVM.main();
+//####################################################
+//        下面是输出决策树画图用的数据的内容
+//####################################################
+//        ZZB_JCS zzb = new ZZB_JCS();
+//        zzb.DataToPlot();
+
+// ####################################################
+//        下面是输出SVM的画图数据的内容
+//####################################################
+        ZZB_SVM.DataToPlot();
+
         long endTime=System.currentTimeMillis(); //获取结束时间
         System.out.println("本次运行时间："+(endTime-startTime)+"ms");
     }
