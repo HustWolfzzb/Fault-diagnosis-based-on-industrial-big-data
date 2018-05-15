@@ -5,9 +5,12 @@
 
  * Address  :   HUST
 
- * Version  :   1.0
+ * Version  :   2.5
 
- * 从数据库中读取符合SVM格式的数据
+ * 从数据库中读取符合SVM格式的数据，增加精度至0.001
+
+ * 2.5 版本新增了Parmeter，可以自由调节！
+
  ********************* */
 import java.io.*;
 import java.sql.ResultSet;
@@ -25,18 +28,18 @@ public class SVMReadData {
         Name = new Object[]{"Sensor1","Sensor2","Sensor3","Sensor4", "Load", "category"};
     }
 
-    public String readTrainData() {
+    public String readTrainData(Parameter par) {
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
             NumberFormat nf = NumberFormat.getNumberInstance();
-            nf.setMaximumFractionDigits(1);
+            nf.setMaximumFractionDigits(3);
             FileWriter svmTrainData = new FileWriter("svmTrainData.txt");
-            int columnCount = Parameter.getTrainNum();
+            int columnCount = par.getTrainNum();
             Object[][] DataTrain;
             DataTrain = new Object[columnCount][Name.length];
             for (int  i = 0;i<columnCount;++i) {
-                String getDataQuery = ReadData.getSelectQuery(Name,"gear",i*Parameter.getTrainDistance());
+                String getDataQuery = ReadData.getSelectQuery(Name,"gear",i * par.getTrainDistance());
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();
@@ -66,18 +69,18 @@ public class SVMReadData {
         return "svmTrainData.txt";
     }
 
-    public String readTestData() {
+    public String readTestData(Parameter par) {
         try {
             mysql.Connect();
             Statement statement=mysql.getStatement();
             NumberFormat nf = NumberFormat.getNumberInstance();
-            nf.setMaximumFractionDigits(1);
+            nf.setMaximumFractionDigits(3);
             FileWriter svmTestData = new FileWriter("svmTestData.txt");
-            int columnCount = Parameter.getTestNum();
+            int columnCount = par.getTestNum();
             Object[][] DataTest;
             DataTest = new Object[columnCount][Name.length];
             for (int  i = 0;i<columnCount;++i) {
-                String getDataQuery = ReadData.getSelectQuery(Name,"gear",i*Parameter.getTestDistance()+1);
+                String getDataQuery = ReadData.getSelectQuery(Name,"gear",i * par.getTestDistance()+1);
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();

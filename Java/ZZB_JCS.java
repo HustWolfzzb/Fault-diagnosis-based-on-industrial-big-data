@@ -11,6 +11,7 @@
  ********************* */
 
 import java.io.*;
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,6 +21,9 @@ import java.util.Set;
 
 //最外层类名
 public class ZZB_JCS{
+    private NumberFormat nf = NumberFormat.getNumberInstance();
+    private Parameter par = new Parameter();
+
     /* *********************
      * Define the Class of Sample
 
@@ -53,14 +57,9 @@ public class ZZB_JCS{
 
      * just like decoding the data
      ********************* */
-
-// 此处需要改造为读取外部数据！并且能够进行分解，改造为可读取的形式
-    static Map<Object,List<Sample>> readSample(String[] attribute_Names) throws IOException {
-        //样本属性及其分类，暂时先在代码里面写了。后面需要数据库或者是文件读取
-        ReadData data = new ReadData();
-        Object[][] rawData =  data.readTrainData();
+    static void DataToTest(Parameter par, ReadData data)  throws IOException{
         FileWriter out1 = new FileWriter("DataToTest.txt");
-        Object[][] DataToTest = data.readTestData();
+        Object[][] DataToTest = data.readTestData(par);
         for (int i = 0; i < DataToTest.length; ++i) {
             for (int j = 0; j < DataToTest[i].length; ++j) {
                 out1.write(DataToTest[i][j] + " ");
@@ -68,9 +67,22 @@ public class ZZB_JCS{
             out1.write("\n");
         }
         out1.close();
+    }
+// 此处需要改造为读取外部数据！并且能够进行分解，改造为可读取的形式
+    static Map<Object,List<Sample>> readSample(ReadData data, String[] attribute_Names, Parameter par, boolean WriteToTXT){
+        //样本属性及其分类，暂时先在代码里面写了。后面需要数据库或者是文件读取
+
+        Object[][] rawData =  data.readTrainData(par);
         //最终组合出一个包含所有的样本的Map
         Map<Object,List<Sample>> sample_set = new HashMap<Object,List<Sample>>();
 
+        if (WriteToTXT) {
+            try{
+                DataToTest(par,data);
+            }catch (IOException e){
+                System.out.println(e);
+            }
+        }
         //读取每一排的数据
         //分解后读取样本属性及其分类，然后利用这些数据构造一个Sample对象
         //然后按照样本最后的分类划分样本集，
@@ -362,33 +374,133 @@ public class ZZB_JCS{
                 LINES[i] = in.readLine();
             }
             in.close();
-
             GUI.updateTEXT(gui, LINES, decisionTree);
         }catch (IOException e){
             System.out.println("Nothing! Continue!");
         }
     }
+
+    public void DataToPlot() throws Exception {
+        ReadData data = new ReadData();
+        nf.setMaximumFractionDigits(1);
+        String[] attribute = new String[]{"Sensor1", "Sensor2", "Sensor3", "Sensor4", "Load"};
+        String[] attribute_Names = new String[]{"Sensor1", "Sensor2", "Sensor3", "Sensor4", "Load", "category"};
+        int[] numOfTrain = new int[]{
+                200, 400, 800, 1000, 2000,
+                3000, 4000, 5000, 6000, 8000,
+                10000, 12000, 15000, 17500, 20000,
+                22500, 25000, 27500, 30000, 32500,
+                35000, 37500, 40000, 42500, 45000,
+                47500, 50000, 52500, 55000, 57500,
+                60000, 62500, 65000, 67500, 70000,
+                72500, 75000, 77500, 80000, 82500,
+                85000, 87500, 90000, 92500, 95000,
+                97500, 100000, 110000, 120000, 125000,
+                130000, 140000, 150000, 160000, 175000,
+        };
+        float[] ACC = new float[numOfTrain.length];
+        float[] Precision = new float[numOfTrain.length];
+        float[] Recall = new float[numOfTrain.length];
+        //读取样本集
+        for (int number = 0; number < numOfTrain.length; ++number) {
+            long startTime=System.currentTimeMillis();   //获取开始时间
+            par.setTrainNum(numOfTrain[number]);
+            Map<Object, List<Sample>> samples = readSample(data, attribute_Names, par, false);
+            //生成决策树
+            Object decisionTree = generateDecisionTree(samples, attribute);
+            //输出决策树
+//            File file = new File("GUIDATA.txt");
+//            FileWriter out = new FileWriter(file);
+//            outputDecisionTree(out,decisionTree,0,null);
+//            out.close();
+            Object[][] testD = data.readTestData(par);
+            float RightCount = 0;
+            float FaultCount = 0;
+            float TP = 0;
+            float FN = 0;
+            float FP = 0;
+            float TN = 0;
+            for (Object[] test : testD) {
+                String res = "";
+                res = TestData.TestData(decisionTree, attribute, test, res);
+                if (res.contains(":")) {
+                    if (res.contains("1")) {
+                        if ((float) test[test.length - 1] == 1) {
+                            RightCount += 1;
+                            TP += 1;
+                        } else {
+                            FaultCount += 1;
+                            FP += 1;
+                        }
+                    } else if (res.contains("0")) {
+                        if ((float) test[test.length - 1] == 0) {
+                            RightCount += 1;
+                            TN += 1;
+                        } else {
+                            FaultCount += 1;
+                            FN += 1;
+                        }
+                    }
+                } else {
+                    FaultCount += 1;
+                }
+            }
+            float acc = Float.parseFloat(nf.format(RightCount / (RightCount + FaultCount) * 100));
+            float precision = Float.parseFloat(nf.format(TP / (TP + FP)*100));
+            float recall = Float.parseFloat(nf.format(TP / (TP + FN)*100));
+            System.out.println("数量级为："+par.getTrainNum()+",精度为：" + acc + "%，查准率为：" + precision + "，%查全率为：" + recall+"%");
+            long endTime=System.currentTimeMillis(); //获取结束时间
+            System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
+            ACC[number] = acc;
+            Precision[number] = precision;
+            Recall[number] = recall;
+        }
+        System.out.print("x = [");
+        for (int num:numOfTrain) System.out.print(num + ",");
+        System.out.println("]");
+
+        System.out.print("y1 = [");
+        for (float num:ACC) System.out.print(num + ",");
+        System.out.println("]");
+
+        System.out.print("y2 = [");
+        for (float num:Precision) System.out.print(num + ",");
+        System.out.println("]");
+
+        System.out.print("y3 = [");
+        for (float num:Recall) System.out.print(num + ",");
+        System.out.println("]");
+
+        System.out.println("plt.plot(x, y1, 'r--', x, y2, 'bs', x, y3, 'g^')");
+        System.out.println("plt.axis([0, 180000, 20, 70])");
+
+    }
+
+
     public static void main(String[] args) throws Exception{
         long startTime=System.currentTimeMillis();   //获取开始时间
-        String[] attribute = new String[] {"Sensor1","Sensor2","Sensor3", "Sensor4", "Load"};
-        String[] attribute_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4","Load", "category"};
-        //读取样本集
-        Map<Object,List<Sample>> samples = readSample(attribute_Names);
-        //生成决策树
-        Object decisionTree = generateDecisionTree(samples,attribute);
-        //输出决策树
-        File file = new File("GUIDATA.txt");
-        FileWriter out = new FileWriter(file);
-        outputDecisionTree(out,decisionTree,0,null);
-        out.close();
-        GUI gui = new GUI();
-        readTXT(gui,decisionTree);
+//        String[] attribute = new String[] {"Sensor1","Sensor2","Sensor3", "Sensor4", "Load"};
+//        String[] attribute_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4","Load", "category"};
+//        //读取样本集
+//        ReadData data = new ReadData();
+//        Map<Object,List<Sample>> samples = readSample(data,attribute_Names,new Parameter(),true);
+//        //生成决策树
+//        Object decisionTree = generateDecisionTree(samples,attribute);
+//        //输出决策树
+//        File file = new File("GUIDATA.txt");
+//        FileWriter out = new FileWriter(file);
+//        outputDecisionTree(out,decisionTree,0,null);
+//        out.close();
+//        GUI gui = new GUI();
+//        readTXT(gui,decisionTree);
+        ZZB_JCS zzb = new ZZB_JCS();
+        zzb.DataToPlot();
 ////        *****原代码有点问题！应该是给定一个没有分类的属性列表去给他！而不带有分类的属性列表，这样会把分类作为一个属性的！*****
 ////        String line="";
 ////        TestData.TestData(decisionTree, Test_Names,test,line);
 //        ZZB_SVM.main();
         long endTime=System.currentTimeMillis(); //获取结束时间
-        System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
+        System.out.println("本次运行时间："+(endTime-startTime)+"ms");
     }
 }
 

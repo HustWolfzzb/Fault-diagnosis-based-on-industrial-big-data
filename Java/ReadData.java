@@ -6,11 +6,13 @@
 
  * Address  :   HUST
 
- * Version  :   6.0
+ * Version  :   6.1
 
  * 从数据库读取数据，并且从ReadData这个函数传出去！5.0加了训练集和验证集的划分
- *
- * 第六代提供了离散化方式并且增加了属性划分区间这一变量。
+
+ * 第六代提供了离散化方式并且增加了属性划分区间这一变量
+
+ * 在原有基础上，增添了可接受Parmeter设定这一条
  ********************* */
 
 
@@ -28,56 +30,59 @@ import java.util.List;
 
 public class ReadData {
     private Object[] Name;
-    private Mysql_Connect mysql=new Mysql_Connect();
-    ArrayList<List<Float>> range;
+    private Mysql_Connect mysql = new Mysql_Connect();
+    ArrayList<List<Float>> range = new ArrayList<>();
+    public NumberFormat nf = NumberFormat.getNumberInstance();
 
     ReadData() {
-        Name = new Object[]{"Sensor1","Sensor2","Sensor3","Sensor4", "Load", "category"};
+        nf.setMaximumFractionDigits(1);
+        Name = new Object[]{"Sensor1", "Sensor2", "Sensor3", "Sensor4", "Load", "category"};
     }
 
-    public static String getSelectQuery(Object[] Name,String table,int id){
+    public static String getSelectQuery(Object[] Name, String table, int id) {
         String select = "SELECT  ";
-        for (int i=0;i<Name.length-1;++i){
-            select += ("`"+(Name[i]+"`"+","));
+        for (int i = 0; i < Name.length - 1; ++i) {
+            select += ("`" + (Name[i] + "`" + ","));
         }
-        select += ("`"+Name[Name.length-1]+"`");
-        select += " from " + table + " where id = "+id;
+        select += ("`" + Name[Name.length - 1] + "`");
+        select += " from " + table + " where id = " + id;
 //        System.out.println(select);
         return select;
     }
 
-    public Object[][] readTrainData() {
+    public Object[][] readTrainData(Parameter par) {
         try {
             mysql.Connect();
-            Statement statement=mysql.getStatement();
-            NumberFormat nf = NumberFormat.getNumberInstance();
-            nf.setMaximumFractionDigits(1);
-            int columnCount = Parameter.getTrainNum();
-            float [][] dataToTrain;
+            Statement statement = mysql.getStatement();
+            int columnCount = par.getTrainNum();
+            float[][] dataToTrain;
             dataToTrain = new float[columnCount][Name.length];
-            for (int  i = 0;i<columnCount;++i) {
-                String getDataQuery = getSelectQuery(Name,"gear",i*Parameter.getTrainDistance());
+            for (int i = 0; i < columnCount; ++i) {
+                String getDataQuery = getSelectQuery(Name, "gear", i * par.getTrainDistance());
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();
-                for (int j = 0; j < Name.length; ++j){
-                    dataToTrain[i][j]=Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
+                for (int j = 0; j < Name.length; ++j) {
+                    dataToTrain[i][j] = Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
                 }
             }
-            range = Parameter.EADC(dataToTrain);
+            if (!range.isEmpty()){
+                range.clear();
+            }
+            range = par.EADC(dataToTrain);
             Object[][] re = new Object[columnCount][Name.length];
-            for (int valueindex = 0;valueindex<Name.length-1;++valueindex) {
+            for (int valueindex = 0; valueindex < Name.length - 1; ++valueindex) {
                 for (int i = 0; i < dataToTrain.length; ++i) {
                     for (int x = 0; x < range.get(valueindex).size(); ++x) {
-                        if (dataToTrain[i][valueindex] > range.get(valueindex).get(x) && dataToTrain[i][valueindex] <= range.get(valueindex).get(x+1)) {
-                            re[i][valueindex] = ("|"+range.get(valueindex).get(x) + "<X≤" + range.get(valueindex).get(x + 1)+"|");
+                        if (dataToTrain[i][valueindex] > range.get(valueindex).get(x) && dataToTrain[i][valueindex] <= range.get(valueindex).get(x + 1)) {
+                            re[i][valueindex] = ("|" + range.get(valueindex).get(x) + "<X≤" + range.get(valueindex).get(x + 1) + "|");
                             break;
                         }
                     }
                 }
             }
             for (int i = 0; i < dataToTrain.length; ++i) {
-                re[i][Name.length-1] = dataToTrain[i][Name.length-1];
+                re[i][Name.length - 1] = dataToTrain[i][Name.length - 1];
             }
             statement.close();
             mysql.Dis_Connect();
@@ -88,38 +93,43 @@ public class ReadData {
         return new Object[1][1];
     }
 
-    public Object[][] readTestData() {
+    public Object[][] readTestData(Parameter par) {
         try {
             mysql.Connect();
-            Statement statement=mysql.getStatement();
-            NumberFormat nf = NumberFormat.getNumberInstance();
-            nf.setMaximumFractionDigits(1);
-            int columnCount = Parameter.getTestNum();
+            Statement statement = mysql.getStatement();
+            int columnCount = par.getTestNum();
             float[][] dataToTest;
             dataToTest = new float[columnCount][Name.length];
-            for (int  i = 0;i<columnCount;++i) {
-                String getDataQuery = getSelectQuery(Name,"gear",i*Parameter.getTestDistance()+1);
+            for (int i = 0; i < columnCount; ++i) {
+                String getDataQuery = getSelectQuery(Name, "gear", i * par.getTestDistance() + 1);
                 ResultSet select_ok;
                 select_ok = statement.executeQuery(getDataQuery);
                 select_ok.next();
-                for (int j = 0; j < Name.length; ++j){
-                    dataToTest[i][j]=Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
+                for (int j = 0; j < Name.length; ++j) {
+                    dataToTest[i][j] = Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
                 }
             }
-            if (range.size()!=0) {
-                Object[][] re = new Object[columnCount][range.size()+1];
+//            for (List<Float> x:range) {
+//                System.out.println(x.size());
+//                for (float s:x){
+//                    System.out.print(s+"-->");
+//                }
+//            }
+
+            if (range.size() != 0) {
+                Object[][] re = new Object[columnCount][range.size() + 1];
                 for (int valueindex = 0; valueindex < range.size(); ++valueindex) {
                     for (int i = 0; i < dataToTest.length; ++i) {
                         for (int x = 0; x < range.get(valueindex).size(); ++x) {
-                            if (dataToTest[i][valueindex] > range.get(valueindex).get(x) && dataToTest[i][valueindex] <= range.get(valueindex).get(x+1)) {
-                                re[i][valueindex] = ("|"+range.get(valueindex).get(x) + "<X≤" + range.get(valueindex).get(x + 1)+"|");
+                            if (dataToTest[i][valueindex] > range.get(valueindex).get(x) && dataToTest[i][valueindex] <= range.get(valueindex).get(x + 1)) {
+                                re[i][valueindex] = ("|" + range.get(valueindex).get(x) + "<X≤" + range.get(valueindex).get(x + 1) + "|");
                                 break;
                             }
                         }
                     }
                 }
                 for (int i = 0; i < dataToTest.length; ++i) {
-                    re[i][Name.length-1] = dataToTest[i][Name.length-1];
+                    re[i][Name.length - 1] = dataToTest[i][Name.length - 1];
                     //便利旧集合没有就添加到新集合
                 }
                 statement.close();
@@ -135,3 +145,6 @@ public class ReadData {
         return new Object[1][1];
     }
 }
+
+
+

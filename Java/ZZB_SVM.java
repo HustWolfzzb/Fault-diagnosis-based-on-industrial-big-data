@@ -3,8 +3,9 @@ import java.io.IOException;
 public class ZZB_SVM {
     public static Float main() throws IOException {
         SVMReadData sr = new SVMReadData();
-        String trainFileName = sr.readTrainData();
-        String testFileName = sr.readTestData();
+        Parameter par = new Parameter();
+        String trainFileName = sr.readTrainData(par);
+        String testFileName = sr.readTestData(par);
         //训练使用的数据以及训练得出生成的模型文件名。
         String[] trainFile = { trainFileName, "model.txt" };
         //测试数据文件，模型文件，结果存放文件

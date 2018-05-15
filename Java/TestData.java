@@ -50,11 +50,11 @@ public class TestData{
             }
             if (!flag){
                 line="Sorry, we don't find this data, maybe it's OK!";
-                System.out.println("Sorry, we don't find this data, maybe it's OK!");
+//                System.out.println("Sorry, we don't find this data, maybe it's OK!");
             }
         }else {
             line="The Category of this Data is:"+getCategory(obj);
-            System.out.println("The Category of this Data is:"+getCategory(obj));
+//            System.out.println("The Category of this Data is:"+getCategory(obj));
         }
         return line;
     }

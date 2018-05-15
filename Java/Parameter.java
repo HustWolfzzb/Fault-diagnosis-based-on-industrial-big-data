@@ -108,39 +108,38 @@ class Interval{
     }
 }
 public class Parameter {
-    private static int rate = 2;
-    private static int trainNum = 40000;
-    private static int testNum = trainNum/rate;
-    public static int getTrainNum(){
+    private  int rate;
+    private int trainNum;
+    private  int testNum;
+    Parameter(){
+        rate = 2;
+        trainNum = 10000;
+        testNum = trainNum/rate;
+    }
+    public int getTrainNum(){
         return trainNum;
     }
-    public static int getRate(){
-        return rate;
-    }
-    public static int getTestNum(){
+    public int getTestNum(){
         return testNum;
     }
-    public static int getTestDistance(){
+    public int getTestDistance(){
         return 2000000/testNum;
     }
-    public static int getTrainDistance(){
+    public int getTrainDistance(){
         return 2000000/trainNum;
     }
-    public static void setRate(int r){
-        rate = r;
-        testNum = trainNum / rate;
-    }   
-    public static void setTrainNum(int t){
+    public void setTrainNum(int t){
         trainNum = t;
         testNum = trainNum / rate;
     }
-    public static void setTestNum(int t){
+    public void setTestNum(int t){
         testNum = t;
         trainNum = testNum * rate;
     }
 
 
-    public static void Clear(ArrayList<Interval> allInterval){
+
+    void Clear(ArrayList<Interval> allInterval){
         ArrayList<Interval> del = new ArrayList<>();
         for (int s = 0;s<allInterval.size();++s) {
             if (allInterval.get(s).getCount() == 0){
@@ -153,7 +152,7 @@ public class Parameter {
         }
         allInterval.removeAll(del);
     }
-    static double Entropy(ArrayList<Interval> set, int size){
+    double Entropy(ArrayList<Interval> set, int size){
         double shang = 0;
         NumberFormat nf = NumberFormat.getNumberInstance();
         nf.setMaximumFractionDigits(4);
@@ -163,7 +162,8 @@ public class Parameter {
         }
         return  Double.parseDouble(nf.format(shang));
     }
-    public static ArrayList<List<Float>> EADC(float[][] dat) {
+
+    public ArrayList<List<Float>> EADC(float[][] dat) {
         ArrayList<List<Float>> re = new  ArrayList<>();
         for (int valueindex = 0; valueindex< dat[0].length-1;++valueindex) {
             ArrayList<Alone_Value_Category> LIST = new ArrayList<>();
@@ -205,7 +205,7 @@ public class Parameter {
             }
             k = allInterval.size();
             int k0 = k;
-            double Ck0 = 0.5;
+            double Ck0 = 0;
             boolean Loop = true;
             double Hpk_1 = 0;
             while (Loop && k >= 10) {
@@ -227,7 +227,7 @@ public class Parameter {
                     newA.clear();
                 }
                 allInterval.get(mergePoint).merge(allInterval.get(mergePoint + 1));
-                allInterval.remove(allInterval.get(mergePoint + 1));
+                allInterval.remove(mergePoint + 1);
                 double Ck_1 = (k0 - 1) * Hpk_1 - Hp0 * (k - 2);
                 if (Ck_1 > Ck0) {
                     --k;
@@ -235,7 +235,7 @@ public class Parameter {
                     Loop = false;
                     --k;
                 }
-//                Ck = Ck_1;
+                Ck0 = Ck_1;
             }
             range.clear();
             range.add(-100f);

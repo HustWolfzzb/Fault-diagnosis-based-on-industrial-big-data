@@ -48,7 +48,7 @@ public class Mysql_Connect {
             conn = DriverManager.getConnection(url, user, password);
 
             if (!conn.isClosed()){
-                System.out.println("Connect Success!");
+//                System.out.println("Connect Success!");
             }
             else {
                 System.out.println("\n\nFailed to connect to the Database!");

@@ -139,20 +139,7 @@ public class GUI{
             String res="";
             res=TestData.TestData(tree, Test_Names,test,res);
             if (res.contains(":")){
-                //三套方案！************
-//                RightCount++;
-                //三套方案！************
-                //二套方案！************
-//                        Fault = Fault.trim();
-//                        if (Fault.equals("Other_Faults") && FaultMap.get(Fault).equals((String) test[test.length-1])){
-//                            RightCount++;
-//                        }
-//                        else {
-//                            RightCount++;
-//                        }
-                //二套方案！************
-                //一套方案！************
-                if((res.contains("1") && (test[test.length - 1]).equals("1.0")) || (res.contains("0") && ((String)test[test.length - 1]).equals("0.0"))){
+                if((res.contains("1") && (((String)test[test.length-1]).contains("1"))) || ((res.contains("0") &&  (((String)test[test.length-1]).equals("0.0"))))){
                     RightCount++;
                 }
                 else {
