@@ -22,7 +22,6 @@ import java.util.Set;
 //最外层类名
 public class ZZB_JCS{
     private NumberFormat nf = NumberFormat.getNumberInstance();
-    private Parameter par = new Parameter();
 
     /* *********************
      * Define the Class of Sample
@@ -69,7 +68,7 @@ public class ZZB_JCS{
         out1.close();
     }
 // 此处需要改造为读取外部数据！并且能够进行分解，改造为可读取的形式
-    static Map<Object,List<Sample>> readSample(ReadData data, String[] attribute_Names, Parameter par, boolean WriteToTXT){
+    static Map<Object,List<Sample>> getSample(ReadData data, String[] attribute_Names, Parameter par, boolean WriteToTXT){
         //样本属性及其分类，暂时先在代码里面写了。后面需要数据库或者是文件读取
 
         Object[][] rawData =  data.readTrainData(par);
@@ -282,26 +281,26 @@ public class ZZB_JCS{
     static void outputDecisionTree(FileWriter out,Object obj, int level, Object from) throws IOException {
         //这个到后面决定输出多少个|----- 也就是说是决定层级的
         for (int i=0; i < level ;++i){
-            System.out.print("|---->");
+//            System.out.print("|---->");
             out.write("|---->");
         }
         // 所有子节点专用？除了根节点都要吧！
         if (from != null){
-            System.out.printf("(%s):",from);
+//            System.out.printf("(%s):",from);
             out.write("("+from+"):");
         }
         //大概是说，如果这个东西还有子节点，那就继续递归
         if (obj instanceof Tree){
             Tree tree = (Tree) obj;
             String attribute_Name = tree.getAttribute();
-            System.out.printf("[%s = ?]\n",attribute_Name);
+//            System.out.printf("[%s = ?]\n",attribute_Name);
             out.write("["+attribute_Name+" = ?]\n");
             for (Object attrValue : tree.getAttributeValues()){
                 Object child =tree.getChild(attrValue);
                 outputDecisionTree(out,child,level+1,attribute_Name + " = " + attrValue);
             }
         }else {
-            System.out.printf("【* CATEGORY = %s *】\n", TestData.getCategory(obj));
+//            System.out.printf("【* CATEGORY = %s *】\n", TestData.getCategory(obj));
             out.write("【* CATEGORY = "+TestData.getCategory(obj)+" *】\n");
         }
     }
@@ -367,7 +366,7 @@ public class ZZB_JCS{
                 ++linecount;
             }
             in.close();
-            System.out.println(linecount);
+//            System.out.println(linecount);
             in = new BufferedReader(new FileReader(file));
             String[] LINES = new String[linecount];
             for (int i = 0; i < linecount; ++i) {
@@ -382,6 +381,7 @@ public class ZZB_JCS{
 
     public void DataToPlot() throws Exception {
         ReadData data = new ReadData();
+        Parameter par = new Parameter();
         nf.setMaximumFractionDigits(1);
         String[] attribute = new String[]{"Sensor1", "Sensor2", "Sensor3", "Sensor4", "Load"};
         String[] attribute_Names = new String[]{"Sensor1", "Sensor2", "Sensor3", "Sensor4", "Load", "category"};
@@ -405,7 +405,7 @@ public class ZZB_JCS{
         for (int number = 0; number < numOfTrain.length; ++number) {
             long startTime=System.currentTimeMillis();   //获取开始时间
             par.setTrainNum(numOfTrain[number]);
-            Map<Object, List<Sample>> samples = readSample(data, attribute_Names, par, false);
+            Map<Object, List<Sample>> samples = getSample(data, attribute_Names, par, false);
             //生成决策树
             Object decisionTree = generateDecisionTree(samples, attribute);
             //输出决策树
@@ -475,27 +475,28 @@ public class ZZB_JCS{
         System.out.println("plt.axis([0, 180000, 20, 70])");
 
     }
-
+    public static Object JCS(Parameter par) throws Exception{
+        String[] attribute = new String[] {"Sensor1","Sensor2","Sensor3", "Sensor4", "Load"};
+        String[] attribute_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4","Load", "category"};
+        //读取样本集
+        ReadData data = new ReadData();
+        Map<Object,List<Sample>> samples = getSample(data,attribute_Names,par,true);
+        //生成决策树
+        Object decisionTree = generateDecisionTree(samples,attribute);
+        //输出决策树
+        File file = new File("GUIDATA.txt");
+        FileWriter out = new FileWriter(file);
+        outputDecisionTree(out,decisionTree,0,null);
+        out.close();
+        return decisionTree;
+    }
 
     public static void main(String[] args) throws Exception{
         long startTime=System.currentTimeMillis();   //获取开始时间
 // ####################################################
 //        下面是主体的，生成决策树，GUI部分的内容
 //####################################################
-//        String[] attribute = new String[] {"Sensor1","Sensor2","Sensor3", "Sensor4", "Load"};
-//        String[] attribute_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4","Load", "category"};
-//        //读取样本集
-//        ReadData data = new ReadData();
-//        Map<Object,List<Sample>> samples = readSample(data,attribute_Names,new Parameter(),true);
-//        //生成决策树
-//        Object decisionTree = generateDecisionTree(samples,attribute);
-//        //输出决策树
-//        File file = new File("GUIDATA.txt");
-//        FileWriter out = new FileWriter(file);
-//        outputDecisionTree(out,decisionTree,0,null);
-//        out.close();
-//        GUI gui = new GUI();
-//        readTXT(gui,decisionTree);
+        GUI gui = new GUI();
 //####################################################
 //        下面是输出决策树画图用的数据的内容
 //####################################################
@@ -505,7 +506,7 @@ public class ZZB_JCS{
 // ####################################################
 //        下面是输出SVM的画图数据的内容
 //####################################################
-        ZZB_SVM.DataToPlot();
+//        ZZB_SVM.DataToPlot();
 
         long endTime=System.currentTimeMillis(); //获取结束时间
         System.out.println("本次运行时间："+(endTime-startTime)+"ms");
