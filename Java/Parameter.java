@@ -108,9 +108,9 @@ class Interval{
     }
 }
 public class Parameter {
-    private  int rate;
-    private int trainNum;
-    private  int testNum;
+    private static int rate;
+    private static int trainNum;
+    private static int testNum;
     Parameter(){
         rate = 2;
         trainNum = 10000;

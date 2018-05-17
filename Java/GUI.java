@@ -77,7 +77,6 @@ class MyWin extends WindowAdapter{
     @Override
     public void windowClosing(WindowEvent e) {
         System.out.println("Bye Bye!");
-        JOptionPane.showInternalMessageDialog(null, "非法输入字符", "Error", JOptionPane.WARNING_MESSAGE);
         JOptionPane.showMessageDialog(null," Welcome for Your Next Time!","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
         System.exit(0);
     }
@@ -90,13 +89,15 @@ class MyWin extends WindowAdapter{
     public void windowOpened(WindowEvent e) {
         // TODO Auto-generated method stub
         System.out.println("Now It is Working!");
-        JOptionPane.showMessageDialog(null,"Welcome To Here!\n【clear】: Clear the Screen!\n【next 】：The Next Line！\n【exit 】： Exit the System!\nFor More Option, input \"HELP\"","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Welcome To Here!\n【init】：Load Model！\n【clear】: Clear the Screen!\n【next 】：The Next Line！\n【exit 】： Exit the System!\nFor More Option, input \"HELP\"","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
     }
 }
 
 public class GUI{
-    public float RightCount = 0;
-    public float FaultCount = 0;
+    private boolean isInit = false;
+    public Parameter par = new Parameter();
+    private float RightCount = 0;
+    private float FaultCount = 0;
     private Object tree;
     private Frame f;
     private int nextTimes=0;
@@ -106,19 +107,44 @@ public class GUI{
     private TextField ta;
     private MenuBar mb;
     private Menu m,subm,Run;
-    private MenuItem closeItem,openItem,saveItem,subItem1,subItem;
+    private MenuItem closeItem,openItem,saveItem,subItem1,subItem,subItem2,subItem3,subItem4,subItem5;
     private FileDialog openDialog,saveDialog;
     private File file;
     private JPanel jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8,jp9,jp10,jp11,jp12,jp13,jp14;
     private JLabel jl1,jl2,jl3,jl4,jl5,jl6,jl7,jl8,jl9,jl10,jl11,jl12;
     private String[] TEXT =  new String[11];
     private static  String[] LINES;
-    public GUI() {
-        init();
-    }
     public static int line=0;
-    public Vector<String > TData = new Vector<String>();
-    public static String Space = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+    private Vector<String > TData = new Vector<String>();
+    private static String Space = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+
+    GUI() {
+        init();
+        par.setTrainNum(400);
+    }
+
+    private void saveCommand(){
+        if(file==null){
+            saveDialog.setVisible(true);
+            String dirPath=saveDialog.getDirectory();
+            String fileName=saveDialog.getFile();
+            if(dirPath==null || fileName==null)
+                return;
+            file=new File(dirPath,fileName);
+        }
+        try {
+            BufferedWriter bufw = new BufferedWriter(new FileWriter(file));
+            int i = 0;
+            while (i < LINES.length){
+                if(LINES[i]!=null)
+                    bufw.write(LINES[i]+"\n");
+                i++;
+            }
+            bufw.close();
+        } catch (IOException e2) {
+            throw new RuntimeException("Failed to Save !");
+        }
+    }
     private void addLine(){
         if (line<=LINES.length/10)
             line++;
@@ -205,16 +231,70 @@ public class GUI{
         }
     }
     private void dealCommand(String command){
-        if (command.isEmpty()){
-            System.out.println("呵呵哒~~~");
+        if (command.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "未检测到命令", "输入错误", JOptionPane.WARNING_MESSAGE);
         }
         if (command.toLowerCase().equals("exit")){
             System.exit(0);
         }
-        if (command.toLowerCase().equals("help")){
-            JOptionPane.showMessageDialog(null,"【clear】: Clear the Screen!\n【test】: Test your DATA!\n【load】:Load the File Choosed\n【autoload】：Load the default testdata\n【autotest】：test all Test_Data\n【last】：The Last Line\n【next】：The Next Line\n【help】：Show All Options\n【save】：Save the DecisionTree as '.txt' File\n【exit】： Exit the System","**** Command Option ****",JOptionPane.WARNING_MESSAGE);
+        else if (command.toLowerCase().equals("help")){
+            JOptionPane.showMessageDialog(null,"【init】：Load Model！\n【clear】: Clear the Screen!\n【test】: Test your DATA!\n【load】:Load the File Choosed\n【autoload】：Load the default testdata\n【autotest】：test all Test_Data\n【last】：The Last Line\n【next】：The Next Line\n【help】：Show All Options\n【save】：Save the DecisionTree as '.txt' File\n【showinfo】：Show Info of the User\n【exit】： Exit the System\n【setTrainNum】：Reset the TrainData Num\n【setTestNum】：Reset the TestData Num","**** Command Option ****",JOptionPane.WARNING_MESSAGE);
+            return;
         }
-        if(command.toLowerCase().equals("clear")){
+
+        String [] comm = command.split(" ");
+        if(comm[0].toLowerCase().equals("settrainnum")){
+            try{
+                par.setTrainNum(Integer.valueOf(comm[1]));
+                jl12.setText(Space+"设置完毕，当前训练数据为："+par.getTrainNum()+"，请初始化！");
+                isInit = false;
+            }catch (Exception e){
+                System.out.println(e);
+                JOptionPane.showMessageDialog(null,"你输入的数据有误，标准为：\n\t SetTrainNum 10000","Type Error",JOptionPane.WARNING_MESSAGE);
+            }
+            return;
+        }
+        else if(comm[0].toLowerCase().equals("settestnum")){
+            try{
+                par.setTestNum(Integer.valueOf(comm[1]));
+                jl12.setText(Space+"设置完毕，当前测试数据为："+par.getTestNum()+"，请初始化！");
+                isInit = false;
+            }catch (Exception e){
+                JOptionPane.showMessageDialog(null,"你输入的数据有误，标准为：\n\t SetTestNum 10000","Type Error",JOptionPane.WARNING_MESSAGE);
+            }
+            return;
+        }
+        if (command.toLowerCase().equals("init")){
+            try {
+                ZZB_JCS.readTXT(this, ZZB_JCS.JCS(par));
+            }catch (Exception e){
+                System.out.println("初始化失败！");
+            }
+            isInit = true;
+            jl12.setText(Space+"初始化完成，请继续操作（可键入\"help\"查询）");
+            return;
+        }
+        if (!isInit){
+            jl12.setText(Space+"请先输入init进行初始化操作！");
+            return;
+        }
+        else if(command.toLowerCase().equals("save")){
+            saveCommand();
+        }
+        else if(command.toLowerCase().equals("showinfo")){
+            jl2.setText(Space+"当前页面       "+Space+line);
+            jl3.setText(Space+"总页数         "+Space+LINES.length/10);
+            jl4.setText(Space+"总行数         "+Space+LINES.length);
+            jl5.setText(Space+"训练集样本数"+Space+par.getTrainNum());
+            jl6.setText(Space+"验证集样本数"+Space+par.getTestNum());
+            jl7.setText(Space+"当前工作目录"+Space+System.getProperty("user.dir"));
+            jl8.setText(Space+"操作系统       "+Space+System.getProperty("os.name"));
+            jl9.setText(Space+"使用者         "+Space+System.getProperty("user.name"));
+            jl10.setText(Space+"");
+            jl11.setText(Space+"");
+            jl12.setText(Space+"");
+        }
+        else if(command.toLowerCase().equals("clear")){
             System.out.println("Down, Clear ALL!");
             line=0;
             jl2.setText(Space+"Line 1");
@@ -227,16 +307,16 @@ public class GUI{
             jl9.setText(Space+"Line 8");
             jl10.setText(Space+"Line 9");
             jl11.setText(Space+"Line 10");
-            jl12.setText("");
+            jl12.setText(Space+"Page："+Space+ "0");
         }
         else if(command.toLowerCase().equals("next")){
             addLine();
-            jl12.setText("");
+            jl12.setText(Space+"Page:"+ Space + line);
             updateDisplay();
         }
         else if(command.toLowerCase().equals("last")){
             subLine();
-            jl12.setText("");
+            jl12.setText(Space+"Page:"+ Space + line);
             updateDisplay();
         }
         else if(command.toLowerCase().equals("load")){
@@ -278,7 +358,7 @@ public class GUI{
             }
         }
         else{
-            String[] comm = command.split(" ");
+            comm = command.split(" ");
             if (comm[0].toLowerCase().equals("test") && comm.length<2) {
                 System.out.println("Test Ready NOW!");
                 Object[] test;
@@ -312,18 +392,10 @@ public class GUI{
                 res=TestData.TestData(tree, Test_Names,test,res);
                 jl12.setText(Space+res);
             }
-//            else if(comm[0].toLowerCase().equals("setrate")){
-//                Parameter.setRate(Integer.valueOf(comm[2]));
-//                try{
-//                    ZZB_JCS.main(Test_Names);
-//                }catch (Exception e){
-//                    System.out.println("HEHEHE！");
-//                }
-//                System.exit(0);
-//            }
         }
     }
     private void init(){
+
         f=new Frame("The Graduation Design Windows form Zhang Zhaobo for Teachers!");
         f.setBounds(300, 100, 800, 600);
         f.setLayout(new GridLayout(14,1));
@@ -333,16 +405,22 @@ public class GUI{
         closeItem=new MenuItem("Exit");
         openItem=new MenuItem("Open");
         saveItem=new MenuItem("Save");
-        subm=new Menu("New");
-        subItem1=new MenuItem("Web Project");
-        subItem=new MenuItem("Java Project");
+        subm=new Menu("Show");
+        subItem1=new MenuItem("Next");
+        subItem=new MenuItem("Last");
+        subItem4=new MenuItem("Clear");
         subm.add(subItem);
         subm.add(subItem1);
+        subm.add(subItem4);
         m.add(subm);
         m.add(openItem);
         m.add(saveItem);
         m.add(closeItem);
         Run = new Menu("Run");
+        subItem2 = new MenuItem("Auto Test");
+        subItem3 = new MenuItem("Help");
+        Run.add(subItem2);
+        Run.add(subItem3);
         mb.add(m);
         mb.add(Run);
         but = new Button("Execute !");
@@ -452,26 +530,7 @@ public class GUI{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
-                if(file==null){
-                    saveDialog.setVisible(true);
-                    String dirPath=saveDialog.getDirectory();
-                    String fileName=saveDialog.getFile();
-                    if(dirPath==null || fileName==null)
-                        return;
-                    file=new File(dirPath,fileName);
-                }
-                try {
-                    BufferedWriter bufw = new BufferedWriter(new FileWriter(file));
-                    int i = 0;
-                    while (i < LINES.length){
-                        if(LINES[i]!=null)
-                            bufw.write(LINES[i]+"\n");
-                        i++;
-                    }
-                    bufw.close();
-                } catch (IOException e2) {
-                    throw new RuntimeException("Failed to Save !");
-                }
+                saveCommand();
             }
         });
         openItem.addActionListener(new ActionListener() {
@@ -504,6 +563,7 @@ public class GUI{
                 dealCommand(ta.getText());
             }
         });
+
         but.addMouseListener(new MouseAdapter() {
             private int count=0;
             private int clickCount=1;
@@ -560,15 +620,40 @@ public class GUI{
                 }
             }
         });
+        subItem2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                dealCommand("autotest");
+            }
+        });
+        subItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                dealCommand("next");
+            }
+        });
+        subItem1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                dealCommand("last");
+            }
+        });
+        subItem4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                dealCommand("clear");
+            }
+        });
+        subItem4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                dealCommand("help");
+            }
+        });
     }
-
-//    public static void main(String[] args){
-//        GUI gui = new GUI();
-//        ZZB_JCS jcs = new ZZB_JCS();
-//        try {
-//            jcs.main1(gui);
-//        }catch (Exception e){
-//            System.out.println("Failed to JCS");
-//        }
-//    }
 }  
