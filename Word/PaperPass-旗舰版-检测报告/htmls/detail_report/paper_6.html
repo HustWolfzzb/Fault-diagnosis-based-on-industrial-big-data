@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>PaperPass 最权威论文抄袭检测系统</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+</head>
+<body>
+<div>
+    <div class="text-center PT30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_5.html"><span>上一页</span></a></li>
+    <li><a href="paper_7.html"><span>下一页</span></a></li>
+    <li><a href="paper_8.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">6</span>/<span>8</span>
+            页
+        </div>    </div>
+    <div class="paper-txt P30 PB0">
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="289">289</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">import java.io.IOException;</span> <span class="g-font-color green"> import java.text.NumberFormat;</span> <span class="g-font-color green">  public class ZZB_SVM {  public static Float main() throws IOException {  SVMReadData sr = new SVMReadData();</span> <span class="g-font-color green">  Parameter par = new Parameter();</span> <span class="g-font-color green">  String trainFileName = sr.readTrainData(par);</span> <span class="g-font-color green">  String testFileName = sr.readTestData(par);</span><a href='../sentence_detail/507.html' target='right' class='g-font-color orange'>  //训练使用的数据以及训练得出生成的模型文件名。</a> <span class="g-font-color green">  String[] trainFile = { trainFileName， ”model.txt” };</span> <span class="g-font-color green">  //测试数据文件，模型文件，结果存放文件  String[] predictFile = { testFileName， ”model.txt”，”predict.txt” };</span> <span class="g-font-color green">  System.out.println(”........SVM Start..........”);</span> <span class="g-font-color green">  long start=System.currentTimeMillis();</span> <span class="g-font-color green">  svm_train.main(trainFile);</span> <span class="g-font-color green"> //训练  System.out.println(”Usage of Time :</span> <span class="g-font-color green"> ”+(System.currentTimeMillis()-start));</span> <span class="g-font-color green">  //预测  float x = svm_predict.main(predictFile);</span> <span class="g-font-color green">  return x;</span> <span class="g-font-color green">  }</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="290">290</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">该类的main()方法最终将返回一个测试正确率的浮点数。</span> <span class="g-font-color green">静态方法main()的调用位置在人机交互界面类GUI.java中调用并且显示。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="291">291</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在对LibSVM的使用过程中，均使用默认的选项进行模型训练。</span> <span class="g-font-color green">下面是对于SVM分类建模过程有较大影响的参数解释：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="292">292</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">SVM类型设置（SVM type）：</span><a href='../sentence_detail/523.html' target='right' class='g-font-color orange'>默认为C-支持向量分类机，参数C是惩罚系数，C的数值与对错误分类的惩罚成正比例关系。</a><a href='../sentence_detail/524.html' target='right' class='g-font-color orange'>因此，惩罚系数对于模型预测的精度有较大的影响；</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="293">293</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">核函数设置（kernel type）：</span> <span class="g-font-color green">默认为径向基函数 (Radial Basis Function，简称为RBF函数)，在本次试验中采用高斯核函数，见表2-1中第三条；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="294">294</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">gamma：</span> <span class="g-font-color green">核函数中的gamma函数设置，此背景下默认为0.25；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="295">295</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">eps：</span> <span class="g-font-color green">允许的终止判据，类似迭代精度(默认0.001)</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="296">296</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">shrinking：</span> <span class="g-font-color green">是否使用启发式，0或1(默认为1)</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="297">297</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">3.5 人机交互界面设计</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="298">298</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">人机交互界面采用一个名为GUI.java的类来实现，其采用Java的awt和Swing两个专用于GUI编程的自带库来实现各个组件。</span> <span class="g-font-color green">在 ZZB_ JCS. java的 main方法中定义一个 GUI. java的实例化对象后，其以线程的方式独立于主线程存在，</span> <span class="g-font-color green">不过在主线程运行完毕之前会将构建的决策树模型以及其他一些会在人机交互中用到的变量，</span> <span class="g-font-color green">通过定义的静态方法传入到 GUI的实例对象中，从而实现从后台到前台的过渡。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="299">299</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">GUI整体由一个大框架，12个Label文字标签、1个文字输入栏，3个按钮组成。</span> <span class="g-font-color green">初步效果如下：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="300">300</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">图15 人机交互界面展示</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="301">301</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">另外配有两个菜单栏提供功能显示：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="302">302</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">图16 菜单栏</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="303">303</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">3.5.1 界面组件介绍</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="304">304</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在主程序的后半段，会将决策树算法处理数据后生成的决策树模型传入到 GUI线程实例中，</span> <span class="g-font-color green">然后在此基础上，将决策树模型分段在 GUI上展示。</span> <span class="g-font-color green">Line1-Line10就是用于展示决策树模型的。</span> <span class="g-font-color green">最上方的This is the Code Line for Command！</span> <span class="g-font-color green">作为提示，表示下面的输入框的作用。</span> <span class="g-font-color green">在文本输入框中键入对应的指令即可调用不同的系统命令执行包括测试数据，自动加载测试数据，退出，决策树展示换行等不同的功能。</span> <span class="g-font-color green">部分命令按钮会在首次加载GUI的时候以弹窗形式告知。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="305">305</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/551.html' target='right' class='g-font-color orange'>图16 初始化人机交互指令提示弹窗</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="306">306</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">按照提示，在命令框中输入HELP会显示所有的命令：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="307">307</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">图17 help命令弹窗</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="308">308</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/554.html' target='right' class='g-font-color orange'>底部的两个按钮则是用于查看决策树模型的辅助按钮。</a> <span class="g-font-color green">Button-CLEAR用于直接清空Label的输出，恢复到模型展示初始状态，也就是初始化的时候的样子，效果等同于在命令输入框输入clear这条指令。</span> <span class="g-font-color green">而Button-NEXT则是等同于在命令框输入next这条指令的效果，调取下一个十行决策树模型展示。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="309">309</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在最底部还有一个Label，这个Label用于响应如test，Load等无法直接在界面组件上展示效果的各种命令。</span> <span class="g-font-color green">如果命令错误，那么在底部会显示Error报错；</span> <span class="g-font-color green">如果是进行数据测试，那么会在最后这一条Label上展示出结果；</span> <span class="g-font-color green">如果是如加载数据的Load指令，则会在底部显示加载结果。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="310">310</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">3.5.2 操作命令介绍</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="311">311</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">下面解释下输入框能够接受的几条定义的命令：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="312">312</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">init：</span> <span class="g-font-color green">初始化决策树输出，内部加载数据，在init执行前所有的其他命令都无法操作；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="313">313</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">clear：</span> <span class="g-font-color green">清屏效果，将Line1-Line10以及底部提示栏还原为初始状态；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="314">314</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">next：</span> <span class="g-font-color green">读取下一个十行决策树内容显示在界面上；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="315">315</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">last:</span> <span class="g-font-color green"> 读取上一个十行决策树内容显示在界面上；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="316">316</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">test [data(value1 value2 value3 )]：</span> <span class="g-font-color green">调用决策树模型测试输入的数据：</span> <span class="g-font-color green">数据格式如上。</span> <span class="g-font-color green">如果没有在命令框中输入数据，那么系统会查询是否已经加载了外部数据，如果有，</span> <span class="g-font-color green">则自动读取外部数据，否则按照预设的数据（固定的示例）进行计算演示；</span> <span class="g-font-color green">其结果输出到底部消息提示栏的为分类结果；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="317">317</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">load:</span> <span class="g-font-color green"> 效果类似于菜单栏的open</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="318">318</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">autoload：</span> <span class="g-font-color green">自动加载测试数据；</span> <span class="g-font-color green">搜索当前目录下的测试数据文本，如果要跨越目录可以使用左上角的菜单栏-]Open，选择文件读入或者在命令框中输入LOAD加载文件读取窗口；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="319">319</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">autotest：</span><a href='../sentence_detail/583.html' target='right' class='g-font-color orange'>自动将目前存储的所有测试数据进行分类预测，并且统计正确率。</a> <span class="g-font-color green">同时调用ZZB_SVM.main()测试SVM下的结果，将两种模型准确度输出到底部消息提示栏；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="320">320</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">save：</span><a href='../sentence_detail/586.html' target='right' class='g-font-color orange'>将当前的决策树存入到指定文件夹，效果等同于菜单栏中的save选项；</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="321">321</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">help：</span> <span class="g-font-color green">输入后可以跳出弹窗显示所有命令提示；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="322">322</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">showinfo：</span> <span class="g-font-color green">显示当先使用者的信息，包括工作目录、使用者、操作系统、训练集大小、测试集大小、模型输出行数、页面数等；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="323">323</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">exit：</span> <span class="g-font-color green">退出GUI界面，效果等同于默认的退出按钮或菜单栏的exit选项；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="324">324</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">settrainnum：</span> <span class="g-font-color green">设置训练集大小，后必须跟一个整形参数，另外重置后必须再次进行初始化，否则会报错；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="325">325</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">settestnum：</span> <span class="g-font-color green">设置测试集大小，后必须跟一个整形参数，重置后也必须进行初始化操作。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="326">326</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">3.5.3 适用场景</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="327">327</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">此GUI界面适用于智能工厂环境，因为需要预装数据库，Java8软件，所以需要电脑的性能较好，才能保证我们能够迅速得到模型并且初始化GUI界面。</span> <span class="g-font-color green">另外GUI界面需要标准键盘输入才能与之交互，如果可以使用一些实物按钮来封装命令或者对应着GUI界面上的某些按钮将会有较好的效果。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+            </div>
+    <div class="text-center PB30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_5.html"><span>上一页</span></a></li>
+    <li><a href="paper_7.html"><span>下一页</span></a></li>
+    <li><a href="paper_8.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">6</span>/<span>8</span>
+            页
+        </div>    </div>
+    <div style="text-align: center;padding-top:30px">
+         <a href="http://www.118qikan.com/service?f=pp_report_section" target="_blank"><img src="http://file.paperpass.com/images/fabiao.jpg"/></a></div>
+    <div class="paper-footer">
+        <p>检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成</p>
+        <p>Copyright © 2007-2018 PaperPass</p>
+    </div>
+</div>
+</body>
+<script type="text/html" template="section">
+    <div class="text-right">
+        <div class="modifyTxt-notice">
+            修改完本段落之后，点击“临时保存”，之后可在上方导航“修改文档”页面中查看修改后的内容
+        </div>
+        <textarea class="form-control resize-none" rows="4" tpl-section="textarea"></textarea>
+        <div class="button-wrap MT10">
+            <button type="button" class="g-btn g-btn-default g-btn-sm red" tpl-section-cancle="btn">取消保存</button>
+            <button type="button" class="g-btn g-btn-default g-btn-sm" tpl-section-save="btn">临时保存</button>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/Lib.js"></script>
+<script type="text/javascript">
+    Report.report_id = '5afd279a0c129mxp7';
+</script>
+<script type="text/javascript">
+    (function(System,$){
+
+        var sectionEdit = System.Paper.sectionEdit();
+        var sectionSave = System.Paper.sectionSave(null);
+        $(function(){
+            $(document).on('click','[tpl-section=btn]',function(){
+                sectionEdit.call(this);
+            });
+            $(document).on('click','[tpl-section-save=btn]',function(){
+                sectionSave.call(this);
+
+            });
+            $(document).on('click','[tpl-section-cancle=btn]',function(){
+                var $warp = $(this).closest('[tpl-section="warp"]');
+                $warp.find('[tpl-section="box"]').html('');
+            });
+
+
+        });
+    })(Report,jQuery);
+
+</script>
+</html>

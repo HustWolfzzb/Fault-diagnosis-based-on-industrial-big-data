@@ -1,0 +1,840 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>详细报告语句详情</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <style type="text/css">
+        .content-tips .paper-section{margin-bottom:0;min-width:450px;}
+    </style>
+</head>
+<body>
+<span id="gototop"></span>
+<div>
+    <div class="paper-txt P30">
+        <div class="paper-section" style="margin-bottom:0;">
+            <div class="font-bold MT5">
+                该句相似度：<span class="g-font-color orange similarNum">53%</span>
+            </div>
+            <div class="MT30">
+                <p class="font-bold">您的语句：</p>
+                <span>根据属性 A，我们可以属性 A的不同取值（假设有 v种），将整个样本集 D分为 v个子样本集，</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="tab-A">
+            <ul class="tab-A-ul clearfix" tab-a="ul">
+                <li class="active" data-id="学术期刊,学位论文,学术会议,书籍数据,互联网,自建库,all">
+                    <span class="tab-text">综合</span>
+                    <span class="tab-superscript">16</span>
+                </li>
+                <li data-id="tab,学术期刊,学位论文,学术会议,书籍数据,自建库,local">
+                    <span class="tab-text">本地库</span>
+                    <span class="tab-superscript">16</span>
+                </li>
+                <li data-id="互联网,5">
+                    <span class="tab-text">互联网</span>
+                    <span class="tab-superscript">0</span>
+                </li>
+            </ul>
+        </div>
+        <div class="none" tab="section" data-id="tab">
+            <div class="tab-B clearfix">
+                <div class="paper-section P30 PB0 clearfix">
+                    <span class="tab-B-span pull-left">本地库</span>
+                    <ul class="tab-B-ul pull-left clearfix" tab-b="ul">
+                        <li class="active" data-id="tab,学术期刊,学位论文,学术会议,书籍数据,自建库,local">
+                            <span class="tab-text">全部</span>
+                            <span class="tab-superscript">16</span>
+                            <span class="black-spacer"></span>
+                        </li>
+                        <li data-id="tab,学术期刊,1">
+                            <span class="tab-text">期刊</span>
+                            <span class="tab-superscript">3</span>
+                            <span class="black-spacer"></span>
+                        </li>
+                        <li data-id="tab,学位论文,2">
+                            <span class="tab-text">学位</span>
+                            <span class="tab-superscript">10</span>
+                            <span class="black-spacer"></span>
+                        </li>
+                        <li data-id="tab,学术会议,3">
+                            <span class="tab-text">会议</span>
+                            <span class="tab-superscript">0</span>
+                            <span class="black-spacer"></span>
+                        </li>
+                        <li data-id="tab,书籍数据,4">
+                            <span class="tab-text">图书</span>
+                            <span class="tab-superscript">3</span>
+                                                    </li>
+                                            </ul>
+                </div>
+                <div class="g-line-row MT30 tab-pane-line"></div>
+            </div>
+        </div>
+        <div class="content-tips">
+            <div class="tab-content none" tab="section" data-id="1">
+                <div class="paper-txt P30 paper-section clearfix">
+                    <p class="g-font-color green pull-left">
+                        在期刊库共找出相似内容：<span>3</span>个                    <p>
+                    <div class="pull-right">
+                        <a href="#modify_suggest" class="g-btn g-btn-default g-btn-sm">查看修改意见</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content none" tab="section" data-id="2">
+                <div class="paper-txt P30 paper-section clearfix">
+                    <p class="g-font-color green pull-left">
+                        在学位库共找出相似内容：<span>10</span>个                    <p>
+                    <div class="pull-right">
+                        <a href="#modify_suggest" class="g-btn g-btn-default g-btn-sm">查看修改意见</a>                    </div>
+                </div>
+            </div>
+            <div class="tab-content none" tab="section" data-id="3">
+                <div class="paper-txt P30 paper-section clearfix">
+                    <p class="g-font-color green pull-left">
+                        在会议库中没有找到与此句话相似的内容                    <p>
+                    <div class="pull-right">
+                                            </div>
+                </div>
+            </div>
+            <div class="tab-content none" tab="section" data-id="4">
+                <div class="paper-txt P30 paper-section clearfix">
+                    <p class="g-font-color green pull-left">
+                        在图书库共找出相似内容：<span>3</span>个                    <p>
+                    <div class="pull-right">
+                        <a href="#modify_suggest" class="g-btn g-btn-default g-btn-sm">查看修改意见</a>                    </div>
+                </div>
+            </div>
+            <div class="tab-content none" tab="section" data-id="5">
+                <div class="paper-txt P30 paper-section clearfix">
+                    <p class="g-font-color green pull-left">
+                        在互联网库中没有找到与此句话相似的内容                    <p>
+                    <div class="pull-right">
+                                            </div>
+                </div>
+            </div>
+            <!-- 自建库 -->
+            <div class="tab-content none" tab="section" data-id="6">
+                <div class="paper-txt P30 paper-section clearfix">
+                    <p class="g-font-color green pull-left">
+                        在自建库中没有找到与此句话相似的内容                    <p>
+                    <div class="pull-right">
+                                            </div>
+                </div>
+            </div>
+                        <div class="tab-content" tab="section" data-id="all">
+                <div class="paper-txt P30 paper-section clearfix">
+                    <p class="g-font-color green pull-left">
+                        在本地库和互联网库共找出相似内容：<span>16</span>个
+                    <p>
+                    <div class="pull-right">
+                        <a href="#modify_suggest" class="g-btn g-btn-default g-btn-sm">查看修改意见</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content none" tab="section" data-id="local">
+                <div class="paper-txt P30 paper-section clearfix">
+                    <p class="g-font-color green pull-left">
+                        在本地库共找出相似内容：<span>16</span>个                    <p>
+                    <div class="pull-right">
+                        <a href="#modify_suggest" class="g-btn g-btn-default g-btn-sm">查看修改意见</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+                <div class="tab-content" tab="section" data-id="书籍数据">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">1</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">53%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange"><span class="g-underline-text">根据</span><span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设有 v种），<span class="g-underline-text">将</span>整个样本<span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子样本<span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">属性</span>A，<span class="g-underline-text">根据</span>该<span class="g-underline-text">属性</span><span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>v1，v2，…，vn<span class="g-underline-text">将</span>T中<span class="g-underline-text">的</span>训练<span class="g-underline-text">集</span>划<span class="g-underline-text">分为</span>n个子<span class="g-underline-text">集</span>，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            的所有样本都是正例，则产生一个标有“Yes”的节点作为T的子节点，并结束;③如果T中的所有样本都是反例，则产生一个标有“No”的节点作为T的子节点，并结束;④选择一个<span class="g-font-color green">属性A，根据该属性的不同取值v1，v2，…，vn将T中的训练集划分为n个子集，</span>并根据这n个子集建立T的n个子节点:T1，T2，…，Tn，并分别以A=vi作为                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（书籍数据）：</p>
+                            <div class="local-source-detail">
+                                <b>章节：</b>《前言》<br><b>书名：</b>《管理信息学》<br><b>作者：</b>杨善林<br><b>出版社：</b>高等教育出版社<br><b>ISBN：</b>7-04-012311-8
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="书籍数据">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">2</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">45%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A的不同取<span class="g-underline-text">值</span>（假设有 v种），<span class="g-underline-text">将</span>整个样本集 D<span class="g-underline-text">分为</span> v个子样本集，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green">特征<span class="g-underline-text">属性</span>A（A具有v个<span class="g-underline-text">值</span>：a1，a2，…，av）<span class="g-underline-text">将</span>D<span class="g-underline-text">分为</span>v个子集{D1，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            增益为例说明如何正确选择内部节点的特征属性。假设：学习样本集D中共有|D|条数据记录，分别属于m个类别，其中，属于类别Ci的数据记录数为|Ci|。计算D的熵（entropy）：再设以<span class="g-font-color green">特征属性A（A具有v个值：a1，a2，…，av）将D分为v个子集{D1，</span>D2，…，Dv}，每个子集Dj中都包括|Dj|条具有相应的特征属性值Aj的数据记录。计算：                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（书籍数据）：</p>
+                            <div class="local-source-detail">
+                                <b>章节：</b>《第七章 分类》<br><b>书名：</b>《生物医学数据挖掘》<br><b>作者：</b>章鲁 ... 等<br><b>出版社：</b>上海科学技术出版社<br><b>出版时间：</b>2008-01-01<br><b>ISBN：</b>978-7-5323-9253-7
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">3</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">44%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设<span class="g-underline-text">有</span> v种），<span class="g-underline-text">将</span>整个<span class="g-underline-text">样本</span><span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">集</span><span class="g-underline-text">的</span>划分则依据测试<span class="g-underline-text">属性</span><span class="g-underline-text">的</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>进行，测试<span class="g-underline-text">属性</span><span class="g-underline-text">有</span>多少<span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>就<span class="g-underline-text">将</span><span class="g-underline-text">样本</span><span class="g-underline-text">集</span>划<span class="g-underline-text">分为</span>多少子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            长出一个新叶子节点；IF新叶节点对应的样本子集T’为空则不再分裂此叶子节点，将其标记为T中出现最多的类；ID3算法运用信息熵理论，选择当前样本集中具有最大信息增益值的属性作为测试属性，样本<span class="g-font-color green">集的划分则依据测试属性的取值进行，测试属性有多少不同取值就将样本集划分为多少子样本集，</span>同时，决策树上相应于该样本集的节点长出新的叶子节点。由于决策树的结构越简单越能从本质的层次上                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《基于数据挖掘方法的热轧带钢表面质量缺陷分析》<br><b>作者：</b>宋健<br><b>分类号：</b>TG335.11<br><b>学科专业：</b>控制理论与控制工程<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>郭朝晖<br><b>学位授予单位：</b>上海交通大学<br><b>学位年度：</b>2008<br><b>关键词：</b>数据挖掘 分类 决策树 表面质量缺陷
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">4</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">44%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设<span class="g-underline-text">有</span> v种），<span class="g-underline-text">将</span>整个<span class="g-underline-text">样本</span><span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">集</span><span class="g-underline-text">的</span>划分则依据测试<span class="g-underline-text">属性</span><span class="g-underline-text">的</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>进行，测试<span class="g-underline-text">属性</span><span class="g-underline-text">有</span>多少<span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>就<span class="g-underline-text">将</span><span class="g-underline-text">样本</span><span class="g-underline-text">集</span>划<span class="g-underline-text">分为</span>多少子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            (9)ifS，为空then加上一个叶节点，以samples中最普遍的类标记；浙江大学硕士学位论文第三章决策树的构造和简化ID3算法运用信息熵理论，选择当前样本集中具有最大信息增益值的属性作为测试属性。样本<span class="g-font-color green">集的划分则依据测试属性的取值进行，测试属性有多少不同取值就将样本集划分为多少子样本集，</span>同时，决策树上相应于该样本集的节点长出新的叶子节点。由于决策树的结构越简单越能从本质上概括事物                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《数据挖掘分类算法研究》<br><b>作者：</b>郭炜星<br><b>分类号：</b>TP301.6<br><b>学科专业：</b>计算机软件与理论<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>陈平<br><b>学位授予单位：</b>浙江大学<br><b>学位年度：</b>2008<br><b>关键词：</b>数据挖掘 分类算法 降维方法 加权二分查找算法
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">5</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">44%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设<span class="g-underline-text">有</span> v种），<span class="g-underline-text">将</span>整个<span class="g-underline-text">样本</span><span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">集</span><span class="g-underline-text">的</span>划分则依据测试<span class="g-underline-text">属性</span><span class="g-underline-text">的</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>进行，测试<span class="g-underline-text">属性</span><span class="g-underline-text">有</span>多少<span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>就<span class="g-underline-text">将</span><span class="g-underline-text">样本</span><span class="g-underline-text">集</span>划<span class="g-underline-text">分为</span>多少子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            当前的候选属性集用T_attributelist表示，候选属性集中的所有属性皆为离散型，连续值属性必须事先经过预处理转化为离散型口ID3算法运用信息嫡理论，选择当前样本集中具有最大信息增益值的属性作为测试属性，样本<span class="g-font-color green">集的划分则依据测试属性的取值进行，测试属性有多少不同取值就将样本集划分为多少子样本集，</span>同时，决策树上相应于该样本集的节点长出新的叶子节点。由于决策树的结构越简单越能从本质的层次上                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《基于决策树分类算法研究及应用》<br><b>作者：</b>王立柱<br><b>分类号：</b>TP311.131<br><b>学科专业：</b>管理科学与工程<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>赵大宇<br><b>学位授予单位：</b>沈阳师范大学<br><b>学位年度：</b>2005<br><b>关键词：</b>数据挖掘 知识发现 决策树 数据仓库 数据库管理系统 人才识别
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">6</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">44%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设<span class="g-underline-text">有</span> v种），<span class="g-underline-text">将</span>整个<span class="g-underline-text">样本</span><span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">集</span><span class="g-underline-text">的</span>划分则依据测试<span class="g-underline-text">属性</span><span class="g-underline-text">的</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>进行，测试<span class="g-underline-text">属性</span><span class="g-underline-text">有</span>多少<span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>就<span class="g-underline-text">将</span><span class="g-underline-text">样本</span><span class="g-underline-text">集</span>划<span class="g-underline-text">分为</span>多少子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            IF新叶节点对应的样本子集S’为空则不再分裂此叶子节点，将其标记为S中出现最多的类：继续对它分裂：，ID3算法运用信息熵理论，选择当前样本集中具有最大信息增益值的属性作为测试属性：样本<span class="g-font-color green">集的划分则依据测试属性的取值进行，测试属性有多少不同取值就将样本集划分为多少子样本集，</span>同时，决策树上相应于该样本集的节点长出新的叶子节点。由于决策树的结构越简单越能从本质的层次上                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《决策树在土地规划中的应用研究》<br><b>作者：</b>但小岗<br><b>分类号：</b>F301.23<br><b>学科专业：</b>计算机应用技术<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>陈笑蓉<br><b>学位授予单位：</b>贵州大学<br><b>学位年度：</b>2008<br><b>关键词：</b>决策树 土地规划 土地利用
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">7</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">44%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设<span class="g-underline-text">有</span> v种），<span class="g-underline-text">将</span>整个<span class="g-underline-text">样本</span><span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">集</span><span class="g-underline-text">的</span>划分则依据测试<span class="g-underline-text">属性</span><span class="g-underline-text">的</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>进行，测试<span class="g-underline-text">属性</span><span class="g-underline-text">有</span>多少<span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>就<span class="g-underline-text">将</span><span class="g-underline-text">样本</span><span class="g-underline-text">集</span>划<span class="g-underline-text">分为</span>多少子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            的例外，如果没有例外则训练结束。(4)组合当前窗口的一些训练数据与某些在(3)中找到的例外形成新的窗口，转步骤ID3算法选择当前样本集中具有最大信息增益值的属’|生作为测试属性；样本<span class="g-font-color green">集的划分则依据测试属性的取值进行，测试属性有多少不同取值就将样本集划分为多少子样本集，</span>同时，决策树上相应于该样本集的节点长出新的叶子节点。在ID3算法中，对CLS算法的一个重大改进是                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《基于决策树的土地利用现状信息提取研究》<br><b>作者：</b>高玉蓉<br><b>分类号：</b>TP311.13<br><b>学科专业：</b>农业遥感与信息技术<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>许红卫<br><b>学位授予单位：</b>浙江大学<br><b>学位年度：</b>2006<br><b>关键词：</b>决策树 决策规则 boosting技术 信息提取 采样 监督分类 土地利用
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学术期刊">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">8</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">43%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span>不同取值（假设有 v种），<span class="g-underline-text">将</span>整个样本<span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子样本<span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green">…a……，a。}是<span class="g-underline-text">属性</span>a，<span class="g-underline-text">的</span>值域<span class="g-underline-text">集</span>。用<span class="g-underline-text">属性</span>a．<span class="g-underline-text">将</span>S划<span class="g-underline-text">分为</span>v个子<span class="g-underline-text">集</span>{S，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            x/x∈U，且f(X，C)=C．}，则样本集s的信息熵总值、兰意样本属于Ci的概率。定义3：设训练样本集s中条件属性a．具有个不同取值，则Va，={a<span class="g-font-color green">…a……，a。}是属性a，的值域集。用属性a．将S划分为v个子集{S，</span>，的样本子集。则根据属性a．划分样本的信息熵值定义4：用属性ai划分样本集S后所得的信2                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学术期刊）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《一种基于信息熵的可伸缩决策树算法》<br><b>作者：</b>耿焱<br><b>作者单位：</b>南京审计学院信息科学学院<br><b>参考文献：</b>3篇<br><b>页数：</b>1页<br><b>分类号：</b>O4<br><b>机标分类号：</b>TP1 TP3<br><b>期刊名称：</b>《中国科技信息》<br><b>出版时间：</b>2005年24期<br><b>ISSN：</b>1001-8972<br><b>关键词：</b>分类 决策树 可伸缩<br><b>摘要：</b>提出了一种基于信息熵的可伸缩决策树生成算法SDTA(A Scalable Decision Tree Algorithm).与SPRINT算法不同,该算法使用基于信息熵增益的思想分割训练样本集,引入了新的数据结构:基于类别的属性表.该表记录存储了计算分割属性的所有信息,并且该表的大小不会随样本集的增大而增大,可以常贮主存.与SLIQ算法相比,SDTA算法彻底摆脱了主存容量对算法效率的限制.实验表明,SDTA算法能生成正确的决策树,而且具有良好的可伸缩性.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学术期刊">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">9</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">42%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span>取<span class="g-underline-text">值</span>（<span class="g-underline-text">假设</span>有 v种），将整个<span class="g-underline-text">样本</span>集 D分为 v个子<span class="g-underline-text">样本</span>集，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green">期望熵。<span class="g-underline-text">假设</span><span class="g-underline-text">属性</span>A<span class="g-underline-text">的</span>所有<span class="g-underline-text">不同</span><span class="g-underline-text">值</span><span class="g-underline-text">的</span>集合为Value（A），Sv是<span class="g-underline-text">属性</span>A<span class="g-underline-text">的</span><span class="g-underline-text">值</span>为v<span class="g-underline-text">的</span><span class="g-underline-text">样本</span>子集，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            类Ci（i=1，2，…，c），每个类Ci含有的样本数目为ni，则S划分为c个类的信息熵为其中，pi为S中的样本属于第i类Ci的概率，即pi=ni/n。定义7<span class="g-font-color green">期望熵。假设属性A的所有不同值的集合为Value（A），Sv是属性A的值为v的样本子集，</span>即Sv={s∈S｜A（s）=v}。属性A对样本集Sv分类的熵为E（Sv），                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学术期刊）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《基于信息熵的粗糙K-prototypes聚类算法》<br><b>作者：</b>欧阳浩 戴喜生 王智文 王萌<br><b>作者单位：</b>广西科技大学 计算机学院,广西 柳州,545006；广西科技大学 电气与信息工程学院,广西 柳州,545006<br><b>参考文献：</b>19篇<br><b>页码：</b>P1239—P1243<br><b>页数：</b>5页<br><b>分类号：</b>TP391<br><b>基金项目：</b>国家自然科学基金项目(61364006)；广西自然科学基金项目(2013GXNSFAA019336、2013GXNSFBA019280)；广西高校科学技术研究基金项目(LX2014190)；广西科技大学科学基金项目(校科自1261128)<br><b>期刊名称：</b>《计算机工程与设计》<br><b>出版时间：</b>2015年5期<br><b>期刊级别：</b>PKU<br><b>ISSN：</b>1000-7024<br><b>关键词：</b>混合型数据 聚类 信息熵 粗糙集 数据挖掘<br><b>摘要：</b>针对传统K-prototypes在计算分类属性的差异度时未考虑各个分类属性对聚类结果的影响程度，且算法容易受到噪声的干扰，无法处理数据中不够精确、不完整等不确定性问题，提出基于信息熵的粗糙K-prototypes聚类算法。在计算数据样本之间分类属性的差异度时，使用信息熵的理论，确定每个分类属性对于聚类分析结果的影响权重；引入粗糙理论，计算得到各样本与粗糙模之间的粗糙相异度，通过多次迭代计算，获得最终聚类结果。该算法结合信息熵和粗糙理论，可区别对待各分类属性，解决数据不精确引起的不确定性问题，4个UCI数据集上的实验分析结果验证了该算法的有效性。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="书籍数据">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">10</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">42%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span>不同<span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设有 v种），<span class="g-underline-text">将</span>整个样本<span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子样本<span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green">{a1，a2，…，av}，则通过<span class="g-underline-text">属性</span>A<span class="g-underline-text">的</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>可<span class="g-underline-text">将</span>数据<span class="g-underline-text">集</span>S划<span class="g-underline-text">分为</span>v个子<span class="g-underline-text">集</span>，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            中元组的数量。集合S在分类中的期望信息量可以由以下公式给出：其中，pi是表示任意样本属于ci类的概率，pi=ri/S。S为训练样本数据集中的元组数量。假设属性A共有v个不同的取值<span class="g-font-color green">{a1，a2，…，av}，则通过属性A的取值可将数据集S划分为v个子集，</span>其中，Sj表示在数据集S中属性A的取值为aj的子集，j=1，2，…，v。如果A                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（书籍数据）：</p>
+                            <div class="local-source-detail">
+                                <b>章节：</b>《第5章 基于粗糙集的决策树的构建》<br><b>书名：</b>《基于粗糙集数据挖掘技术的客户价值分析》<br><b>作者：</b>王宏<br><b>出版社：</b>经济科学出版社<br><b>出版时间：</b>2006-09-01<br><b>ISBN：</b>7-5058-5824-6<br><b>摘要：</b>本书先对客户价值研究理论、数据挖掘理论、粗糙集理论进行了综述，接着介绍了客户价值分析、分类数据挖掘、基于粗糙集的数据挖掘等内容。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">11</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">42%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span>不同<span class="g-underline-text">取</span><span class="g-underline-text">值</span>（<span class="g-underline-text">假设</span><span class="g-underline-text">有</span> v<span class="g-underline-text">种</span>），将整个样本集 D分为 v个子样本集，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green">v，v是<span class="g-underline-text">属性</span>a<span class="g-underline-text">的</span>一个<span class="g-underline-text">取</span><span class="g-underline-text">值</span>，<span class="g-underline-text">假设</span>a<span class="g-underline-text">有</span>n个<span class="g-underline-text">值</span>，则v是在比较n．1<span class="g-underline-text">种</span>可能分割<span class="g-underline-text">的</span></p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            ，该算法生成的是一棵二叉树。在每个非叶结点需选择一个测试属性，形成一个测试条件，满足此条件的样本被分到左子树，不满足的被分到右子树。对某连续属性a，假定其测试条件为a≤<span class="g-font-color green">v，v是属性a的一个取值，假设a有n个值，则v是在比较n．1种可能分割的</span>GINI系数后得出的。这一过程中，对a的i1个值排序是很耗时的工作，SLIQ算法为提高排序效率                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《基于粗糙集合理论的决策树优化方法研究》<br><b>作者：</b>郑锦良<br><b>分类号：</b>TP311.131<br><b>学科专业：</b>计算机应用技术<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>胡学钢<br><b>学位授予单位：</b>合肥工业大学<br><b>学位年度：</b>2009<br><b>关键词：</b>数据挖掘 数据分类 决策树 粗糙集合
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">12</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">42%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设<span class="g-underline-text">有</span> v种），<span class="g-underline-text">将</span>整个<span class="g-underline-text">样本</span><span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">集</span><span class="g-underline-text">的</span>划分则依据测试<span class="g-underline-text">属性</span><span class="g-underline-text">的</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>进行，测试<span class="g-underline-text">属性</span><span class="g-underline-text">有</span>多少<span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>就<span class="g-underline-text">将</span><span class="g-underline-text">样本</span><span class="g-underline-text">集</span>划<span class="g-underline-text">分为</span>多少子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>。</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            的技术进行了分析和比较。华中科技大学硕士学位论文3．2几种典型的决策树算法ID3算法是一种根据熵减(EntropyDcduce)理论选择最优的描述属性的方法。选择当前样本集中具有最大信息增益值的属性作为测试属性。样本<span class="g-font-color green">集的划分则依据测试属性的取值进行，测试属性有多少不同取值就将样本集划分为多少子样本集。</span>同时，决策树上相应于该样本集的节点长出新的节点．这种方法使得对一个对象分类所需的期望测试数目达到最小                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《基于数据挖掘的教学评价系统研究》<br><b>作者：</b>袁燕<br><b>分类号：</b>G420<br><b>学科专业：</b>计算机应用技术<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>马光志<br><b>学位授予单位：</b>华中科技大学<br><b>学位年度：</b>2006<br><b>关键词：</b>决策树 关联规则 教学评价 数据挖掘 教学质量 属性信息熵
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">13</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">42%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span>不同取<span class="g-underline-text">值</span>（假设有 v种），<span class="g-underline-text">将</span>整个<span class="g-underline-text">样本</span><span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">值</span>分割当前<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>;若为连续<span class="g-underline-text">属性</span>，则依据它<span class="g-underline-text">的</span>分割闽<span class="g-underline-text">值</span>，<span class="g-underline-text">将</span>当前<span class="g-underline-text">样本</span><span class="g-underline-text">集</span><span class="g-underline-text">分为</span>两个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>.对</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            v'的取值v;成为当前节点在a上的分割闭值(threshold)。按照上述方法求出当前候选属性集中所有属性的信息增益率，比较它们找出信息增益率最高的属性，若为离散属性，则按照该属性的不同取<span class="g-font-color green">值分割当前样本集;若为连续属性，则依据它的分割闽值，将当前样本集分为两个子样本集.对</span>每个子样本集用同样的方法分割直到不可分割或达到停止条件为止。为了处理某些样本在某些属性上取值空缺的情况                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《数据挖掘决策树分类技术及应用的研究》<br><b>作者：</b>朱伟忠<br><b>分类号：</b>TP311.131<br><b>学科专业：</b>计算机技术<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>杨慧斌<br><b>学位授予单位：</b>华南理工大学<br><b>学位年度：</b>2004<br><b>关键词：</b>数据挖掘 决策树 OLE DB for DM 文本分类 信息熵 数据结构 数据库系统
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">14</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">42%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span>不同取<span class="g-underline-text">值</span>（假设有 v种），<span class="g-underline-text">将</span>整个<span class="g-underline-text">样本</span><span class="g-underline-text">集</span> D<span class="g-underline-text">分为</span> v个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">值</span>分割当前<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>：若为连续<span class="g-underline-text">属性</span>，则依据它<span class="g-underline-text">的</span>分割阀<span class="g-underline-text">值</span>，<span class="g-underline-text">将</span>当前<span class="g-underline-text">样本</span><span class="g-underline-text">集</span><span class="g-underline-text">分为</span>两个子<span class="g-underline-text">样本</span><span class="g-underline-text">集</span>。对</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            v’的取值、ri成为当前节点在属性口上的分割阀值(threshold)。按照上述方法求出当前候选属性集中所有属性的信息增益率，比较它们找出信息增益率最高的属性，若为离散属性，则按照该属性的不同取<span class="g-font-color green">值分割当前样本集：若为连续属性，则依据它的分割阀值，将当前样本集分为两个子样本集。对</span>每个子样本集用同样的方法继续分割直到不可分割或达到停止条件为止．考虑到训练样本集中可能含有一些样本，它们在                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《决策树分类方法在保险业务中的应用研究》<br><b>作者：</b>周奕羊<br><b>分类号：</b>F840.4<br><b>学科专业：</b>软件工程<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>张小平<br><b>学位授予单位：</b>贵州大学<br><b>学位年度：</b>2007<br><b>关键词：</b>数据挖掘 分类方法 决策树算法 保险业务
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学位论文">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">15</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">41%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange"><span class="g-underline-text">根据</span><span class="g-underline-text">属性</span> A，我们可以<span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设有 v种），<span class="g-underline-text">将</span>整个样本集 D<span class="g-underline-text">分为</span> v个子样本集，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green">集合S，<span class="g-underline-text">根据</span><span class="g-underline-text">属性</span>A<span class="g-underline-text">的</span><span class="g-underline-text">不同</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span><span class="g-underline-text">将</span>S<span class="g-underline-text">分为</span>|V(A)|个类，其中V(A)表示<span class="g-underline-text">属性</span>A</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            函数，它们的相对熵可以衡量两个随机分布的差异性，随机分布差异性越大，则两个随机分布的相对熵也越大。2.信息增益在ID3决策树构造中，使用信息增益[15]作为分裂属性选择的条件。假设样本<span class="g-font-color green">集合S，根据属性A的不同取值将S分为|V(A)|个类，其中V(A)表示属性A</span>的值域，属性A的每一个取值vVA()；Sv表示属性A取值为v的样本子集。使用属性A                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学位论文）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《基于决策树分类的网络异常流检测与过滤》<br><b>作者：</b>丁文彬<br><b>分类号：</b>TP393.06<br><b>学科专业：</b>计算机应用技术<br><b>授予学位：</b>硕士<br><b>导师姓名：</b>鲁珂<br><b>学位授予单位：</b>电子科技大学<br><b>学位年度：</b>2013<br><b>关键词：</b>网络异常流检测 决策树分类 随机森林 强分类器群 C4.5算法
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+                    <div class="tab-content" tab="section" data-id="学术期刊">
+            <div>
+                <div class="g-line-row"></div>
+                <div class="paper-txt P30">
+                    <div class="paper-section" style="margin-bottom:0;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="chapter-symbol"></span>
+                                <span class="chapter-num">16</span>
+
+                            </div>
+                            <div class="font-bold pull-right">
+                                相似度：<span class="g-font-color orange similarNum">41%</span>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">您的句子：</p>
+                            <p class="g-font-color orange">根据<span class="g-underline-text">属性</span> A，我们<span class="g-underline-text">可以</span><span class="g-underline-text">属性</span> A<span class="g-underline-text">的</span>不同<span class="g-underline-text">取</span><span class="g-underline-text">值</span>（假设有 v种），将整个样本集 D分为 v个子样本集，</p>
+
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似句子：</p>
+                            <p class="g-font-color green"><span class="g-underline-text">属性</span>a=v<span class="g-underline-text">的</span><span class="g-underline-text">值</span>。<span class="g-underline-text">属性</span>al<span class="g-underline-text">的</span><span class="g-underline-text">取</span><span class="g-underline-text">值</span><span class="g-underline-text">可以</span>是有限离散<span class="g-underline-text">值</span>，也<span class="g-underline-text">可以</span>是连续数<span class="g-underline-text">值</span>，<span class="g-underline-text">可以</span>是语言<span class="g-underline-text">值</span>，</p>
+                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">相似原文片段：</p>
+                            的关系集，即F={f的值域。信息系统是数据库的抽象描述。在信息系统中的关系集F是非常重要的，它是对象集与属性集之间的纽带，也是知识发现的信息基础。f)=v表达了对象j具有<span class="g-font-color green">属性a=v的值。属性al的取值可以是有限离散值，也可以是连续数值，可以是语言值，</span>也可以是图像和声音。在本文中，属性al的取值为有限离散值{01}。定理1设(                        </div>
+                        <div class="MT10">
+                            <p class="font-bold">来源（学术期刊）：</p>
+                            <div class="local-source-detail">
+                                <b>篇名：</b>《采用二分法的信息系统属性约简研究》<br><b>作者：</b>智慧来<br><b>作者单位：</b>河南理工大学 计算机科学与技术学院,河南 焦作,454000<br><b>参考文献：</b>16篇<br><b>页码：</b>P21—P24<br><b>页数：</b>4页<br><b>分类号：</b>TP18<br><b>机标分类号：</b>TP3 TP1<br><b>基金项目：</b>国家自然科学基金(No.60975033)；河南理工大学博士基金(No.B2011-102)。<br><b>期刊名称：</b>《计算机工程与应用》<br><b>出版时间：</b>2014年9期<br><b>期刊级别：</b>ISTIC - PKU<br><b>ISSN：</b>1002-8331<br><b>关键词：</b>信息系统 属性约简 范式转换 二分法<br><b>摘要：</b>属性约简是粗糙集理论的重要研究内容之一，并已经证明是一个NP难问题。为了提高算法的效率，提出了一个采用二分策略的属性约简方法，即计算信息系统的划分核心，利用划分核心将原始对象集逐次二分，对每个二分后的对象子集分别计算划分辨识集，计算划分辨识集的极小覆盖，通过合并极小覆盖与划分核心获得信息系统的属性约简。分析和实验结果表明随着划分核心数量的增长，使用二分法大幅度提高了算法的效率。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+            
+        <!--语句修改建议-->
+        <span id="modify_suggest"></span>
+        <div id="advice">
+            <div class="g-line-row"></div>
+            <div class="paper-txt P30 PB0">
+                <div class="paper-section">
+                    <p class="g-font-s16 font-bold g-font-color green MB10">该句修改建议（轻度相似，请酌情修改）</p>
+                    <span class="g-font-color green">根据<span class="g-font-color red">属性</span> A，我们可以<span class="g-font-color red">属性</span> A的<span class="g-font-color red">不同</span><span class="g-font-color red">取</span><span class="g-font-color red">值</span>（假设有 v种），<span class="g-font-color red">将</span>整个样本<span class="g-font-color red">集</span> D<span class="g-font-color red">分为</span> v个子样本<span class="g-font-color red">集</span>，</span>
+                    <div class="MT10">
+                        <p class="font-bold">同义词：</p>
+                        <ul class="local-source-detail">
+                            <li class="g-font-color green"><span class="g-font-color red">不同：</span>差别 差异 不比</li><li class="g-font-color green"><span class="g-font-color red">分为：</span>分成</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="back-to-top text-center">
+        <a href="#gototop" class="font-bold g-font-color green">回到顶部</a>
+    </div>
+    <div class="paper-footer">
+        <p>检测报告由<a href="http://www.paperpass.com/" target="_black">PaperPass</a>文献相似度检测系统生成</p>
+        <p>Copyright © 2007-2018 PaperPass</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/Lib.js"></script>
+<script type="text/javascript">
+    (function(System,$){
+        var tab = System.Paper.tab();
+        var $advice = null;
+        function run(){
+            var i = 0;
+            $advice.show();
+            tab.call(this,{callback:function(){
+                var $num = $(this).find('.chapter-num');
+                if($num.length>0){
+                    i++;
+                    $num.text(i);
+                }
+            }});
+            //没有内容时同时不显示该句修改建议
+            if(0 === i){$advice.hide();}
+        }
+        $(function(){
+            $advice = $('#advice');
+            $(document).on('click','[tab-a="ul"] li',function(){
+                run.call(this);
+            });
+            $(document).on('click','[tab-b="ul"] li',function(){
+                run.call(this);
+            });
+        });
+    })(Report,jQuery);
+
+
+</script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="">
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>PaperPass_检测报告</title>
+    <link rel="stylesheet" href="htmls/css/bootstrap.css"/>
+    <link rel="stylesheet" href="htmls/css/iframe.css"/>
+    <style type="text/css">
+        html,body{overflow: hidden;}
+        .alert-warning{position: fixed;top:0; width: 100%;height: 30px;line-height: 30px;text-align: center; background: #f00;color: #fff;z-index: 10000;}
+    </style>
+
+</head>
+<body class="">
+<noscript>
+    <div class="alert-warning">
+        <p>您当前的浏览器的安全设置导致脚本被禁用！请<b>更换浏览器</b>。</p>
+    </div>
+</noscript>
+<div id="m-header">
+    <div class="paper-header">
+        <div class="header-nav">
+            <a href="" class="nav-logo pull-left">
+                <img src="htmls/images/logo.png">
+                <p class="g-font-color green text-right g-font-s16">旗舰版</p>
+            </a>
+            <div class="nav-tit pull-left">
+                <h4>基于工业大数据的生产设备故障诊断</h4>
+                论文作者：<span class="MR10">张照博</span>
+                提交时间：<span class="submitTime">2018-5-17 14:56:26</span></li>
+            </div>
+            <div class="nav-detail pull-right">
+                <ul class="nav-detail-info pull-left">
+                    <li>论文字数：<span class="paperNum">23847</span></li>
+                    <li>段落个数：<span class="sectionNum">422</span></li>
+                    <li>句子个数：<span class="sentenceNum">788</span></li>
+                </ul>
+                <div class="nav-detail-similar pull-left">
+                    总体相似度
+                    <p class="text-right">
+                        <span class="similarNum">15%</span>
+                    </p>
+                    <span class="progress"><span class="progress-bar green" style="width: 15%;"></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nav clearfix" id="m-nav">
+    <ul class="tab pull-left clearfix" tab-a="ul">
+        <li class="active">
+            <a href="htmls/detail_report.html" target="main">详细报告</a>
+            <span class="grey-spacer"></span>
+        </li>
+        <li>
+            <a href="htmls/comprehensive_assessment.html" target="main">综合评估</a>
+            <span class="grey-spacer"></span>
+        </li>
+        <li>
+            <a href="htmls/view_original_edit.html" target="main">修改文档</a>
+            <span class="grey-spacer"></span>
+        </li>
+        <li>
+            <a href="htmls/view_original.html" target="main">查看原文</a>
+            <span class="grey-spacer"></span>
+        </li>
+        <li>
+            <a href="简明打印版.pdf" target="_blank">打印PDF</a>
+            <span class="grey-spacer"></span>
+        </li>
+        <li>
+            <a href="htmls/help.html" target="main">使用帮助</a>
+            <span class="grey-spacer"></span>
+        </li>
+        <li>
+             <a href="http://www.118qikan.com/service?f=ppreport_top" target="_blank">论文降重</a>
+        </li>
+    </ul>
+    <div class="pull-right">
+        <p class="g-font-color green">
+            检测报告编号：
+            <span>5AFD279A0C129MXP7</span>
+            <a type="button" class="g-btn g-btn-default g-btn-sm transparent ML15" href="http://www.paperpass.com/check" target="_blank">查询真伪</a>
+        </p>
+    </div>
+</div>
+<div id="m-content" class="clearfix over-h MT10">
+    <iframe src="htmls/detail_report.html" name="main" scrolling="no" frameborder="0"></iframe>
+</div>
+
+</body>
+<script type="text/javascript" src="htmls/js/jquery.min.js"></script>
+<script type="text/javascript" src="htmls/js/Lib.js"></script>
+<script type="text/javascript">
+    (function(System,$){
+        'use strict';
+        var tab = System.Paper.tab();
+        var run = System.Paper.setMainIframeHeight();
+        $(function(){
+            try {
+                if ("undefined" === typeof localStorage || "undefined" === typeof JSON) {
+                    $('body').append('<div class="alert-warning"><p>您当前的浏览器不支持段落修改功能，如需使用此功能请<b>更换其它浏览器</b>！</p></div>');
+                }
+            } catch (e){
+                $('body').append('<div class="alert-warning"><p>您当前的浏览器不支持段落修改功能，如需使用此功能请<b>更换其它浏览器</b>！</p></div>');
+            }
+            $(document).on('click','[tab-a="ul"] li',function(){
+                tab.call(this);
+            });
+            $(window).resize(function(){
+                run();
+            }).trigger('resize');
+        });
+    })(Report,jQuery);
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>PaperPass 最权威论文抄袭检测系统</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+</head>
+<body>
+<div>
+    <div class="text-center PT30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_2.html"><span>上一页</span></a></li>
+    <li><a href="paper_4.html"><span>下一页</span></a></li>
+    <li><a href="paper_8.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">3</span>/<span>8</span>
+            页
+        </div>    </div>
+    <div class="paper-txt P30 PB0">
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="115">115</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">2.2.1 信息熵</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="116">116</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/199.html' target='right' class='g-font-color orange'>假设当前样本集 D中有 N个样本，而整个样本有 k个分类，每个分类对应的样本数量为那么对于每个分类，</a> <span class="g-font-color green">他们各自占据的信息量（也可以理解为样本分类的频率）为：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="117">117</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/201.html' target='right' class='g-font-color orange'>结合每一个分类的信息量，则此样本总体的信息熵为：</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="118">118</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">2.2.2 信息增益</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="119">119</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/203.html' target='right' class='g-font-color orange'>假设当前样本集D中有N 个样本，每个样本都有一些属性，假设我们目前取属性A作为我们计算信息增益的属性。</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="120">120</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/204.html' target='right' class='g-font-color orange'>根据属性 A，我们可以属性 A的不同取值（假设有 v种），将整个样本集 D分为 v个子样本集，</a><a href='../sentence_detail/205.html' target='right' class='g-font-color orange'>每个样本子集的样本数为 N，那么每一个样本子集的频率为：</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="121">121</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">那么该样本集的A属性的信息增益即为：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="122">122</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">2.2.3 ID3算法</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="123">123</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/208.html' target='right' class='g-font-color orange'>ID3是一种以自顶向下递归的方法构造决策树的贪心算法。</a> <span class="g-font-color green">其决策树的基本生成策略如下:</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="124">124</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（1）树以整体样本作为单个节点开始；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="125">125</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/211.html' target='right' class='g-font-color orange'>（2）如果当前节点中，所有的样本都属于同一类，则该节点成为叶节点，并标记为当前样本的类；</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="126">126</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/212.html' target='right' class='g-font-color orange'>（3）否则，使用前面提到的信息增益作为判断信息，选择信息增益最大的一个属性作，该各个属性值将成为该节点往下进行分支的依据。</a><a href='../sentence_detail/213.html' target='right' class='g-font-color red'>在这里，我们假设所有的属性都是分类的，即取离散值，连续值的属性必须离散化[9]；</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="127">127</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/214.html' target='right' class='g-font-color red'>（4） 对测试属性的每个已知的值创建一个分支，并据此划分样本子集；</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="128">128</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/215.html' target='right' class='g-font-color red'>（5） 算法使用类似的方法，递归地形成每个划分上的样本决策树。</a><a href='../sentence_detail/216.html' target='right' class='g-font-color red'>一旦一个属性出现在一个节点上，就不必在该节点的后代上考虑这个属性。</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="129">129</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">ID3算法虽然简单易用，但是也有很多缺陷：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="130">130</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（1） ID3算法缺乏对于连续值的处理手段，而在现实生活中，很多的应用环境都是采集到的连续值；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="131">131</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（2）计算信息增益的时候对于样本频率P(xi)有极大的依赖性，有时候会对模型造成很大的偏差；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="132">132</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（3）对噪声较为敏感，所谓噪声也就是一些在生成模型的时候就给定的错误数据；</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="133">133</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（4）采用递归的方式形成模型，而且整个决策树的生成过程对于数据多次读取存写，所以算法较为低效，而且无法应用于大数据量的场合下。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="134">134</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">下面是利用这些概念获得故障树的过程：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="135">135</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/223.html' target='right' class='g-font-color red'>图2 ID3算法生成决策树流程图</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="136">136</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">为了提高决策树的模型精度，去除掉模型创建时一些错误数据的干扰，有两种剪枝方法可以用于提高决策树的正确分类能力：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="137">137</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/225.html' target='right' class='g-font-color orange'>（1）预剪枝方法(prepruning)，该方法通过提前停止树的向下延伸而对树剪枝。</a> <span class="g-font-color green">在各个节点向下分支之前，判断通往该分支的样本子集中的判断正确率进行对比，如果在当前节点的正确率高于分支后的子节点，</span> <span class="g-font-color green">那么就停止生长，这就是预剪枝的主要思想。</span> <span class="g-font-color green">该方法很多的分支都未曾展开，降低了过拟合的风险，而且还显著减少了决策树的训练时间和花销；</span> <span class="g-font-color green">但是另外一方面，一些分支虽然不能提升整体的泛化性能，但是由其再次展开的分支却有可能导致性能显著提高，</span> <span class="g-font-color green">而且预剪枝的贪心本质给这种方法带来了欠拟合的风险。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="138">138</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（2）后剪枝方法( postpruning)，顾名思义，该方法是预先生成一颗完整的决策树，然后从每一个叶节点往上查看父节点，</span><a href='../sentence_detail/232.html' target='right' class='g-font-color orange'>计算如果该父节点进行剪枝成为叶节点后是否会提高判定精度来决定是否剪枝。</a> <span class="g-font-color green">这种方式直到无法提高决策树性能为止。</span> <span class="g-font-color green">对比预剪枝方法，后剪枝方法保留了更多的分支。</span> <span class="g-font-color green">一般情况下，后剪枝方法的欠拟合风险比较小，泛化性能优于预剪枝方法生成的决策树。</span><a href='../sentence_detail/236.html' target='right' class='g-font-color orange'>但是由于后剪枝方法是在决策树生成后在进行的，所以在训练时间和花销上会比预剪枝方法高得多。</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="139">139</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">2.3 支持向量机二分类原理</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="140">140</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">2.3.1 SVM原理</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="141">141</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/239.html' target='right' class='g-font-color orange'>支持向量机（ Support Vector Machine， SVM）是一种经典的二分类模型算法，基本模型定义为特征空间中最大间隔的线性分类器，</a><a href='../sentence_detail/240.html' target='right' class='g-font-color orange'>其学习的优化目标便是间隔最大化，因此支持向量机本身可以转化为一个凸二次规划求解的问题。</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="142">142</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/241.html' target='right' class='g-font-color orange'>对于二分类学习器，假设数据是线性可分的，这时分类学习就是找到一个合适的超平面来进行分类，</a><a href='../sentence_detail/242.html' target='right' class='g-font-color orange'>该超平面能够将不同类别的样本分开，下图中的点是低维数据表示，</a> <span class="g-font-color green">而这些数据对应的超平面就是中间那根线。</span> <span class="g-font-color green">对于点来说，线毫无疑问是处于高维的超平面了。</span><a href='../sentence_detail/245.html' target='right' class='g-font-color orange'>随着维数增加，超平面总是比数据的维数多一维。</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="143">143</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">图3 二维超平面</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="144">144</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">但是这样的超平面可能存在多个，我们应该寻找的最优超平面该如何获取呢？</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="145">145</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/248.html' target='right' class='g-font-color orange'>图4 存在多个划分超平面将两类训练样本分开</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="146">146</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">直观上看的话，我们应该寻找位于两类训练样本正中间的超平面作为我们的最优超平面，</span><a href='../sentence_detail/250.html' target='right' class='g-font-color orange'>因为这个超平面对于整个训练样本局部扰动的容忍性能最好。</a> <span class="g-font-color green">换言之，这个超平面所产生的分类结果是最鲁棒的，对于未知的数据的分类能里最强。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="147">147</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在样本空间中，超平面可以通过如下线性方程表示：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="148">148</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">其中w = （w1;</span> <span class="g-font-color green">w2;</span> <span class="g-font-color green">w3;</span> <span class="g-font-color green">...;</span><a href='../sentence_detail/257.html' target='right' class='g-font-color red'>wd）为超平面的法向量，决定了超平面的方向。</a><a href='../sentence_detail/258.html' target='right' class='g-font-color red'>b为位移，决定了超平面与原点之间的距离。</a> <span class="g-font-color green">既然有了可以用数学方式表达的超平面，那么样本空间中任意一点到超平面的距离也就可以表示为：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="149">149</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">假设超平面能够正确分类，即对于，则有:</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="150">150</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/261.html' target='right' class='g-font-color orange'>那么我们可以得到距离超平面最近的几个训练样本可以使得上式中的等号成立，</a><a href='../sentence_detail/262.html' target='right' class='g-font-color orange'>这几个样本就称为支持向量，两个异类支持向量到超平面的距离之和为：</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="151">151</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">这个距离就被称作间隔（margin）：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="152">152</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">图5 支持向量与间隔</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="153">153</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/265.html' target='right' class='g-font-color orange'>显而易见的，我们的目标就是找到具有最大间隔的超平面作为最优超平面。</a> <span class="g-font-color green">那么此超平面需要符合下列特点：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="154">154</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/267.html' target='right' class='g-font-color orange'>由此，为了得到最大间隔下的最优超平面，只需要最小化，于是，上式可以改写为：</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="155">155</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">这就是支持向量机（Support Vector Machine，SVM）这一方法的基本型。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="156">156</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">2.3.2 对偶问题</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="157">157</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/270.html' target='right' class='g-font-color orange'>由上面的支持向量机方法的基本型，我们可以知道这是一个带约束的凸二次规划问题，解决这个问题的较高效的办法是：</a> <span class="g-font-color green">对偶问题（dual problem）。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="158">158</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/272.html' target='right' class='g-font-color orange'>具体的解决方式为给每条约束添加拉格朗日乘子 则上述问题的朗格朗日函数可写为：</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="159">159</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/273.html' target='right' class='g-font-color orange'>其中，由拉格朗日乘数法的思想，令对的偏导为0可以的得到：</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="160">160</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">利用两个式子代入到中可以消去，就得到了关于基本型的对偶问题：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="161">161</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">通过求解出的，我们可以计算得出，从而得到最终具体的模型：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="162">162</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在上述的解答过程中，因为基本型有着不等式的约束条件，所以需要满足KKT（Karush-Kuhn-Tucker）条件：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="163">163</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">于是对于任何的训练样本，都要有 = 0 或者 的限制条件。</span> <span class="g-font-color green">且必须是满足的样本才会出现在最大间隔边界上，说明这一个样本是支持向量。</span> <span class="g-font-color green">这一点也就代表着，训练完成后大部分的训练样本都不需要进行保留，只需要留下支持向量的那些样本即可。</span><a href='../sentence_detail/280.html' target='right' class='g-font-color orange'>因为非支持向量的都等于0，去除之后不会对模型产生什么影响。</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="164">164</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">模型建立完毕之后，在对新的数据点进行分类时，实际上就是将这个新的数据点代入到分类函数中，</span> <span class="g-font-color green">若 f( x)得出来的结果大于0，则为正类，否则为负类。</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="165">165</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">2.3.3 SVM核函数</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="166">166</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">假如训练样本线性不可分，放到我们最开始的例子里面的意思就是：</span><a href='../sentence_detail/285.html' target='right' class='g-font-color orange'>我们无法用一条直线将所有的样本正确分类为两类。</a> <span class="g-font-color green">如下面的异或问题：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="167">167</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">图6 异或问题</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="168">168</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">图7 非线性映射</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="169">169</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/289.html' target='right' class='g-font-color orange'>对于这种情况，我们可以将原始空间的训练样本映射到一个更高维度的特征空间，使得样本在这个特征空间内线性可分[10]。</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="170">170</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/290.html' target='right' class='g-font-color orange'>令表示将x映射到高维空间中的特征向量，那么对比前面线性可分的模型表示，可以得到相应的模型为：</a>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="171">171</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">同理可得：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="172">172</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">同样可以得到他的对偶问题，如下：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="173">173</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">映射后的特征空间维数可能会很高，会极大地加大我们训练时间和内存开销，直接计算 不一定可行。</span> <span class="g-font-color green">为了避开这个不稳定的区域，我们可以假设存在这样一个函数：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="174">174</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/295.html' target='right' class='g-font-color orange'>即在高维特征空间中映射向量的内积等于在原始样本空间中通过核函数计算后的结果。</a> <span class="g-font-color green">这就是核技巧。</span> <span class="g-font-color green">上述式子可以改写为：</span>            </p>
+            <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+        </div>
+            </div>
+    <div class="text-center PB30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_2.html"><span>上一页</span></a></li>
+    <li><a href="paper_4.html"><span>下一页</span></a></li>
+    <li><a href="paper_8.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">3</span>/<span>8</span>
+            页
+        </div>    </div>
+    <div style="text-align: center;padding-top:30px">
+         <a href="http://www.118qikan.com/service?f=pp_report_section" target="_blank"><img src="http://file.paperpass.com/images/fabiao.jpg"/></a></div>
+    <div class="paper-footer">
+        <p>检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成</p>
+        <p>Copyright © 2007-2018 PaperPass</p>
+    </div>
+</div>
+</body>
+<script type="text/html" template="section">
+    <div class="text-right">
+        <div class="modifyTxt-notice">
+            修改完本段落之后，点击“临时保存”，之后可在上方导航“修改文档”页面中查看修改后的内容
+        </div>
+        <textarea class="form-control resize-none" rows="4" tpl-section="textarea"></textarea>
+        <div class="button-wrap MT10">
+            <button type="button" class="g-btn g-btn-default g-btn-sm red" tpl-section-cancle="btn">取消保存</button>
+            <button type="button" class="g-btn g-btn-default g-btn-sm" tpl-section-save="btn">临时保存</button>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/Lib.js"></script>
+<script type="text/javascript">
+    Report.report_id = '5afd279a0c129mxp7';
+</script>
+<script type="text/javascript">
+    (function(System,$){
+
+        var sectionEdit = System.Paper.sectionEdit();
+        var sectionSave = System.Paper.sectionSave(null);
+        $(function(){
+            $(document).on('click','[tpl-section=btn]',function(){
+                sectionEdit.call(this);
+            });
+            $(document).on('click','[tpl-section-save=btn]',function(){
+                sectionSave.call(this);
+
+            });
+            $(document).on('click','[tpl-section-cancle=btn]',function(){
+                var $warp = $(this).closest('[tpl-section="warp"]');
+                $warp.find('[tpl-section="box"]').html('');
+            });
+
+
+        });
+    })(Report,jQuery);
+
+</script>
+</html>

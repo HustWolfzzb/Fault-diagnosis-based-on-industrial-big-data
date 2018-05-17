@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p,
+a, em, img,
+strong, sub, sup, i,center, dl, dt, dd, ol, ul, li,
+form, label, legend, table, caption, tbody,tfoot, thead, tr, th, td{margin: 0;padding: 0;border: 0;font-size: 100%;vertical-align: baseline;}
+
+body{background:#fff;line-height: 1;overflow-x:hidden;font-family: Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;}
+h1,h2,h3,h4,h5,h6{font-size:100%;clear: both;}
+em,i{font-style:normal;}
+ul,ol,li{list-style:none;}
+a{text-decoration:none;outline:none;background: transparent;}
+button,input,select,textarea{font-size:100%;outline:none}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+table{border-collapse:collapse;border-spacing:0;}
+textarea{resize:vertical;overflow: auto;vertical-align: top;padding: 10px;}
+fieldset,img{border:none;border:0;}
+img {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-interpolation-mode: bicubic;
+  /* 1 */
+  max-width: 100%;
+  /* 2 */
+  height: auto;
+  /* 2 */
+  vertical-align: middle;
+  /* 3 */
+  border: 0;
+  /* 4 */
+}
+
+
+
+
