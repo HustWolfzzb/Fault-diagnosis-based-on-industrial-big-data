@@ -8,7 +8,7 @@
                        ___________________
 
 
-STEP File Name: D:\C++\Graduation-Design\Drawing\g1_3_1_1\g1_3_1_1.stp
+STEP File Name: D:\C++\Graduation-Design\Drawing\Version1--装配完毕\g1_3_1_1.stp
 
 
 #1879: halfcone definition
@@ -85,34 +85,34 @@ STEP-in 无法成功完成
 STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
 STEP-in 无法成功完成
-曲面已成功地形成实体。
-STEP-in 完成
-Error: 无法从剪裁的曲面生成实体。
-STEP-in 无法成功完成
 #11781: halfcone definition
 #11804: halfcone definition
 #12310: halfcone definition
 #12334: halfcone definition
 曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
+STEP-in 完成
+Error: 无法从剪裁的曲面生成实体。
+STEP-in 无法成功完成
+曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成#33402: halfcone definition
+STEP-in 完成曲面已成功地形成实体。
+STEP-in 完成
+Error: 无法从剪裁的曲面生成实体。
+STEP-in 无法成功完成
+曲面已成功地形成实体。
+STEP-in 完成
+Error: 无法从剪裁的曲面生成实体。
+STEP-in 无法成功完成
+#33402: halfcone definition
 #33425: halfcone definition
 #33688: halfcone definition
 #33711: halfcone definition
 曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成
-Error: 无法从剪裁的曲面生成实体。
-STEP-in 无法成功完成
-曲面已成功地形成实体。
-STEP-in 完成
-Error: 无法从剪裁的曲面生成实体。
-STEP-in 无法成功完成
-曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
@@ -168,11 +168,11 @@ STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
 STEP-in 无法成功完成
 曲面已成功地形成实体。
-STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
 STEP-in 无法成功完成
 曲面已成功地形成实体。
+STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
@@ -346,41 +346,19 @@ STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成
-Error: 无法从剪裁的曲面生成实体。
-STEP-in 无法成功完成
-曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
 STEP-in 无法成功完成
 曲面已成功地形成实体。
-STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
 STEP-in 无法成功完成
 曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成
-Error: 无法从剪裁的曲面生成实体。
-STEP-in 无法成功完成
-曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成
-Error: 无法从剪裁的曲面生成实体。
-STEP-in 无法成功完成
-曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
-STEP-in 完成
-Error: 无法从剪裁的曲面生成实体。
-STEP-in 无法成功完成
-曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
@@ -393,6 +371,28 @@ STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
 STEP-in 无法成功完成
 曲面已成功地形成实体。
+STEP-in 完成曲面已成功地形成实体。
+STEP-in 完成
+Error: 无法从剪裁的曲面生成实体。
+STEP-in 无法成功完成
+曲面已成功地形成实体。
+STEP-in 完成曲面已成功地形成实体。
+STEP-in 完成曲面已成功地形成实体。
+STEP-in 完成
+Error: 无法从剪裁的曲面生成实体。
+STEP-in 无法成功完成
+曲面已成功地形成实体。
+STEP-in 完成
+Error: 无法从剪裁的曲面生成实体。
+STEP-in 无法成功完成
+曲面已成功地形成实体。
+STEP-in 完成曲面已成功地形成实体。
+STEP-in 完成曲面已成功地形成实体。
+STEP-in 完成
+Error: 无法从剪裁的曲面生成实体。
+STEP-in 无法成功完成
+曲面已成功地形成实体。
+STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
@@ -413,8 +413,7 @@ STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
 STEP-in 无法成功完成
 曲面已成功地形成实体。
+STEP-in 完成曲面已成功地形成实体。
 STEP-in 完成
 Error: 无法从剪裁的曲面生成实体。
 STEP-in 无法成功完成
-曲面已成功地形成实体。
-STEP-in 完成
