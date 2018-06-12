@@ -56,7 +56,7 @@ public class ZZB_JCS{
 
      * just like decoding the data
      ********************* */
-    static void DataToTest(Parameter par, ReadData data)  throws IOException{
+    static void DataToTest(Parameter par, ReadData data) throws IOException{
         FileWriter out1 = new FileWriter("DataToTest.txt");
         Object[][] DataToTest = data.readTestData(par);
         for (int i = 0; i < DataToTest.length; ++i) {
@@ -497,6 +497,11 @@ public class ZZB_JCS{
 //        下面是主体的，生成决策树，GUI部分的内容
 //####################################################
         GUI gui = new GUI();
+//        Parameter par = new Parameter();
+//        ReadData data = new ReadData();
+//        par.setTrainNum(200000);
+//        data.saveTrainData(par);
+//        data.saveTestData(par);
 //####################################################
 //        下面是输出决策树画图用的数据的内容
 //####################################################

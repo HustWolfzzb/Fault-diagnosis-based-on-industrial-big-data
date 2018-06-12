@@ -21,6 +21,8 @@
 * 其实我觉得如果可以每一次读一条数据，然后处理一条会比较好
 * 但是算了，数据量不大的话，这个样子也不会增加太多时间的！
 ******************* */
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -109,6 +111,7 @@ public class ReadData {
                     dataToTest[i][j] = Float.parseFloat(nf.format(select_ok.getFloat((String) Name[j])));
                 }
             }
+
 //            for (List<Float> x:range) {
 //                System.out.println(x.size());
 //                for (float s:x){
@@ -130,7 +133,7 @@ public class ReadData {
                 }
                 for (int i = 0; i < dataToTest.length; ++i) {
                     re[i][Name.length - 1] = dataToTest[i][Name.length - 1];
-                    //便利旧集合没有就添加到新集合
+                    //遍历旧集合，没有就添加到新集合
                 }
                 statement.close();
                 mysql.Dis_Connect();
@@ -143,6 +146,69 @@ public class ReadData {
             e.printStackTrace();
         }
         return new Object[1][1];
+    }
+
+    public void saveTrainData(Parameter par)  throws IOException {
+        try {
+            mysql.Connect();
+            Statement statement = mysql.getStatement();
+            int columnCount = par.getTrainNum();
+            float[][] dataToTrain;
+            dataToTrain = new float[columnCount][Name.length];
+            for (int i = 0; i < columnCount; ++i) {
+                String getData = getSelectQuery(Name, "gear", i * par.getTrainDistance());
+                ResultSet select_done;
+                select_done = statement.executeQuery(getData);
+                select_done.next();
+                for (int j = 0; j < Name.length; ++j) {
+                    dataToTrain[i][j] = Float.parseFloat(nf.format(select_done.getFloat((String) Name[j])));
+                }
+            }
+            FileWriter out1 = new FileWriter("Hadoop_DataToTrain.txt");
+            for (int i = 0; i < dataToTrain.length; ++i) {
+                for (int j = 0; j < dataToTrain[i].length; ++j) {
+                    out1.write(dataToTrain[i][j] + " ");
+                }
+                out1.write("\n");
+            }
+            out1.close();
+
+            statement.close();
+            mysql.Dis_Connect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveTestData(Parameter par)  throws IOException {
+        try {
+            mysql.Connect();
+            Statement statement = mysql.getStatement();
+            int columnCount = par.getTestNum();
+            float[][] dataToTest;
+            dataToTest = new float[columnCount][Name.length];
+            for (int i = 0; i < columnCount; ++i) {
+                String getData = getSelectQuery(Name, "gear", i * par.getTrainDistance()+1);
+                ResultSet select_done;
+                select_done = statement.executeQuery(getData);
+                select_done.next();
+                for (int j = 0; j < Name.length; ++j) {
+                    dataToTest[i][j] = Float.parseFloat(nf.format(select_done.getFloat((String) Name[j])));
+                }
+            }
+            FileWriter out1 = new FileWriter("Hadoop_DataToTest.txt");
+            for (int i = 0; i < dataToTest.length; ++i) {
+                for (int j = 0; j < dataToTest[i].length; ++j) {
+                    out1.write(dataToTest[i][j] + " ");
+                }
+                out1.write("\n");
+            }
+            out1.close();
+            statement.close();
+            mysql.Dis_Connect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
 

@@ -24,9 +24,9 @@ import java.util.Map;
    10  *  用图形的方式,来显示计算机操作的界面,这样更方便更直观.
    11  *
    12  * CLI
-   13  *  Command Line User Interface(命令行用户接口)
-   14  *  就是常用的Dos命令行操作.
-   15  *  需要记忆一些常用的命令.操作更直观.
+   13  *  Command Line User Interface(指令行用户接口)
+   14  *  就是常用的Dos指令行操作.
+   15  *  需要记忆一些常用的指令.操作更直观.
    16  *
    17  * 举例:
    18  *   比如:创建文件夹,或者删除文件夹等
@@ -81,15 +81,10 @@ class MyWin extends WindowAdapter{
         System.exit(0);
     }
     @Override
-    public void windowActivated(WindowEvent e) {
-        //每次获得焦点 就会触发
-        System.out.println("Welcome Back!");
-    }
-    @Override
     public void windowOpened(WindowEvent e) {
         // TODO Auto-generated method stub
         System.out.println("Now It is Working!");
-        JOptionPane.showMessageDialog(null,"Welcome To Here!\n【init】：Load Model！\n【clear】: Clear the Screen!\n【next 】：The Next Line！\n【exit 】： Exit the System!\nFor More Option, input \"HELP\"","MESSAGE FROM ZZB",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"操作指令简介\n【init】：初始化加载模型\n【clear】: 清屏指令\n【next 】：显示下一页\n【exit 】： 退出系统\n更多指令，键入\"HELP\"查询","提示界面",JOptionPane.WARNING_MESSAGE);
     }
 }
 
@@ -103,7 +98,7 @@ public class GUI{
     private int nextTimes=0;
     private String[] Test_Names = new String[] {"Sensor1","Sensor2","Sensor3","Sensor4", "Load"};
 
-    private Button but,but1,but2;
+    private Button but,but1,but2,but3;
     private TextField ta;
     private MenuBar mb;
     private Menu m,subm,Run;
@@ -142,7 +137,7 @@ public class GUI{
             }
             bufw.close();
         } catch (IOException e2) {
-            throw new RuntimeException("Failed to Save !");
+            throw new RuntimeException("保存失败！!");
         }
     }
     private void addLine(){
@@ -196,7 +191,7 @@ public class GUI{
                 TEXT[i] = Space+""+LINES[(LINES.length/10)*10+i];
             }
             for (int i=LINES.length-(LINES.length/10)*10;i<11;++i){
-                TEXT[i]=Space+"|||||||||||||||||===========》》》》》》DONE!";
+                TEXT[i]=Space+"||||||||||||||||>>>>>>>>>>>>>>>>>>>>DONE!";
             }
         }
         System.out.println(line);
@@ -232,13 +227,13 @@ public class GUI{
     }
     private void dealCommand(String command){
         if (command.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "未检测到命令", "输入错误", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "未检测到指令", "输入错误", JOptionPane.WARNING_MESSAGE);
         }
         if (command.toLowerCase().equals("exit")){
             System.exit(0);
         }
         else if (command.toLowerCase().equals("help")){
-            JOptionPane.showMessageDialog(null,"【init】：Load Model！\n【clear】: Clear the Screen!\n【test】: Test your DATA!\n【load】:Load the File Choosed\n【autoload】：Load the default testdata\n【autotest】：test all Test_Data\n【last】：The Last Line\n【next】：The Next Line\n【help】：Show All Options\n【save】：Save the DecisionTree as '.txt' File\n【showinfo】：Show Info of the User\n【exit】： Exit the System\n【setTrainNum】：Reset the TrainData Num\n【setTestNum】：Reset the TestData Num","**** Command Option ****",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"【init】：初始化加载模型\n【clear】: 清屏指令\n【next 】：显示下一页\n【exit 】： 退出系统\n【test】: 测试数据，后接数据\n【load】:手动加载测试数据集\n【autoload】：自动加载测试数据集\n【autotest】：自动测试所有加载的数据集\n【last】：显示上页内容\n【help】：展示所有的指令\n【save】：以 '.txt' 形式保存模型\n【showinfo】：显示当前用户的具体信息\n【setTrainNum】：设置训练集大小\n【setTestNum】：设置测试集大小","**** 人机交互界面指令介绍 ****",JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -250,7 +245,7 @@ public class GUI{
                 isInit = false;
             }catch (Exception e){
                 System.out.println(e);
-                JOptionPane.showMessageDialog(null,"你输入的数据有误，标准为：\n\t SetTrainNum 10000","Type Error",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"你输入的数据有误，标准为：\n\t SetTrainNum 10000","格式错误",JOptionPane.WARNING_MESSAGE);
             }
             return;
         }
@@ -260,7 +255,7 @@ public class GUI{
                 jl12.setText(Space+"设置完毕，当前测试数据为："+par.getTestNum()+"，请初始化！");
                 isInit = false;
             }catch (Exception e){
-                JOptionPane.showMessageDialog(null,"你输入的数据有误，标准为：\n\t SetTestNum 10000","Type Error",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"你输入的数据有误，标准为：\n\t SetTestNum 10000","格式错误",JOptionPane.WARNING_MESSAGE);
             }
             return;
         }
@@ -298,16 +293,16 @@ public class GUI{
         else if(command.toLowerCase().equals("clear")){
             System.out.println("Down, Clear ALL!");
             line=0;
-            jl2.setText(Space+"Line 1");
-            jl3.setText(Space+"Line 2");
-            jl4.setText(Space+"Line 3");
-            jl5.setText(Space+"Line 4");
-            jl6.setText(Space+"Line 5");
-            jl7.setText(Space+"Line 6");
-            jl8.setText(Space+"Line 7");
-            jl9.setText(Space+"Line 8");
-            jl10.setText(Space+"Line 9");
-            jl11.setText(Space+"Line 10");
+            jl2.setText(Space+"第 一 行");
+            jl3.setText(Space+"第 二 行");
+            jl4.setText(Space+"第 三 行");
+            jl5.setText(Space+"第 四 行");
+            jl6.setText(Space+"第 五 行");
+            jl7.setText(Space+"第 六 行");
+            jl8.setText(Space+"第 七 行");
+            jl9.setText(Space+"第 八 行");
+            jl10.setText(Space+"第 九 行");
+            jl11.setText(Space+"第 十 行");
             jl12.setText(Space+"Page："+Space+ "0");
         }
         else if(command.toLowerCase().equals("next")){
@@ -332,14 +327,14 @@ public class GUI{
                     TData.add(line);
                 }
                 tdata.close();
-                jl12.setText(Space+"Auto Load Done! Now you can test data to check the model!");
+                jl12.setText(Space+"自动加载完毕，接下来你可以 test 每一条数据或者 utotest 所有的数据");
             } catch (IOException e2) {
                 System.out.println(e2);
             }
         }
         else if(command.toLowerCase().equals("autotest")){
             if (TData.isEmpty()){
-                jl12.setText(Space+"Please Open the Test File to load the Data! Or input autoload to load the data！");
+                jl12.setText(Space+"请先在菜单栏中加载数据，或者键入 Autoload 自动加载默认测试集 ！");
                 return;
             }
             else {
@@ -349,8 +344,9 @@ public class GUI{
                 System.out.println(RightCount+" "+FaultCount);
                 try{
                     float acc1 = RightCount/(RightCount + FaultCount)*100;
-                    jl12.setText(Space+Space+"Please Wait For Calculate!");
-                    jl12.setText(Space+"决策树(Descision Tree) Model 准确率： "+Float.parseFloat(nf.format(acc1)) + "%     支持向量机(SVM) Model 准确率为：  " + Float.parseFloat(nf.format(ZZB_SVM.main()))+"%");
+                    jl12.setText(Space+Space+"等待计算中......");
+                    float s = ZZB_SVM.main();
+                    jl12.setText(Space+"决策树(Descision Tree)准确率： "+Float.parseFloat(nf.format(acc1)) + "%     支持向量机(SVM)准确率为：  " + Float.parseFloat(nf.format(s))+"%");
                 }catch (IOException e){
                     System.out.println("这他么都能给报错？我不信！!");
                 }
@@ -361,7 +357,7 @@ public class GUI{
         else{
             comm = command.split(" ");
             if (comm[0].toLowerCase().equals("test") && comm.length<2) {
-                System.out.println("Test Ready NOW!");
+                System.out.println("开始测试!");
                 Object[] test;
                 if(TData.isEmpty()) {
                     test = new Object[]{"-3.0", "2.0", "2.0", "1.0", "0.0" };
@@ -397,19 +393,19 @@ public class GUI{
     }
     private void init(){
 
-        f=new Frame("The Graduation Design Windows form Zhang Zhaobo for Teachers!");
+        f=new Frame("张照博的毕业设计");
         f.setBounds(300, 100, 800, 600);
         f.setLayout(new GridLayout(14,1));
         ta=new TextField(50);
         mb=new MenuBar();
-        m=new Menu("File");
-        closeItem=new MenuItem("Exit");
-        openItem=new MenuItem("Open");
-        saveItem=new MenuItem("Save");
-        subm=new Menu("Show");
-        subItem1=new MenuItem("Next");
-        subItem=new MenuItem("Last");
-        subItem4=new MenuItem("Clear");
+        m=new Menu("文件");
+        closeItem=new MenuItem("退出");
+        openItem=new MenuItem("打开");
+        saveItem=new MenuItem("保存");
+        subm=new Menu("显示");
+        subItem1=new MenuItem("下一页");
+        subItem=new MenuItem("上一页");
+        subItem4=new MenuItem("清 屏");
         subm.add(subItem);
         subm.add(subItem1);
         subm.add(subItem4);
@@ -417,19 +413,19 @@ public class GUI{
         m.add(openItem);
         m.add(saveItem);
         m.add(closeItem);
-        Run = new Menu("Run");
-        subItem2 = new MenuItem("Auto Test");
-        subItem3 = new MenuItem("Help");
+        Run = new Menu("运行");
+        subItem2 = new MenuItem("自动测试");
+        subItem3 = new MenuItem("帮助");
         Run.add(subItem2);
         Run.add(subItem3);
         mb.add(m);
         mb.add(Run);
-        but = new Button("Execute !");
-        openDialog=new FileDialog(f,"I wanna to open",FileDialog.LOAD);
-        saveDialog=new FileDialog(f,"I wanna to save",FileDialog.SAVE);
+        but = new Button("执行");
+        openDialog=new FileDialog(f,"打开...",FileDialog.LOAD);
+        saveDialog=new FileDialog(f,"保存至...",FileDialog.SAVE);
         f.setMenuBar(mb);
         jp1 = new JPanel();
-        jl1 = new JLabel("This is the Code Line for Command!");
+        jl1 = new JLabel("指令输入框");
         jl1.setSize(300,40);
         jp1.add(jl1);
         f.add(jp1);
@@ -440,61 +436,61 @@ public class GUI{
         f.add(jp2);
 
         jp3 = new JPanel();
-        jl2 = new JLabel(Space+"Line 1",SwingConstants.LEFT);
+        jl2 = new JLabel(Space+"第 一 行",SwingConstants.LEFT);
         jp3.add(jl2);
         jp3.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp3);
 
         jp4 = new JPanel();
-        jl3 = new JLabel(Space+"Line 2",SwingConstants.LEFT);
+        jl3 = new JLabel(Space+"第 二 行",SwingConstants.LEFT);
         jp4.add(jl3);
         jp4.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp4);
 
         jp5 = new JPanel();
-        jl4 = new JLabel(Space+"Line 3",SwingConstants.LEFT);
+        jl4 = new JLabel(Space+"第 三 行",SwingConstants.LEFT);
         jp5.add(jl4);
         jp5.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp5);
 
         jp6 = new JPanel();
-        jl5 = new JLabel(Space+"Line 4",SwingConstants.LEFT);
+        jl5 = new JLabel(Space+"第 四 行",SwingConstants.LEFT);
         jp6.add(jl5);
         jp6.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp6);
 
         jp7 = new JPanel();
-        jl6 = new JLabel(Space+"Line 5",SwingConstants.LEFT);
+        jl6 = new JLabel(Space+"第 五 行",SwingConstants.LEFT);
         jp7.add(jl6);
         jp7.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp7);
 
         jp8 = new JPanel();
-        jl7 = new JLabel(Space+"Line 6",SwingConstants.LEFT);
+        jl7 = new JLabel(Space+"第 六 行",SwingConstants.LEFT);
         jp8.add(jl7);
         jp8.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp8);
 
         jp9 = new JPanel();
-        jl8 = new JLabel(Space+"Line 7",SwingConstants.LEFT);
+        jl8 = new JLabel(Space+"第 七 行",SwingConstants.LEFT);
         jp9.add(jl8);
         jp9.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp9);
 
         jp10 = new JPanel();
-        jl9 = new JLabel(Space+"Line 8",SwingConstants.LEFT);
+        jl9 = new JLabel(Space+"第 八 行",SwingConstants.LEFT);
         jp10.add(jl9);
         jp10.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp10);
 
         jp11 = new JPanel();
-        jl10 = new JLabel(Space+"Line 9",SwingConstants.LEFT);
+        jl10 = new JLabel(Space+"第 九 行",SwingConstants.LEFT);
         jp11.add(jl10);
         jp11.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp11);
 
         jp12 = new JPanel();
-        jl11 = new JLabel(Space+"Line 10",SwingConstants.LEFT);
+        jl11 = new JLabel(Space+"第 十 行",SwingConstants.LEFT);
         jp12.add(jl11);
         jp12.setLayout(new FlowLayout(FlowLayout.LEFT));
         f.add(jp12);
@@ -506,10 +502,12 @@ public class GUI{
         f.add(jp13);
 
         jp14 = new JPanel();
-        but1 = new Button("CLEAR");
-        but2 = new Button("NEXT");
+        but1 = new Button("清 屏");
+        but3 = new Button("下一页");
+        but2 = new Button("上一页");
         jp14.add(but1);
         jp14.add(but2);
+        jp14.add(but3);
         f.add(jp14);
 
         f.addWindowListener(new MyWin());
@@ -592,32 +590,30 @@ public class GUI{
                 // TODO Auto-generated method stub
                 System.out.println("Put Down the Button1 to Clear the Data!");
                 line=0;
-                jl2.setText(Space+"Line 1");
-                jl3.setText(Space+"Line 2");
-                jl4.setText(Space+"Line 3");
-                jl5.setText(Space+"Line 4");
-                jl6.setText(Space+"Line 5");
-                jl7.setText(Space+"Line 6");
-                jl8.setText(Space+"Line 7");
-                jl9.setText(Space+"Line 8");
-                jl10.setText(Space+"Line 9");
-                jl11.setText(Space+"Line 10");
+                jl2.setText(Space+"第 一 行");
+                jl3.setText(Space+"第 二 行");
+                jl4.setText(Space+"第 三 行");
+                jl5.setText(Space+"第 四 行");
+                jl6.setText(Space+"第 五 行");
+                jl7.setText(Space+"第 六 行");
+                jl8.setText(Space+"第 七 行");
+                jl9.setText(Space+"第 八 行");
+                jl10.setText(Space+"第 九 行");
+                jl11.setText(Space+"第 十 行");
             }
         });
-        but2.addActionListener(new ActionListener() {
+        but3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 dealCommand("next");
             }
         });
-        but2.addKeyListener(new KeyAdapter() {
-            public void keyPressed(KeyEvent e){
-                System.out.println(KeyEvent.getKeyText(e.getKeyCode())+" ******>>>> "+e.getKeyCode());
-                if(e.getKeyCode()==KeyEvent.VK_ENTER){
-                    System.out.println("Put Down the Enter to Change the Data!");
-                    updateDisplay();
-                }
+        but2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                dealCommand("last");
             }
         });
         subItem2.addActionListener(new ActionListener() {
@@ -631,14 +627,14 @@ public class GUI{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
-                dealCommand("next");
+                dealCommand("last");
             }
         });
         subItem1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
-                dealCommand("last");
+                dealCommand("next");
             }
         });
         subItem4.addActionListener(new ActionListener() {
@@ -648,7 +644,7 @@ public class GUI{
                 dealCommand("clear");
             }
         });
-        subItem4.addActionListener(new ActionListener() {
+        subItem3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
