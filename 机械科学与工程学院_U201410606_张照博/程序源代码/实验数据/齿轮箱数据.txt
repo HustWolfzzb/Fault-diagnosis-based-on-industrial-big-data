@@ -1,0 +1,36 @@
+Faulty and healthy gear box Data sets need to be analyzed in detail. Here, we created this dataset for those who do research in wind turbine gearbox fault diagnosis. 
+Data Type: Multivariate 
+Task: Classification 
+Attribute Type: Integer 
+Number of Instances (records in your data set): 2021119 
+Number of Attributes (fields within each record): 4 
+Relevant Information: Data set includes Healthy and Broken Tooth data set. Data set has been recorded under variation of load from '0' to '90' percent with 4 different sensors in four directions. 
+Ten different text files are available for each case (Healthy as well as Broken Tooth). 
+Total Instances in Healthy case: 10,15,808 (of 10 txt files) 
+Total Instances in Broken Tooth case: 10,05,311 (of 10 txt files). 
+Meaning of the txt File naming: Example 'b30hz0.txt'= b stands for broken tooth, 30hz stands for recording frequency, 0 stands for loading condition 
+Attribute Information: Type of Gear box 
+Condition: 1) Healthy condition and 2) Broken Tooth condition
+data Attribute#1: Sensor#1 
+data Attribute#2: Sensor#2 
+data Attribute#3: Sensor#3 
+data Attribute#4: Sensor#4 
+
+齿轮箱故障和健康需要详细分析数据集。
+在这里，我们为那些研究风力涡轮机齿轮箱故障诊断的人创建了这个数据集。数据类型：多变量
+任务：分类属性
+类型：整数
+实例数（数据集中的记录）：2021119
+属性数（每个记录中的字段）：4
+相关信息：数据集包括健康和破碎的牙齿数据集。
+数据组在4个不同传感器的四个方向上从“0”到“90”百分比的负载变化下被记录下来。
+每种情况下都有十种不同的文本文件（健康以及破碎的牙齿）。
+健康情况下的实例总数：10,15,808（10个txt文件）
+破碎情况下的实例总数：10,05311（10个txt文件）。
+ txt的含义文件命名：例子'b30hz0.txt'= b代表断齿，30hz代表记录频率，0代表加载条件.
+属性信息：齿轮箱类型
+条件：1）健康状况和2）断齿状况
+数据属性＃1：传感器＃1
+数据属性＃2：传感器＃2
+数据属性＃3：传感器＃3
+数据属性＃4：传感器＃4

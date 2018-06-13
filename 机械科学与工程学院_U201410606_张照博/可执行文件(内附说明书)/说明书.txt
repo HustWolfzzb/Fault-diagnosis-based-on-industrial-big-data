@@ -1,0 +1,10 @@
+        【郑重声明】
+1. 因为所处环境不同（作者环境为Mac配合本地数据库），并未部署云服务器进行网络互联，所以文件夹内的可执行文件只能在作者电脑上运行，其他环境下均会报错。
+
+2. 若有需要验证，可联系作者：
+Email：1184827350@qq.com / hustwolfzzb@gmail.com
+Tel  ：15827249122
+
+3. 或可进入以下网址下载作者毕设期间所有版本记录和运行截图以及GIF动态运行图：
+https://github.com/HustWolfzzb/Fault-diagnosis-based-on-industrial-big-data
+
