@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/common/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/common/lib" />
+        </SOURCES>
+        <jarDirectory url="file://D:/Java/hadoop-2.9.1/share/hadoop/common/lib" recursive="false" />
+        <jarDirectory url="file://D:/Java/hadoop-2.9.1/share/hadoop/common/lib" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/httpfs" />
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/yarn" />
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/common" />
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/hdfs" />
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/mapreduce" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/common/jdiff" />
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/hdfs/jdiff" />
+          <root url="file://D:/Java/hadoop-2.9.1/share/hadoop/mapreduce/jdiff" />
+        </SOURCES>
+        <jarDirectory url="file://D:/Java/hadoop-2.9.1/share/hadoop/common" recursive="false" />
+        <jarDirectory url="file://D:/Java/hadoop-2.9.1/share/hadoop/hdfs" recursive="false" />
+        <jarDirectory url="file://D:/Java/hadoop-2.9.1/share/hadoop/mapreduce" recursive="false" />
+        <jarDirectory url="file://D:/Java/hadoop-2.9.1/share/hadoop/yarn" recursive="false" />
+      </library>
+    </orderEntry>
+  </component>
+</module>
